@@ -168,6 +168,7 @@ s { text-decoration-thickness: 2px; }
 .burger .ico--close { opacity: 0; transform: rotate(-90deg); }
 .burger.is-open .ico--menu { opacity: 0; transform: rotate(90deg); }
 .burger.is-open .ico--close { opacity: 1; transform: none; }
+@keyframes nav-in { from { transform: translateX(100%); } }
 .nav-backdrop { display: none; position: fixed; inset: 0; z-index: 45; background: rgba(6, 20, 14, .45); animation: modal-in .3s ease; }
 .tb-short { display: none; }
 .nav .nav__cta { display: none; }
@@ -679,15 +680,15 @@ s { text-decoration-thickness: 2px; }
   .nav {
     position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 85vw); z-index: 80;
     flex-direction: column; gap: 4px; padding: 96px 20px 20px; background: #fff; box-shadow: var(--shadow-lg);
-    transform: translateX(100%); transition: transform .45s var(--ease); overflow-y: auto;
+    overflow-y: auto; display: none;
   }
-  .nav.is-open { transform: none; }
+  .nav.is-open { display: flex; animation: nav-in .45s var(--ease); }
   .nav a { font-size: 1.05rem; padding: .9em 1em; color: var(--ink); border-bottom: 1px solid var(--line); border-radius: 12px; }
   .nav-backdrop.is-open { display: block; }
   .nav .nav__cta { display: inline-flex; margin-top: 18px; color: #fff; border: 0; border-radius: 999px; padding: 1em 1.4em; font-size: 1rem; }
   .burger { display: grid; margin-left: auto; position: relative; z-index: 90; }
   .header__cta { display: none; }
-  .hero__grid, .split, .gift, .offer, .faq-wrap { grid-template-columns: 1fr; }
+  .hero__grid, .split, .gift, .offer, .faq-wrap { grid-template-columns: minmax(0, 1fr); }
   .hero__grid { gap: 28px; padding-bottom: 40px; }
   .hero__visual { height: 520px; }
   .gift { gap: 48px; }
