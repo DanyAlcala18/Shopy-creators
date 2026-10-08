@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Shopify Creators | Te creamos tu sitio web en 24 horas</title>
   <meta name="description" content="Agencia especializada en tiendas en línea con Shopify. Tu sitio web profesional listo en 24 horas por $2,499 MXN (precio original $6,000). Incluye asesoría gratuita y curso de Facebook Ads de regalo.">
   <meta name="theme-color" content="#0E3B2C">
@@ -12,7 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E3B2C'/%3E%3Cpath d='M10 12h12l-1 12H11z' fill='none' stroke='%2395BF47' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M13 12a3 3 0 0 1 6 0' fill='none' stroke='%2395BF47' stroke-width='2.2'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -66,7 +66,7 @@
   <div class="topbar__inner">
     <span class="topbar__pulse" aria-hidden="true"></span>
     <svg class="ico"><use href="#i-flame"/></svg>
-    <span class="topbar__txt"><strong>Promoción $2,499</strong> + curso de Facebook Ads de regalo. Termina en</span>
+    <span class="topbar__txt"><strong>Promoción $2,499</strong><span class="tb-long"> + curso de Facebook Ads de regalo. Termina en</span><span class="tb-short"> + regalo · termina en</span></span>
     <span class="timer-chip"><svg class="ico"><use href="#i-timer"/></svg><b data-timer>15:41</b></span>
   </div>
 </div>
@@ -84,11 +84,13 @@
       <a href="#proceso">Proceso</a>
       <a href="#oferta">Precio</a>
       <a href="#faq">Preguntas</a>
+      <a href="#" class="btn btn--primary nav__cta" data-wa="menu"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span></a>
     </nav>
     <a href="#" class="btn btn--primary btn--sm header__cta" data-wa="header"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span></a>
-    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><svg class="ico ico--menu"><use href="#i-menu"/></svg><svg class="ico ico--close"><use href="#i-x"/></svg></button>
   </div>
 </header>
+<div class="nav-backdrop" id="navBackdrop"></div>
 
 <main>
 
@@ -184,6 +186,7 @@
       <button class="chip" data-filter="nicho">Nicho y producto único</button>
     </div>
     <div class="portfolio" id="portfolio"></div>
+    <p class="swipe-hint"><svg class="ico"><use href="#i-arrow"/></svg>Desliza para ver más proyectos</p>
     <div class="center reveal"><a href="#" class="btn btn--primary btn--lg" data-wa="portafolio"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Quiero un sitio así</span><svg class="ico ico--arrow"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
@@ -343,6 +346,7 @@
       <span class="eyebrow"><svg class="ico"><use href="#i-award"/></svg>Compara</span>
       <h2>¿Por qué elegir <span class="hl">Shopify Creators</span>?</h2>
     </div>
+    <p class="swipe-hint swipe-hint--table"><svg class="ico"><use href="#i-arrow"/></svg>Desliza la tabla para comparar</p>
     <div class="compare reveal">
       <table>
         <thead><tr><th></th><th class="us"><span class="brand__mark sm"><svg class="ico"><use href="#i-bag"/></svg></span>Shopify Creators</th><th>Agencia tradicional</th><th>Hacerlo tú solo</th></tr></thead>

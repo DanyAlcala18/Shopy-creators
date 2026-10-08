@@ -73,14 +73,27 @@ onScroll();
 
 const burger = $('#burger');
 const nav = $('#nav');
-burger.addEventListener('click', () => {
-  const open = nav.classList.toggle('is-open');
+const navBackdrop = $('#navBackdrop');
+function setMenu(open) {
+  nav.classList.toggle('is-open', open);
+  navBackdrop.classList.toggle('is-open', open);
+  burger.classList.toggle('is-open', open);
   burger.setAttribute('aria-expanded', open);
-});
-$$('a', nav).forEach((a) => a.addEventListener('click', () => {
-  nav.classList.remove('is-open');
-  burger.setAttribute('aria-expanded', 'false');
-}));
+  burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  document.body.classList.toggle('menu-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
+navBackdrop.addEventListener('click', () => setMenu(false));
+$$('a', nav).forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+/* ---------- Pausar animaciones fuera de pantalla (ahorra batería en celular) ---------- */
+const animIO = new IntersectionObserver((entries) => {
+  entries.forEach((en) => en.target.classList.toggle('anim-off', !en.isIntersecting));
+}, { rootMargin: '100px 0px' });
+function watchAnimations() {
+  $$('.hero__bg, .hero__visual, .marquee, .reviews-marquee, .gift__visual, .guarantee__seal, .final, .countdown').forEach((el) => animIO.observe(el));
+}
 
 /* ---------- Animaciones al hacer scroll ---------- */
 const io = new IntersectionObserver((entries) => {
@@ -163,7 +176,7 @@ grid.innerHTML = WORKS.map((w, i) => `
     <div class="browser">
       <div class="browser__bar"><i></i><i></i><i></i><span>${w.url}</span></div>
       <div class="browser__view">
-        <img src="img/portfolio/${w.id}.jpg" alt="Página de inicio de ${w.name}" loading="lazy" width="1280" height="800">
+        <img src="img/portfolio/${w.id}.jpg" alt="Página de inicio de ${w.name}" loading="lazy" decoding="async" width="1280" height="800">
         <div class="work__overlay"><span><svg class="ico"><use href="#i-eye"/></svg>Vista previa</span></div>
       </div>
     </div>
@@ -174,6 +187,7 @@ $$('.chip').forEach((chip) => chip.addEventListener('click', () => {
   $$('.chip').forEach((c) => c.classList.toggle('is-active', c === chip));
   const f = chip.dataset.filter;
   $$('.work').forEach((w) => w.classList.toggle('is-hidden', f !== 'all' && w.dataset.cat !== f));
+  grid.scrollTo({ left: 0, behavior: 'smooth' });
 }));
 
 /* ---------- Modales ---------- */
@@ -417,3 +431,4 @@ $$('.reviews-row').forEach((row) => {
 
 $('[data-year]').textContent = new Date().getFullYear();
 observeReveals();
+watchAnimations();
