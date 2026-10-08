@@ -9,17 +9,30 @@
   <meta property="og:title" content="Shopify Creators | Tu tienda en línea en 24 horas">
   <meta property="og:description" content="Promoción: sitio web profesional por $2,499 MXN. Incluye curso de Facebook Ads de regalo.">
   <meta property="og:image" content="img/promo.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E3B2C'/%3E%3Cpath d='M10 12h12l-1 12H11z' fill='none' stroke='%2395BF47' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M13 12a3 3 0 0 1 6 0' fill='none' stroke='%2395BF47' stroke-width='2.2'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
 <!-- ============ ICONOS (SVG sprite) ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <!-- Logo Shopify Creators -->
+    <linearGradient id="lg-tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1F7A54"/><stop offset=".55" stop-color="#0F4532"/><stop offset="1" stop-color="#082419"/></linearGradient>
+    <linearGradient id="lg-bag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4E67E"/><stop offset="1" stop-color="#7FB13C"/></linearGradient>
+    <linearGradient id="lg-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="lg-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#E0A93A"/></linearGradient>
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <rect x="1" y="1" width="46" height="46" rx="13" fill="url(#lg-tile)"/>
+      <rect x="1" y="1" width="46" height="46" rx="13" fill="url(#lg-shine)"/>
+      <rect x="1.6" y="1.6" width="44.8" height="44.8" rx="12.4" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="1.2"/>
+      <path d="M33.8 14.3A14.5 14.5 0 1 0 33.8 33.7" fill="none" stroke="url(#lg-bag)" stroke-width="3.8" stroke-linecap="round"/>
+      <path d="M28 18.2C26.8 16.6 25 16 23 16c-2.8 0-4.7 1.6-4.7 3.9 0 2.5 2.2 3.3 4.7 4 2.6.7 4.9 1.6 4.9 4.2 0 2.4-2.1 3.9-4.9 3.9-2.2 0-4.1-.8-5.2-2.4" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M37.6 19.2l1.2 3.4 3.4 1.2-3.4 1.2-1.2 3.4-1.2-3.4-3.4-1.2 3.4-1.2z" fill="url(#lg-gold)"/>
+    </symbol>
     <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
@@ -75,8 +88,8 @@
 <header class="header" id="header">
   <div class="container header__inner">
     <a href="#inicio" class="brand" aria-label="Shopify Creators, inicio">
-      <span class="brand__mark"><svg class="ico"><use href="#i-bag"/></svg></span>
-      <span class="brand__name">Shopify<span>Creators</span></span>
+      <svg class="brand__logo" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="brand__text"><span class="brand__top">Shopify</span><span class="brand__name">Creators</span></span>
     </a>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#portafolio">Portafolio</a>
@@ -349,7 +362,7 @@
     <p class="swipe-hint swipe-hint--table"><svg class="ico"><use href="#i-arrow"/></svg>Desliza la tabla para comparar</p>
     <div class="compare reveal">
       <table>
-        <thead><tr><th></th><th class="us"><span class="brand__mark sm"><svg class="ico"><use href="#i-bag"/></svg></span>Shopify Creators</th><th>Agencia tradicional</th><th>Hacerlo tú solo</th></tr></thead>
+        <thead><tr><th></th><th class="us"><svg class="brand__logo sm" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg>Shopify Creators</th><th>Agencia tradicional</th><th>Hacerlo tú solo</th></tr></thead>
         <tbody>
           <tr><td>Precio</td><td class="us"><b>$2,499</b></td><td>$15,000+</td><td>Tu tiempo</td></tr>
           <tr><td>Tiempo de entrega</td><td class="us"><b>24 horas</b></td><td>2 a 6 semanas</td><td>Semanas o meses</td></tr>
@@ -439,7 +452,7 @@
 <footer class="footer">
   <div class="container footer__grid">
     <div>
-      <a href="#inicio" class="brand brand--light"><span class="brand__mark"><svg class="ico"><use href="#i-bag"/></svg></span><span class="brand__name">Shopify<span>Creators</span></span></a>
+      <a href="#inicio" class="brand brand--light"><svg class="brand__logo" viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-mark"/></svg><span class="brand__text"><span class="brand__top">Shopify</span><span class="brand__name">Creators</span></span></a>
       <p class="footer__about">Agencia especializada en crear tiendas en línea profesionales con Shopify para emprendedores y negocios en México.</p>
       <p class="footer__site"><svg class="ico"><use href="#i-globe"/></svg>shopifycreators.com.mx</p>
     </div>
