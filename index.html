@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopify Creators | Te creamos tu sitio web en 24 horas</title>
+  <meta name="description" content="Agencia especializada en tiendas en línea con Shopify. Tu sitio web profesional listo en 24 horas por $2,499 MXN (precio original $6,000). Incluye asesoría gratuita y curso de Facebook Ads de regalo.">
+  <meta name="theme-color" content="#0E3B2C">
+  <meta property="og:title" content="Shopify Creators | Tu tienda en línea en 24 horas">
+  <meta property="og:description" content="Promoción: sitio web profesional por $2,499 MXN. Incluye curso de Facebook Ads de regalo.">
+  <meta property="og:image" content="img/promo.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E3B2C'/%3E%3Cpath d='M10 12h12l-1 12H11z' fill='none' stroke='%2395BF47' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M13 12a3 3 0 0 1 6 0' fill='none' stroke='%2395BF47' stroke-width='2.2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ ICONOS (SVG sprite) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><path d="M10 2h4M12 14l3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2z"/><path d="M18 17v1a3 3 0 0 1-3 3h-3"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 10-10c0 2.8-2.2 4-4 4h-2a2 2 0 0 0-1.5 3.3A1.6 1.6 0 0 1 12 22z"/><circle cx="7.5" cy="10.5" r="1.2"/><circle cx="12" cy="7" r="1.2"/><circle cx="16.5" cy="10.5" r="1.2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 15-6v14L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/><path d="M21 9v6"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.3L3 16"/><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.2 13 7 22l5-3 5 3-1.2-9"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 3v4M21 5h-4M5 17v4M7 19H3"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="M12 15 9 12a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.3.4 1.6 1.4 2.8 2.5 2.8z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ BARRA DE OFERTA ============ -->
+<div class="topbar" role="region" aria-label="Oferta por tiempo limitado">
+  <div class="topbar__inner">
+    <span class="topbar__pulse" aria-hidden="true"></span>
+    <svg class="ico"><use href="#i-flame"/></svg>
+    <span class="topbar__txt"><strong>Promoción $2,499</strong> + curso de Facebook Ads de regalo. Termina en</span>
+    <span class="timer-chip"><svg class="ico"><use href="#i-timer"/></svg><b data-timer>15:41</b></span>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#inicio" class="brand" aria-label="Shopify Creators, inicio">
+      <span class="brand__mark"><svg class="ico"><use href="#i-bag"/></svg></span>
+      <span class="brand__name">Shopify<span>Creators</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#portafolio">Portafolio</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#oferta">Precio</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a href="#" class="btn btn--primary btn--sm header__cta" data-wa="header"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span></a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="grid-lines"></span></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <div class="pill reveal"><span class="dot"></span>Promoción activa · Cupos limitados hoy</div>
+      <h1 class="hero__title reveal">Te creamos tu <span class="hl">sitio web</span> profesional en <span class="underline">24 horas</span></h1>
+      <p class="hero__lead reveal">Tiendas en línea con Shopify listas para vender: diseño a la medida, pagos con tarjeta, pedidos por WhatsApp y todo configurado por expertos. Tú te enfocas en vender, nosotros en todo lo demás.</p>
+
+      <div class="price-inline reveal">
+        <div class="price-inline__old"><span>Precio original</span><s>$6,000</s></div>
+        <div class="price-inline__new"><span>Precio promoción</span><strong>$2,499<small>MXN</small></strong></div>
+        <div class="save-tag">Ahorras $3,501</div>
+      </div>
+
+      <div class="hero__actions reveal">
+        <a href="#" class="btn btn--primary btn--lg" data-wa="hero"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span><svg class="ico ico--arrow"><use href="#i-arrow"/></svg></a>
+        <a href="#portafolio" class="btn btn--ghost btn--lg"><svg class="ico"><use href="#i-eye"/></svg><span>Ver sitios que hemos hecho</span></a>
+      </div>
+
+      <ul class="hero__perks reveal">
+        <li><span class="perk-ico"><svg class="ico"><use href="#i-zap"/></svg></span>Entrega en 24 horas</li>
+        <li><span class="perk-ico"><svg class="ico"><use href="#i-headset"/></svg></span>Asesoría gratuita</li>
+        <li><span class="perk-ico"><svg class="ico"><use href="#i-gift"/></svg></span>Curso de Facebook Ads gratis</li>
+      </ul>
+
+      <div class="hero__proof reveal">
+        <div class="avatars" aria-hidden="true"><span>MR</span><span>JL</span><span>AG</span><span>CS</span><span class="more">+</span></div>
+        <div>
+          <div class="stars" aria-label="Calificación 4.9 de 5"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><b>4.9/5</b></div>
+          <p>Emprendedores en todo México ya venden con nosotros</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mockup animado -->
+    <div class="hero__visual reveal" aria-hidden="true">
+      <div class="pedestal"></div>
+      <div class="phone">
+        <div class="phone__notch"></div>
+        <div class="phone__screen">
+          <div class="app-head"><span class="app-logo"><svg class="ico"><use href="#i-bag"/></svg></span><b>Mi tienda</b><span class="live"><i></i>En vivo</span></div>
+          <div class="app-label">Ventas de hoy</div>
+          <div class="app-total"><span data-sales>$14,850</span> <small>MXN</small></div>
+          <div class="app-delta"><svg class="ico"><use href="#i-trend"/></svg>+38% vs. ayer</div>
+          <div class="bars">
+            <i style="--h:18%"></i><i style="--h:34%"></i><i style="--h:46%"></i><i style="--h:38%"></i><i style="--h:58%"></i><i style="--h:72%"></i><i style="--h:84%"></i><i style="--h:100%"></i>
+          </div>
+          <div class="notif n1"><span class="notif__ico"><svg class="ico"><use href="#i-bag"/></svg></span><div><b>¡Nueva venta!</b><small>$1,200 MXN</small></div></div>
+          <div class="notif n2"><span class="notif__ico"><svg class="ico"><use href="#i-package"/></svg></span><div><b>¡Pedido recibido!</b><small>Hace un momento</small></div></div>
+        </div>
+      </div>
+      <div class="float-card fc1"><span class="fc-ico"><svg class="ico"><use href="#i-zap"/></svg></span><div><small>Entrega</small><b>24 horas</b></div></div>
+      <div class="float-card fc2"><span class="fc-ico gold"><svg class="ico"><use href="#i-gift"/></svg></span><div><small>De regalo</small><b>Curso Facebook Ads</b></div></div>
+      <div class="float-card fc3"><span class="fc-ico"><svg class="ico"><use href="#i-card"/></svg></span><div><small>Pagos</small><b>Tarjeta y transferencia</b></div></div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span><svg class="ico"><use href="#i-sparkles"/></svg>Ropa y moda</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Belleza y cosméticos</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Tenis y sneakers</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Electrónica</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Producto único</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Coleccionables</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Joyería</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Boletos y eventos</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Dropshipping</span>
+      <span><svg class="ico"><use href="#i-sparkles"/></svg>Ropa y moda</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Belleza y cosméticos</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Tenis y sneakers</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Electrónica</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Producto único</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Coleccionables</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Joyería</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Boletos y eventos</span><span><svg class="ico"><use href="#i-sparkles"/></svg>Dropshipping</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="container stats__grid">
+    <div class="stat reveal"><b><span data-count="24">0</span>h</b><span>Tiempo de entrega</span></div>
+    <div class="stat reveal"><b>+<span data-count="150">0</span></b><span>Sitios entregados</span></div>
+    <div class="stat reveal"><b><span data-count="98">0</span>%</b><span>Clientes satisfechos</span></div>
+    <div class="stat reveal"><b><span data-count="58">0</span>%</b><span>De descuento hoy</span></div>
+  </div>
+</section>
+
+<!-- ============ PORTAFOLIO ============ -->
+<section class="section" id="portafolio">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow"><svg class="ico"><use href="#i-layout"/></svg>Portafolio</span>
+      <h2>Sitios web que <span class="hl">hemos creado</span></h2>
+      <p>Haz clic en cualquier proyecto para ver una vista previa en computadora y celular. Tu tienda puede verse así de profesional mañana.</p>
+    </div>
+    <div class="filters reveal" role="tablist" aria-label="Filtrar proyectos">
+      <button class="chip is-active" data-filter="all">Todos</button>
+      <button class="chip" data-filter="moda">Moda y tenis</button>
+      <button class="chip" data-filter="belleza">Belleza</button>
+      <button class="chip" data-filter="tech">Tecnología</button>
+      <button class="chip" data-filter="nicho">Nicho y producto único</button>
+    </div>
+    <div class="portfolio" id="portfolio"></div>
+    <div class="center reveal"><a href="#" class="btn btn--primary btn--lg" data-wa="portafolio"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Quiero un sitio así</span><svg class="ico ico--arrow"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMA / SOLUCIÓN ============ -->
+<section class="section section--tint">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow"><svg class="ico"><use href="#i-target"/></svg>¿Te pasa esto?</span>
+      <h2>Vender solo por redes te está <span class="hl">costando clientes</span></h2>
+      <ul class="pain">
+        <li><svg class="ico"><use href="#i-x"/></svg>Contestas los mismos precios por mensaje todo el día.</li>
+        <li><svg class="ico"><use href="#i-x"/></svg>La gente desconfía porque no tienes una página formal.</li>
+        <li><svg class="ico"><use href="#i-x"/></svg>Pagas anuncios pero mandas el tráfico a un perfil desordenado.</li>
+        <li><svg class="ico"><use href="#i-x"/></svg>Una agencia tradicional te cobra $15,000 o más y tarda semanas.</li>
+      </ul>
+    </div>
+    <div class="solution reveal">
+      <span class="eyebrow eyebrow--light"><svg class="ico"><use href="#i-sparkles"/></svg>La solución</span>
+      <h3>Una tienda profesional que vende por ti las 24 horas</h3>
+      <ul>
+        <li><svg class="ico"><use href="#i-check"/></svg>Catálogo con precios, fotos y variantes siempre visibles.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Imagen de marca seria que genera confianza al instante.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Lista para recibir el tráfico de tus anuncios y convertirlo.</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Todo por $2,499 y en 24 horas.</li>
+      </ul>
+      <a href="#" class="btn btn--light" data-wa="solucion"><span>Crear mi sitio web</span><svg class="ico ico--arrow"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUÉ INCLUYE ============ -->
+<section class="section" id="incluye">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow"><svg class="ico"><use href="#i-package"/></svg>Todo incluido</span>
+      <h2>Lo que recibes por <span class="hl">$2,499</span></h2>
+      <p>Sin costos ocultos de diseño. Un solo pago y tu tienda queda lista para vender.</p>
+    </div>
+    <div class="features">
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-palette"/></svg></span><h3>Diseño profesional a tu medida</h3><p>Colores, tipografías y estilo de tu marca. Nada de plantillas genéricas sin personalidad.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-phone"/></svg></span><h3>100% adaptado a celular</h3><p>Más del 80% de tus clientes compran desde el teléfono. Tu tienda se verá perfecta ahí.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-package"/></svg></span><h3>Carga de tus productos</h3><p>Subimos tus productos con fotos, descripciones, precios y variantes de talla o color.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-card"/></svg></span><h3>Pagos configurados</h3><p>Tarjeta, transferencia y pedidos por WhatsApp para que no pierdas ninguna venta.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-search"/></svg></span><h3>SEO básico en Google</h3><p>Títulos, descripciones y estructura optimizada para que te encuentren en buscadores.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-globe"/></svg></span><h3>Conexión de dominio</h3><p>Te ayudamos a conectar tu dominio .com o .com.mx para una imagen más profesional.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-zap"/></svg></span><h3>Velocidad optimizada</h3><p>Imágenes ligeras y carga rápida. Una página lenta pierde clientes en segundos.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-file"/></svg></span><h3>Políticas legales</h3><p>Términos, privacidad, envíos y devoluciones redactados para tu negocio.</p></article>
+      <article class="feature reveal"><span class="feature__ico"><svg class="ico"><use href="#i-play"/></svg></span><h3>Capacitación incluida</h3><p>Te enseñamos a subir productos, ver pedidos y administrar tu tienda tú solo.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGALO ============ -->
+<section class="section section--dark" id="regalo">
+  <div class="container gift">
+    <div class="gift__visual reveal" aria-hidden="true">
+      <div class="course-card">
+        <div class="course-card__top"><span class="badge-free">GRATIS</span><svg class="ico"><use href="#i-megaphone"/></svg></div>
+        <h4>Curso de Facebook Ads</h4>
+        <p>De cero a tu primera campaña rentable</p>
+        <ul>
+          <li><span>01</span>Configura tu Business Manager y Pixel</li>
+          <li><span>02</span>Encuentra a tu cliente ideal</li>
+          <li><span>03</span>Crea anuncios que venden</li>
+          <li><span>04</span>Presupuesto y escalamiento</li>
+          <li><span>05</span>Retargeting para cerrar ventas</li>
+        </ul>
+        <div class="course-card__foot"><s>Valor $1,990</s><b>$0 con tu sitio</b></div>
+      </div>
+      <div class="gift-ribbon"><svg class="ico"><use href="#i-gift"/></svg></div>
+    </div>
+    <div class="gift__copy reveal">
+      <span class="eyebrow eyebrow--light"><svg class="ico"><use href="#i-gift"/></svg>Bono exclusivo de la promoción</span>
+      <h2>De regalo: <span class="hl-light">curso de Facebook Ads</span></h2>
+      <p>Una tienda sin clientes no sirve de nada. Por eso, si apartas tu sitio hoy, te regalamos el curso con el que aprenderás a llevar compradores reales a tu página usando anuncios en Facebook e Instagram.</p>
+      <div class="gift__timer">
+        <span><svg class="ico"><use href="#i-clock"/></svg>Este bono desaparece en</span>
+        <b data-timer>15:41</b>
+      </div>
+      <a href="#" class="btn btn--accent btn--lg" data-wa="regalo"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio y recibir el curso</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section" id="proceso">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow"><svg class="ico"><use href="#i-calendar"/></svg>Cómo funciona</span>
+      <h2>Tu tienda lista en <span class="hl">4 pasos</span></h2>
+      <p>Un proceso simple y rápido. Tú solo nos mandas tu información y nosotros hacemos el resto.</p>
+    </div>
+    <ol class="steps">
+      <li class="step reveal"><span class="step__n">1</span><span class="step__ico"><svg class="ico"><use href="#i-whatsapp"/></svg></span><h3>Escríbenos</h3><p>Presiona "Crear mi sitio web" y platícanos de tu negocio por WhatsApp.</p><em>5 minutos</em></li>
+      <li class="step reveal"><span class="step__n">2</span><span class="step__ico"><svg class="ico"><use href="#i-headset"/></svg></span><h3>Asesoría gratuita</h3><p>Definimos estilo, colores, productos y la mejor estrategia para tu giro.</p><em>Sin costo</em></li>
+      <li class="step reveal"><span class="step__n">3</span><span class="step__ico"><svg class="ico"><use href="#i-palette"/></svg></span><h3>Creamos tu sitio</h3><p>Diseñamos, cargamos tus productos y configuramos pagos y envíos.</p><em>24 horas</em></li>
+      <li class="step reveal"><span class="step__n">4</span><span class="step__ico"><svg class="ico"><use href="#i-rocket"/></svg></span><h3>Lanzas y vendes</h3><p>Revisas, pides ajustes y recibes tu tienda con el curso de Facebook Ads.</p><em>A vender</em></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ OFERTA / PRODUCTO ============ -->
+<section class="section section--tint" id="oferta">
+  <div class="container offer">
+    <div class="offer__media reveal">
+      <div class="offer__frame">
+        <span class="offer__badge"><svg class="ico"><use href="#i-flame"/></svg>Promoción</span>
+        <img src="img/promo.jpg" alt="Te creamos tu sitio web. Precio original $6,000, precio promoción $2,499" width="1600" height="1600" loading="lazy">
+      </div>
+    </div>
+
+    <div class="offer__card reveal">
+      <div class="offer__top">
+        <span class="tag-promo">Promoción por tiempo limitado</span>
+        <span class="spots"><i></i>Quedan <b data-spots>4</b> lugares para entrega en 24 h</span>
+      </div>
+      <h2>Sitio web profesional</h2>
+      <p class="offer__sub">Tienda en línea con Shopify, lista para vender</p>
+
+      <div class="offer__price">
+        <div class="old"><span>Precio original</span><s>$6,000 MXN</s></div>
+        <div class="new"><strong>$2,499</strong><span>MXN<br>pago único</span></div>
+        <div class="off">-58%</div>
+      </div>
+
+      <div class="countdown" aria-live="off">
+        <p><svg class="ico"><use href="#i-timer"/></svg>Esta oferta se acaba en:</p>
+        <div class="countdown__boxes"><div><b data-timer-min>15</b><small>min</small></div><span>:</span><div><b data-timer-sec>41</b><small>seg</small></div></div>
+        <div class="countdown__bar"><i data-timer-bar></i></div>
+      </div>
+
+      <ul class="stack">
+        <li><svg class="ico"><use href="#i-check-circle"/></svg><span>Sitio web profesional con Shopify</span><em>$6,000</em></li>
+        <li><svg class="ico"><use href="#i-check-circle"/></svg><span>Entrega express en 24 horas</span><em>$1,000</em></li>
+        <li><svg class="ico"><use href="#i-check-circle"/></svg><span>Asesoría gratuita personalizada</span><em>$800</em></li>
+        <li><svg class="ico"><use href="#i-check-circle"/></svg><span>Configuración de pagos y envíos</span><em>$700</em></li>
+        <li><svg class="ico"><use href="#i-check-circle"/></svg><span>Políticas legales para tu tienda</span><em>$500</em></li>
+        <li class="stack__gift"><svg class="ico"><use href="#i-gift"/></svg><span>Curso de Facebook Ads (regalo)</span><em>$1,990</em></li>
+      </ul>
+      <div class="stack__total"><span>Valor total</span><s>$10,990</s><b>Hoy solo $2,499</b></div>
+
+      <a href="#" class="btn btn--primary btn--xl btn--block" data-wa="oferta"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span><svg class="ico ico--arrow"><use href="#i-arrow"/></svg></a>
+      <div class="offer__trust">
+        <span><svg class="ico"><use href="#i-lock"/></svg>Pago seguro</span>
+        <span><svg class="ico"><use href="#i-refresh"/></svg>Ajustes incluidos</span>
+        <span><svg class="ico"><use href="#i-shield"/></svg>Garantía de satisfacción</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARATIVA ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow"><svg class="ico"><use href="#i-award"/></svg>Compara</span>
+      <h2>¿Por qué elegir <span class="hl">Shopify Creators</span>?</h2>
+    </div>
+    <div class="compare reveal">
+      <table>
+        <thead><tr><th></th><th class="us"><span class="brand__mark sm"><svg class="ico"><use href="#i-bag"/></svg></span>Shopify Creators</th><th>Agencia tradicional</th><th>Hacerlo tú solo</th></tr></thead>
+        <tbody>
+          <tr><td>Precio</td><td class="us"><b>$2,499</b></td><td>$15,000+</td><td>Tu tiempo</td></tr>
+          <tr><td>Tiempo de entrega</td><td class="us"><b>24 horas</b></td><td>2 a 6 semanas</td><td>Semanas o meses</td></tr>
+          <tr><td>Asesoría gratuita</td><td class="us"><svg class="ico yes"><use href="#i-check"/></svg></td><td><svg class="ico no"><use href="#i-x"/></svg></td><td><svg class="ico no"><use href="#i-x"/></svg></td></tr>
+          <tr><td>Curso de Facebook Ads</td><td class="us"><svg class="ico yes"><use href="#i-check"/></svg></td><td><svg class="ico no"><use href="#i-x"/></svg></td><td><svg class="ico no"><use href="#i-x"/></svg></td></tr>
+          <tr><td>Diseño profesional</td><td class="us"><svg class="ico yes"><use href="#i-check"/></svg></td><td><svg class="ico yes muted"><use href="#i-check"/></svg></td><td><svg class="ico no"><use href="#i-x"/></svg></td></tr>
+          <tr><td>Atención directa por WhatsApp</td><td class="us"><svg class="ico yes"><use href="#i-check"/></svg></td><td><svg class="ico no"><use href="#i-x"/></svg></td><td><svg class="ico no"><use href="#i-x"/></svg></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<!-- Sustituye estos testimonios por reseñas reales de tus clientes. -->
+<section class="section section--tint" id="testimonios">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow"><svg class="ico"><use href="#i-users"/></svg>Testimonios</span>
+      <h2>Lo que dicen <span class="hl">nuestros clientes</span></h2>
+    </div>
+  </div>
+  <div class="reviews-marquee reveal">
+    <div class="reviews-row" data-dir="left">
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"Les mandé mis fotos en la mañana y al día siguiente ya tenía mi tienda funcionando. La primera semana vendí más que en todo el mes por Instagram."</blockquote><figcaption><span class="av">MR</span><div><b>Mariana R.</b><small>Ropa para dama · Guadalajara</small></div></figcaption></figure>
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"Me cotizaron $18,000 en otra agencia. Aquí me quedó igual de profesional, más rápido y me enseñaron a manejarla yo solo."</blockquote><figcaption><span class="av">JL</span><div><b>Jorge L.</b><small>Tenis y sneakers · CDMX</small></div></figcaption></figure>
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"El curso de Facebook Ads fue lo mejor. Ya sé cómo hacer mis campañas y no dependo de nadie para conseguir clientes."</blockquote><figcaption><span class="av">AG</span><div><b>Andrea G.</b><small>Cosméticos · Monterrey</small></div></figcaption></figure>
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"Atención súper rápida por WhatsApp. Pedí cambios de colores y fotos y los hicieron el mismo día sin cobrarme extra."</blockquote><figcaption><span class="av">CS</span><div><b>Carlos S.</b><small>Electrónica · Puebla</small></div></figcaption></figure>
+    </div>
+    <div class="reviews-row" data-dir="right">
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"Yo no sabía nada de páginas web. Me explicaron todo paso a paso y ahora subo mis productos yo sola en minutos."</blockquote><figcaption><span class="av">LP</span><div><b>Lucía P.</b><small>Joyería · Querétaro</small></div></figcaption></figure>
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"Mis clientes ahora confían más. Antes me preguntaban si era real, ahora compran directo desde la página."</blockquote><figcaption><span class="av">RM</span><div><b>Roberto M.</b><small>Gorras · Tijuana</small></div></figcaption></figure>
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"Por el precio no esperaba tanta calidad. La tienda se ve igual o mejor que la de marcas grandes."</blockquote><figcaption><span class="av">DV</span><div><b>Daniela V.</b><small>Skincare · Mérida</small></div></figcaption></figure>
+      <figure class="review"><div class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></div><blockquote>"Lancé mi producto con la página y los anuncios del curso. En dos semanas ya había recuperado la inversión."</blockquote><figcaption><span class="av">EH</span><div><b>Eduardo H.</b><small>Producto único · León</small></div></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARANTÍA ============ -->
+<section class="section">
+  <div class="container guarantee reveal">
+    <div class="guarantee__seal" aria-hidden="true"><svg class="ico"><use href="#i-shield"/></svg><span>100%</span></div>
+    <div>
+      <h2>Garantía de satisfacción</h2>
+      <p>Antes de entregarte tu sitio te lo mostramos y hacemos los ajustes que necesites. No damos el proyecto por terminado hasta que estés contento con el resultado. Sin letras chiquitas.</p>
+    </div>
+    <a href="#" class="btn btn--primary btn--lg" data-wa="garantia"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span></a>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--tint" id="faq">
+  <div class="container faq-wrap">
+    <div class="section__head section__head--left reveal">
+      <span class="eyebrow"><svg class="ico"><use href="#i-headset"/></svg>Preguntas frecuentes</span>
+      <h2>Resolvemos <span class="hl">tus dudas</span></h2>
+      <p>¿Tienes otra pregunta? Escríbenos y te respondemos en minutos.</p>
+      <a href="#" class="btn btn--ghost" data-wa="faq"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Hablar con un asesor</span></a>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary>¿De verdad entregan en 24 horas?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Sí. El plazo de 24 horas empieza a contar cuando recibimos tu pago y toda tu información (logo, fotos, precios y datos de productos). Si te falta algo, te ayudamos a prepararlo durante la asesoría gratuita.</p></details>
+      <details class="reveal"><summary>¿Qué necesito para empezar?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Solo tu logo (si no tienes, te orientamos), fotos de tus productos, precios y una breve descripción de tu negocio. Todo lo puedes mandar por WhatsApp.</p></details>
+      <details class="reveal"><summary>¿El precio de $2,499 incluye la mensualidad de Shopify?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Los $2,499 cubren el diseño, la configuración y la entrega de tu tienda. La suscripción de Shopify y el dominio se contratan a tu nombre, para que la tienda sea 100% tuya. Te asesoramos para elegir el plan más económico para tu negocio.</p></details>
+      <details class="reveal"><summary>¿Cuántos productos subo?<svg class="ico"><use href="#i-plus"/></svg></summary><p>La promoción incluye la carga de hasta 20 productos con sus variantes. Además te capacitamos para que agregues todos los que quieras tú mismo en minutos.</p></details>
+      <details class="reveal"><summary>¿Puedo pedir cambios?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Claro. Antes de entregarte la tienda la revisamos juntos y hacemos los ajustes de diseño que necesites. Después de la entrega tienes 7 días de soporte para dudas y ajustes menores.</p></details>
+      <details class="reveal"><summary>¿Cómo recibo el curso de Facebook Ads?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Al entregarte tu sitio te enviamos el acceso al curso por WhatsApp o correo. Es tuyo para siempre y puedes verlo a tu ritmo.</p></details>
+      <details class="reveal"><summary>¿Cómo se paga?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Puedes pagar por transferencia bancaria o con tarjeta. Al escribirnos por WhatsApp te compartimos los datos de pago y apartamos tu lugar con el precio de promoción.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final">
+  <div class="final__bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span></div>
+  <div class="container final__inner reveal">
+    <span class="pill pill--dark"><span class="dot"></span>El precio regresa a $6,000 al terminar el tiempo</span>
+    <h2>Mañana a esta hora tu tienda puede estar <span class="hl-light">vendiendo</span></h2>
+    <p>Sitio web profesional + asesoría gratuita + curso de Facebook Ads de regalo por solo <b>$2,499 MXN</b>.</p>
+    <div class="final__timer"><svg class="ico"><use href="#i-timer"/></svg>La oferta termina en <b data-timer>15:41</b></div>
+    <a href="#" class="btn btn--accent btn--xl" data-wa="final"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span><svg class="ico ico--arrow"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="#inicio" class="brand brand--light"><span class="brand__mark"><svg class="ico"><use href="#i-bag"/></svg></span><span class="brand__name">Shopify<span>Creators</span></span></a>
+      <p class="footer__about">Agencia especializada en crear tiendas en línea profesionales con Shopify para emprendedores y negocios en México.</p>
+      <p class="footer__site"><svg class="ico"><use href="#i-globe"/></svg>shopifycreators.com.mx</p>
+    </div>
+    <div>
+      <h4>Navegación</h4>
+      <ul><li><a href="#portafolio">Portafolio</a></li><li><a href="#incluye">Qué incluye</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#oferta">Precio</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul><li><a href="#" data-policy="terminos">Términos y condiciones</a></li><li><a href="#" data-policy="privacidad">Aviso de privacidad</a></li><li><a href="#" data-policy="reembolsos">Política de reembolsos</a></li><li><a href="#" data-policy="entrega">Política de entrega</a></li></ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p class="footer__txt">Atención por WhatsApp<br>Lunes a sábado, 9:00 a 21:00 h</p>
+      <a href="#" class="btn btn--accent btn--sm" data-wa="footer"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Escríbenos</span></a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; <span data-year>2026</span> Shopify Creators. Todos los derechos reservados.</p>
+    <p class="footer__legal">Shopify es una marca registrada de Shopify Inc. Shopify Creators es una agencia independiente y no está afiliada ni respaldada por Shopify Inc.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOTANTES ============ -->
+<a href="#" class="wa-float" data-wa="flotante" aria-label="Escríbenos por WhatsApp"><svg class="ico"><use href="#i-whatsapp"/></svg><span class="wa-float__tip">¿Dudas? Escríbenos</span></a>
+
+<div class="sticky-cta" id="stickyCta">
+  <div><s>$6,000</s><b>$2,499</b><small><svg class="ico"><use href="#i-timer"/></svg><span data-timer>15:41</span></small></div>
+  <a href="#" class="btn btn--primary btn--sm" data-wa="sticky"><span>Crear mi sitio web</span></a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="toast__ico"><svg class="ico"><use href="#i-check-circle"/></svg></span>
+  <div><b data-toast-title></b><small data-toast-sub></small></div>
+</div>
+
+<!-- Modal vista previa -->
+<div class="modal" id="previewModal" aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel modal__panel--wide" role="dialog" aria-modal="true" aria-labelledby="pvTitle">
+    <button class="modal__close" data-close aria-label="Cerrar"><svg class="ico"><use href="#i-x"/></svg></button>
+    <div class="pv">
+      <div class="pv__stage">
+        <div class="browser browser--lg"><div class="browser__bar"><i></i><i></i><i></i><span data-pv-url></span></div><div class="browser__view"><img data-pv-desk alt=""></div></div>
+        <div class="mini-phone" data-pv-phone><div class="mini-phone__notch"></div><img data-pv-mob alt=""></div>
+      </div>
+      <div class="pv__info">
+        <span class="eyebrow" data-pv-cat></span>
+        <h3 id="pvTitle" data-pv-title></h3>
+        <p data-pv-desc></p>
+        <ul class="pv__tags" data-pv-tags></ul>
+        <div class="pv__nav"><button class="icon-btn" data-pv-prev aria-label="Anterior"><svg class="ico flip"><use href="#i-arrow"/></svg></button><button class="icon-btn" data-pv-next aria-label="Siguiente"><svg class="ico"><use href="#i-arrow"/></svg></button></div>
+        <a href="#" class="btn btn--primary btn--block" data-wa="preview"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Quiero un sitio así</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal políticas -->
+<div class="modal" id="policyModal" aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel modal__panel--doc" role="dialog" aria-modal="true" aria-labelledby="policyTitle">
+    <button class="modal__close" data-close aria-label="Cerrar"><svg class="ico"><use href="#i-x"/></svg></button>
+    <div class="doc" id="policyBody"></div>
+  </div>
+</div>
+
+<!-- Modal salida -->
+<div class="modal" id="exitModal" aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel modal__panel--exit" role="dialog" aria-modal="true" aria-labelledby="exitTitle">
+    <button class="modal__close" data-close aria-label="Cerrar"><svg class="ico"><use href="#i-x"/></svg></button>
+    <span class="exit__ico"><svg class="ico"><use href="#i-gift"/></svg></span>
+    <h3 id="exitTitle">¡Espera! No pierdas tu regalo</h3>
+    <p>Si creas tu sitio hoy te llevas el <b>curso de Facebook Ads gratis</b> y el precio de promoción de <b>$2,499</b> en lugar de $6,000.</p>
+    <div class="exit__timer"><svg class="ico"><use href="#i-timer"/></svg>Termina en <b data-timer>15:41</b></div>
+    <a href="#" class="btn btn--primary btn--lg btn--block" data-wa="salida"><svg class="ico"><use href="#i-whatsapp"/></svg><span>Crear mi sitio web</span></a>
+    <button class="exit__no" data-close>No gracias, prefiero pagar $6,000 después</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
