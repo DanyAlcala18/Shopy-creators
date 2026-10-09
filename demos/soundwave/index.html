@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soundwave | Audio que se siente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #10302E; --muted: #4F6E6B; --mint: #3FD8C2; --lilac: #8E8CF2; --line: rgba(16,48,46,.1); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #E8F7F3; color: var(--ink); font-family: "Outfit", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(700px 500px at 70% 50%, #CFF5EC, transparent 70%), radial-gradient(600px 500px at 100% 0%, #E2E1FF, transparent 70%), linear-gradient(160deg, #F2FBF8, #E3F4F0); }
+.blob { position: absolute; border-radius: 50%; filter: blur(2px); }
+.b1 { width: 160px; height: 160px; left: 46%; top: 90px; background: radial-gradient(circle at 30% 30%, #fff, #BDB9FF); opacity: .7; }
+.b2 { width: 90px; height: 90px; right: 6%; bottom: 90px; background: radial-gradient(circle at 30% 30%, #fff, #8BEBDB); }
+nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 24px 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; color: var(--ink); letter-spacing: -.02em; }
+.logo .eq { display: flex; align-items: flex-end; gap: 3px; height: 22px; }
+.logo .eq i { width: 4px; border-radius: 3px; background: linear-gradient(var(--lilac), var(--mint)); animation: eq 1s ease-in-out infinite alternate; }
+.logo .eq i:nth-child(1) { height: 40%; } .logo .eq i:nth-child(2) { height: 100%; animation-delay: .2s; } .logo .eq i:nth-child(3) { height: 65%; animation-delay: .4s; } .logo .eq i:nth-child(4) { height: 85%; animation-delay: .1s; }
+@keyframes eq { to { transform: scaleY(.45); } }
+.links { display: flex; gap: 6px; padding: 6px; border-radius: 999px; background: rgba(255,255,255,.7); box-shadow: 0 8px 24px -16px rgba(16,48,46,.4); }
+.links a { padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--muted); }
+.links a.on { background: var(--ink); color: #fff; }
+.icons { display: flex; gap: 10px; }
+.ic { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--ink); box-shadow: 0 8px 24px -16px rgba(16,48,46,.5); }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; padding: 10px 64px 0; min-height: 640px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #fff; font-size: 13px; font-weight: 600; color: var(--ink); box-shadow: 0 8px 24px -16px rgba(16,48,46,.5); }
+.badge i { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgba(63,216,194,.25); }
+h1 { font-size: 84px; font-weight: 800; line-height: .95; letter-spacing: -.05em; margin: 22px 0 18px; color: var(--ink); }
+h1 span { background: linear-gradient(90deg, var(--lilac), var(--mint)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { max-width: 430px; font-size: 18px; font-weight: 300; line-height: 1.6; color: var(--muted); }
+.colors { display: flex; align-items: center; gap: 12px; margin: 28px 0 30px; font-size: 14px; font-weight: 500; color: var(--ink); }
+.colors i { width: 30px; height: 30px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 12px -4px rgba(0,0,0,.25); }
+.colors i.on { outline: 2px solid var(--ink); outline-offset: 2px; }
+.ctas { display: flex; align-items: center; gap: 16px; }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 8px 8px 8px 26px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 600; font-size: 16px; box-shadow: 0 18px 36px -18px rgba(16,48,46,.8); }
+.btn i { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--lilac), var(--mint)); color: #fff; }
+.price b { display: block; font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1; }
+.price small { font-size: 13px; color: var(--muted); }
+.stage { position: relative; height: 620px; }
+.wave { position: absolute; left: 50%; top: 50%; border-radius: 50%; border: 2px solid rgba(63,216,194,.45); transform: translate(-50%,-50%); animation: pulse 3s ease-out infinite; }
+.w1 { width: 380px; height: 380px; }
+.w2 { width: 380px; height: 380px; animation-delay: 1s; }
+.w3 { width: 380px; height: 380px; animation-delay: 2s; }
+@keyframes pulse { from { opacity: .9; transform: translate(-50%,-50%) scale(.8); } to { opacity: 0; transform: translate(-50%,-50%) scale(1.5); } }
+.disc { position: absolute; left: 50%; top: 50%; width: 420px; height: 420px; border-radius: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle at 35% 30%, #fff, #D6F6EF 55%, #B6EBDF); box-shadow: 0 50px 80px -40px rgba(16,48,46,.45), inset 0 -10px 30px rgba(63,216,194,.25); }
+.main { position: absolute; left: 50%; top: 50%; width: 400px; transform: translate(-50%,-52%) rotate(-8deg); filter: drop-shadow(0 40px 40px rgba(16,48,46,.35)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translate(-50%,-56%) rotate(-6deg); } }
+.chip { position: absolute; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 20px; background: rgba(255,255,255,.85); backdrop-filter: blur(10px); box-shadow: 0 20px 40px -20px rgba(16,48,46,.5); }
+.chip i { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: #E6FAF5; color: #13A893; }
+.chip b { display: block; font-size: 16px; color: var(--ink); }
+.chip small { font-size: 12px; color: var(--muted); }
+.c1 { left: 0; top: 110px; }
+.c2 { right: 0; top: 260px; }
+.c2 i { background: #EEEDFF; color: #6461E0; }
+.mini { position: absolute; right: 40px; bottom: 50px; width: 150px; height: 150px; border-radius: 28px; background: #fff; display: grid; place-items: center; box-shadow: 0 20px 40px -20px rgba(16,48,46,.5); }
+.mini img { width: 76%; }
+.mini span { position: absolute; top: 10px; left: 12px; font-size: 11px; font-weight: 700; color: var(--lilac); }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { padding: 16px 20px; }
+  .links, .ic.hide { display: none; }
+  .burger { display: grid; }
+  .hero { grid-template-columns: 1fr; padding: 0 20px 30px; min-height: 0; }
+  .stage { height: 330px; order: -1; }
+  .disc { width: 250px; height: 250px; }
+  .w1, .w2, .w3 { width: 230px; height: 230px; }
+  .main { width: 240px; }
+  .c1 { top: 10px; padding: 8px 12px; }
+  .c2 { top: auto; bottom: 10px; padding: 8px 12px; }
+  .chip i { width: 30px; height: 30px; }
+  .chip b { font-size: 14px; }
+  .mini, .b1 { display: none; }
+  h1 { font-size: 52px; margin: 14px 0 12px; }
+  .lead { font-size: 16px; }
+  .colors { margin: 20px 0 22px; }
+  .ctas { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <nav>
+    <a class="logo" href="#"><span class="eq"><i></i><i></i><i></i><i></i></span>soundwave</a>
+    <div class="links"><a class="on" href="#">Audífonos</a><a href="#">Inalámbricos</a><a href="#">Gaming</a><a href="#">Accesorios</a></div>
+    <div class="icons">
+      <span class="ic hide"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span>
+      <span class="ic burger"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="badge"><i></i>Nuevo color · Edición Menta</span>
+      <h1>Escucha en<br><span>otro color.</span></h1>
+      <p class="lead">Audífonos ultraligeros con sonido envolvente, micrófono con cancelación de ruido y comodidad para todo el día.</p>
+      <div class="colors">Color <i class="on" style="background:#45D3C5"></i><i style="background:#F2F2F2"></i><i style="background:#1D1D1F"></i><i style="background:#B9B5FF"></i></div>
+      <div class="ctas">
+        <a class="btn" href="#">Comprar ahora <i><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+        <div class="price"><b>$1,299</b><small>o 6 pagos de $217</small></div>
+      </div>
+    </div>
+    <div class="stage">
+      <span class="wave w1"></span><span class="wave w2"></span><span class="wave w3"></span>
+      <div class="disc"></div>
+      <img class="main" src="p155.png" alt="Audífonos Menta">
+      <div class="chip c1"><i><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></i><div><b>Sonido 7.1</b><small>Envolvente</small></div></div>
+      <div class="chip c2"><i><svg viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2M6 11v2M10 11v2"/></svg></i><div><b>240 g</b><small>Ultraligeros</small></div></div>
+      <div class="mini"><span>TWS</span><img src="p163.png" alt="Audífonos inalámbricos"></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HYPE DISTRICT | Drops de streetwear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #F4F4F1; --ink: #0A0A0A; --red: #E3001B; --muted: #5C5C58; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Space Mono", monospace; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: square; }
+.page { position: relative; min-height: 800px; overflow: hidden; background-image: linear-gradient(rgba(10,10,10,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(10,10,10,.05) 1px, transparent 1px); background-size: 40px 40px; }
+.ticker { background: var(--red); color: #fff; overflow: hidden; white-space: nowrap; padding: 9px 0; font-weight: 700; font-size: 13px; letter-spacing: .1em; }
+.ticker div { display: inline-block; animation: tick 22s linear infinite; }
+.ticker span { color: #fff; margin: 0 22px; }
+@keyframes tick { to { transform: translateX(-50%); } }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 56px; border-bottom: 3px solid var(--ink); background: var(--bg); }
+.logo { font-family: "Archivo Black"; font-size: 26px; letter-spacing: -.02em; color: var(--ink); }
+.logo span { background: var(--red); color: #fff; padding: 0 8px; margin-left: 4px; }
+.links { display: flex; gap: 0; border: 2px solid var(--ink); }
+.links a { padding: 8px 16px; font-size: 13px; font-weight: 700; text-transform: uppercase; border-right: 2px solid var(--ink); color: var(--ink); }
+.links a:last-child { border: 0; }
+.links a.on { background: var(--ink); color: #fff; }
+.cart { display: flex; align-items: center; gap: 8px; padding: 9px 14px; border: 2px solid var(--ink); font-weight: 700; font-size: 13px; background: #fff; box-shadow: 4px 4px 0 var(--ink); color: var(--ink); }
+.cart b { color: var(--red); }
+.hero { display: grid; grid-template-columns: 1fr 1.1fr; gap: 20px; padding: 30px 56px 0; align-items: center; }
+.drop { display: inline-flex; align-items: center; gap: 10px; padding: 6px 12px; background: var(--ink); color: #fff; font-size: 13px; font-weight: 700; }
+.drop i { width: 9px; height: 9px; border-radius: 50%; background: var(--red); animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+h1 { font-family: "Archivo Black"; font-size: 104px; line-height: .86; letter-spacing: -.04em; text-transform: uppercase; margin: 22px 0 18px; color: var(--ink); }
+h1 span { color: var(--red); }
+.lead { max-width: 440px; font-size: 14px; line-height: 1.7; color: var(--muted); }
+.count { display: flex; gap: 10px; margin: 26px 0; }
+.count div { width: 82px; padding: 10px 0; text-align: center; border: 2px solid var(--ink); background: #fff; box-shadow: 4px 4px 0 var(--ink); }
+.count b { display: block; font-family: "Archivo Black"; font-size: 32px; line-height: 1; color: var(--ink); }
+.count small { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.ctas { display: flex; gap: 14px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 24px; border: 2px solid var(--ink); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; }
+.btn-red { background: var(--red); color: #fff; box-shadow: 6px 6px 0 var(--ink); }
+.btn-w { background: #fff; color: var(--ink); }
+.board { position: relative; height: 600px; }
+.slab { position: absolute; border: 3px solid var(--ink); background: #fff; box-shadow: 10px 10px 0 var(--ink); }
+.slab img { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); }
+.s1 { left: 40px; top: 20px; width: 340px; height: 400px; background: #EDEDE9; }
+.s1 img { width: 82%; }
+.s2 { right: 0; top: 120px; width: 230px; height: 280px; background: #E3001B; }
+.s2 img { width: 84%; }
+.s3 { left: 160px; bottom: 30px; width: 300px; height: 150px; background: #FFE14D; }
+.s3 img { width: 76%; }
+.code { position: absolute; left: 0; top: 0; padding: 4px 8px; background: var(--ink); color: #fff; font-size: 11px; font-weight: 700; }
+.pr { position: absolute; right: 0; bottom: 0; padding: 6px 10px; background: var(--ink); color: #fff; font-family: "Archivo Black"; font-size: 15px; }
+.sticker { position: absolute; z-index: 3; display: grid; place-items: center; text-align: center; font-family: "Archivo Black"; text-transform: uppercase; }
+.st1 { right: 40px; top: 10px; width: 120px; height: 120px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 17px; line-height: 1; transform: rotate(14deg); border: 3px dashed var(--red); }
+.st1 small { display: block; font-family: "Space Mono"; font-size: 10px; color: #FFE14D; margin-top: 4px; }
+.st2 { left: 10px; top: 330px; padding: 8px 14px; background: #fff; border: 3px solid var(--red); color: var(--red); font-size: 22px; transform: rotate(-12deg); }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { padding: 12px 18px; border-bottom-width: 2px; }
+  .links { display: none; }
+  .logo { font-size: 20px; }
+  .hero { grid-template-columns: 1fr; padding: 16px 18px 30px; gap: 4px; }
+  .board { height: 320px; order: -1; }
+  .s1 { left: 0; top: 6px; width: 200px; height: 236px; box-shadow: 6px 6px 0 var(--ink); }
+  .s2 { width: 130px; height: 160px; top: 70px; right: 6px; box-shadow: 6px 6px 0 var(--ink); }
+  .s3 { left: 80px; bottom: 6px; width: 180px; height: 86px; box-shadow: 6px 6px 0 var(--ink); }
+  .st1 { width: 80px; height: 80px; font-size: 12px; right: 4px; top: -4px; }
+  .st2 { font-size: 15px; top: 220px; left: -4px; }
+  h1 { font-size: 58px; margin: 14px 0 12px; }
+  .lead { font-size: 13px; }
+  .count div { width: 70px; }
+  .count b { font-size: 26px; }
+  .ctas { flex-direction: column; }
+  .btn { justify-content: center; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="ticker"><div><span>DROP 12 · SÁBADO 11:00 AM</span><span>★ 100% AUTÉNTICO</span><span>ENVÍO 24 H</span><span>RAFFLE ABIERTO</span><span>DROP 12 · SÁBADO 11:00 AM</span><span>★ 100% AUTÉNTICO</span><span>ENVÍO 24 H</span><span>RAFFLE ABIERTO</span></div></div>
+  <nav>
+    <a class="logo" href="#">HYPE<span>DISTRICT</span></a>
+    <div class="links"><a class="on" href="#">Drops</a><a href="#">Hoodies</a><a href="#">Tenis</a><a href="#">Raffles</a></div>
+    <a class="cart" href="#"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>BOLSA <b>[2]</b></a>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="drop"><i></i>DROP EN VIVO · STOCK LIMITADO</span>
+      <h1>No es<br>ropa. Es <span>hype.</span></h1>
+      <p class="lead">Supreme, Vale, Nike y más. Piezas verificadas, cantidades limitadas y drops cada semana. Cuando se acaba, se acaba.</p>
+      <div class="count"><div><b>02</b><small>Días</small></div><div><b>14</b><small>Horas</small></div><div><b>37</b><small>Min</small></div><div><b>09</b><small>Seg</small></div></div>
+      <div class="ctas"><a class="btn btn-red" href="#">Entrar al raffle <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-w" href="#">Ver drop anterior</a></div>
+    </div>
+    <div class="board">
+      <div class="slab s1"><span class="code">#HD-1201</span><img src="supreme-hoodie-logo.png" alt="Supreme box logo hoodie"><span class="pr">$9,800</span></div>
+      <div class="slab s2"><span class="code">#HD-1202</span><img src="vale-hoodie-classico.png" alt="Vale hoodie"><span class="pr">$7,450</span></div>
+      <div class="slab s3"><span class="code">#HD-1203</span><img src="nike-mind-001.png" alt="Nike Mind 001"><span class="pr">$4,990</span></div>
+      <div class="sticker st1"><div>Sold<br>out<small>en 4 min</small></div></div>
+      <div class="sticker st2">Last pair!</div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

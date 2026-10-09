@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tabla | iPads para estudiar y crear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root { --paper: #FFFBF1; --ink: #1E2440; --muted: #555B78; --blue: #3B6CFF; --pink: #FF6FAE; --yellow: #FFE15A; --mint: #39C98B; --grid: rgba(70,120,220,.13); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--paper); color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hand { font-family: "Caveat", cursive; }
+.page { position: relative; min-height: 800px; overflow: hidden; background-color: var(--paper); background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 28px 28px; background-position: -1px 9px; }
+.margin { position: absolute; top: 0; bottom: 0; left: 36px; width: 2px; background: rgba(255,90,110,.45); }
+.strip { position: relative; z-index: 4; display: flex; justify-content: center; align-items: center; gap: 10px; height: 38px; background: var(--ink); font-size: 13px; font-weight: 500; color: #FFFBF1; }
+.strip b { color: var(--yellow); font-weight: 700; }
+.strip .hand { font-size: 19px; color: #FFB3D4; }
+nav { position: relative; z-index: 4; display: flex; align-items: center; justify-content: space-between; padding: 18px 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 26px; letter-spacing: -.04em; color: var(--ink); }
+.logo i { position: relative; width: 30px; height: 36px; border-radius: 7px; border: 2.5px solid var(--ink); background: var(--yellow); transform: rotate(-8deg); box-shadow: 3px 3px 0 var(--ink); }
+.logo i::after { content: ""; position: absolute; left: 5px; right: 5px; top: 8px; height: 10px; border-bottom: 2.5px solid var(--ink); border-radius: 0 0 50% 50%; }
+.logo span { color: var(--pink); }
+.links { display: flex; gap: 28px; font-size: 15px; font-weight: 500; }
+.links a { color: var(--muted); }
+.links a.on { color: var(--ink); font-weight: 700; background: linear-gradient(transparent 60%, var(--yellow) 60%); }
+.nav-r { display: flex; align-items: center; gap: 12px; }
+.ic { position: relative; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; border: 2px solid var(--ink); background: #fff; color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.ic b { position: absolute; top: -8px; right: -8px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--ink); background: var(--pink); color: #fff; font-size: 10px; font-weight: 800; display: grid; place-items: center; }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; padding: 0 64px 0 84px; min-height: 680px; }
+.copy { position: relative; animation: pop .8s cubic-bezier(.2,.8,.3,1.2) both; }
+.sticker { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 2px solid var(--ink); border-radius: 999px; background: #fff; font-size: 14px; font-weight: 700; color: var(--ink); transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--ink); }
+.sticker i { width: 22px; height: 22px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; color: #fff; }
+.sticker i svg { width: 13px; height: 13px; stroke-width: 3; }
+h1 { position: relative; font-size: 78px; font-weight: 800; line-height: .98; letter-spacing: -.045em; margin: 26px 0 20px; color: var(--ink); }
+h1 mark { position: relative; z-index: 0; background: none; color: var(--ink); white-space: nowrap; }
+h1 mark::before { content: ""; position: absolute; z-index: -1; left: -6px; right: -8px; top: 18%; bottom: 4%; background: var(--yellow); border-radius: 6px 14px 8px 16px; transform: rotate(-1.5deg); animation: hl 1s .5s ease-out both; transform-origin: left; }
+@keyframes hl { from { transform: rotate(-1.5deg) scaleX(0); } }
+h1 .blue { color: var(--blue); }
+.note-arrow { position: absolute; right: 30px; top: 6px; display: flex; align-items: flex-start; gap: 4px; font-size: 24px; color: var(--pink); transform: rotate(4deg); }
+.note-arrow svg { width: 60px; height: 44px; stroke-width: 2.2; margin-top: 10px; }
+.lead { max-width: 470px; font-size: 18px; line-height: 1.55; color: var(--muted); }
+.lead b { color: var(--ink); }
+.ctas { display: flex; gap: 16px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 24px; border: 2px solid var(--ink); border-radius: 14px; font-weight: 700; font-size: 16px; box-shadow: 4px 4px 0 var(--ink); }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-white { background: #fff; color: var(--ink); }
+.perks { display: flex; gap: 12px; margin-top: 34px; }
+.perk { display: flex; align-items: center; gap: 9px; padding: 9px 13px 9px 9px; border-radius: 12px; background: #fff; border: 1.5px dashed rgba(30,36,64,.35); }
+.perk i { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; color: var(--ink); }
+.perk b { display: block; font-size: 13.5px; font-weight: 700; color: var(--ink); line-height: 1.15; }
+.perk small { font-size: 12px; color: var(--muted); }
+.stage { position: relative; height: 640px; animation: pop 1s .15s cubic-bezier(.2,.8,.3,1.2) both; }
+@keyframes pop { from { opacity: 0; transform: translateY(20px) scale(.98); } }
+.blob { position: absolute; left: 50%; top: 52%; width: 500px; height: 440px; transform: translate(-50%,-50%) rotate(-6deg); border-radius: 46% 54% 50% 50% / 52% 44% 56% 48%; background: #DCE6FF; border: 2px solid var(--ink); }
+.pad { position: absolute; filter: drop-shadow(10px 14px 0 rgba(30,36,64,.16)) drop-shadow(0 24px 30px rgba(30,36,64,.25)); }
+.air { width: 250px; left: 4px; top: 196px; transform: rotate(-13deg); animation: w1 6s ease-in-out infinite; }
+.pink { width: 250px; right: 0; top: 210px; transform: rotate(11deg); animation: w2 7s ease-in-out infinite; }
+.pro .pad { position: static; display: block; width: 100%; }
+.ptag { position: absolute; right: -14%; bottom: -3%; padding: 6px 12px; border: 2px solid var(--ink); border-radius: 10px; background: #fff; font-size: 13px; font-weight: 700; color: var(--ink); transform: rotate(-6deg); box-shadow: 3px 3px 0 var(--ink); white-space: nowrap; }
+.pro { position: absolute; width: 290px; left: 50%; margin-left: -145px; top: 126px; z-index: 2; animation: w3 6.5s ease-in-out infinite; }
+@keyframes w1 { 50% { transform: rotate(-11deg) translateY(-8px); } }
+@keyframes w2 { 50% { transform: rotate(9deg) translateY(-10px); } }
+@keyframes w3 { 50% { transform: translateY(-12px); } }
+.sticky { position: absolute; z-index: 4; width: 156px; padding: 18px 14px 14px; background: var(--yellow); color: var(--ink); box-shadow: 0 14px 18px -10px rgba(30,36,64,.45); }
+.sticky::before { content: ""; position: absolute; left: 50%; top: -10px; width: 64px; height: 20px; margin-left: -32px; background: rgba(255,255,255,.65); border: 1px solid rgba(30,36,64,.08); transform: rotate(-4deg); }
+.sticky small { display: block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(30,36,64,.7); }
+.sticky b { display: block; font-size: 26px; font-weight: 800; letter-spacing: -.03em; color: var(--ink); }
+.sticky .hand { display: block; font-size: 19px; line-height: 1.05; color: #2B3A8C; }
+.st1 { left: 10px; top: 60px; transform: rotate(-5deg); }
+.st2 { right: 4px; bottom: 74px; background: #FFC2DD; transform: rotate(4deg); }
+.st2 .hand { color: #A0185B; }
+.badge { position: absolute; z-index: 4; right: 40px; top: 52px; width: 108px; height: 108px; border-radius: 50%; display: grid; place-items: center; text-align: center; background: var(--mint); border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); color: #fff; transform: rotate(10deg); animation: spin 18s linear infinite; }
+.badge span { font-size: 13px; font-weight: 800; line-height: 1.1; color: #fff; }
+.badge b { display: block; font-size: 28px; color: #fff; }
+@keyframes spin { from { transform: rotate(10deg); } 50% { transform: rotate(-6deg); } to { transform: rotate(10deg); } }
+.doodle { position: absolute; z-index: 3; color: var(--ink); }
+.d-star { left: 230px; top: 40px; width: 40px; height: 40px; color: var(--pink); animation: tw 2.4s ease-in-out infinite; }
+.d-star2 { left: 48%; bottom: 40px; width: 28px; height: 28px; color: var(--blue); animation: tw 3s .6s ease-in-out infinite; }
+.d-squig { left: 40px; bottom: 50px; width: 120px; height: 30px; color: var(--blue); }
+.d-spiral { right: 200px; top: 78px; width: 46px; height: 46px; color: var(--ink); }
+.fav { position: absolute; z-index: 4; left: 20px; bottom: 96px; display: flex; align-items: center; gap: 2px; font-size: 26px; color: var(--ink); transform: rotate(-4deg); }
+.fav svg { width: 46px; height: 40px; stroke-width: 2.2; }
+@keyframes tw { 50% { transform: scale(.75) rotate(20deg); } }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  .margin { left: 14px; }
+  .strip { font-size: 11.5px; height: 34px; }
+  .strip .hide { display: none; }
+  nav { padding: 12px 20px; }
+  .logo { font-size: 22px; }
+  .logo i { width: 24px; height: 30px; }
+  .links, .ic.hide { display: none; }
+  .ic { width: 38px; height: 38px; }
+  .burger { display: grid; }
+  .hero { grid-template-columns: 1fr; padding: 0 20px 30px 26px; min-height: 0; }
+  .stage { order: -1; height: 318px; margin: 0 -20px 0 -26px; }
+  .blob { width: 300px; height: 250px; }
+  .air { width: 150px; left: 14px; top: 92px; }
+  .pink { width: 150px; right: 10px; top: 100px; }
+  .pro { width: 172px; margin-left: -86px; top: 58px; }
+  .sticky { width: 112px; padding: 13px 10px 10px; }
+  .sticky b { font-size: 19px; }
+  .sticky small { font-size: 10px; }
+  .sticky .hand { font-size: 15px; }
+  .st1 { left: 10px; top: 8px; }
+  .st2 { right: 10px; bottom: 6px; }
+  .badge, .fav, .d-spiral, .d-squig { display: none; }
+  .d-star { left: auto; right: 30px; top: 18px; width: 28px; height: 28px; }
+  .d-star2 { left: 30px; bottom: 30px; }
+  .note-arrow { display: none; }
+  .sticker { font-size: 12.5px; }
+  h1 { font-size: 48px; margin: 16px 0 14px; }
+  .lead { font-size: 15.5px; }
+  .ctas { gap: 10px; margin-top: 22px; }
+  .btn { flex: 1; justify-content: center; padding: 13px 10px; font-size: 14.5px; white-space: nowrap; }
+  .ptag { display: none; }
+  .perks { gap: 8px; margin-top: 22px; }
+  .perk { flex: 1; flex-direction: column; align-items: flex-start; gap: 4px; padding: 8px 9px; }
+  .perk i { width: 24px; height: 24px; }
+  .perk b { font-size: 12.5px; }
+  .perk small { font-size: 11px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="margin"></div>
+  <div class="strip"><span class="hand">regreso a clases</span><span>10% extra con tu <b>credencial escolar</b></span><span class="hide">· Envío gratis a todo México</span></div>
+  <nav>
+    <a class="logo" href="#"><i></i>tabla<span>.</span></a>
+    <div class="links"><a class="on" href="#">iPad</a><a href="#">iPad Air</a><a href="#">iPad Pro</a><a href="#">Pencil</a><a href="#">Fundas</a><a href="#">Kits escolares</a></div>
+    <div class="nav-r">
+      <span class="ic hide"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><b>3</b></span>
+      <span class="ic burger"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h12M4 17h16"/></svg></span>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="copy">
+      <span class="sticker"><i><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></i>Precio estudiante todo el año</span>
+      <h1>Apuntes con<br><mark>superpoderes</mark><span class="blue">.</span></h1>
+      <p class="lead">iPads para tomar apuntes, dibujar, editar y entregar a tiempo. <b>Desde $8,999</b> o 12 pagos de $750.</p>
+      <div class="ctas">
+        <a class="btn btn-blue" href="#">Elegir mi iPad <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-white" href="#">Ver kits escolares</a>
+      </div>
+      <div class="perks">
+        <div class="perk"><i style="background:#DCE6FF"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i><span><b>Garantía 1 año</b><small>Equipo nuevo</small></span></div>
+        <div class="perk"><i style="background:#FFE9A8"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></i><span><b>12 MSI</b><small>Sin intereses</small></span></div>
+        <div class="perk"><i style="background:#FFD6E8"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></i><span><b>Envío gratis</b><small>En 24 a 72 h</small></span></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="blob"></div>
+      <svg class="doodle d-star" viewBox="0 0 40 40"><path d="M20 3l4.5 11.5L36 16l-9 7.5 3 12L20 29l-10 6.5 3-12L4 16l11.5-1.5z" fill="currentColor" stroke="#1E2440" stroke-width="2"/></svg>
+      <svg class="doodle d-spiral" viewBox="0 0 46 46"><path d="M23 23c0-2 3-2 3 0 0 4-6 4-6 0 0-6 9-6 9 0 0 8-12 8-12 0 0-10 15-10 15 0" stroke-width="2.2"/></svg>
+      <svg class="doodle d-squig" viewBox="0 0 120 30"><path d="M4 18c10-14 18 14 28 0s18 14 28 0 18 14 28 0 18 14 28 0" stroke-width="3"/></svg>
+      <svg class="doodle d-star2" viewBox="0 0 28 28"><path d="M14 2v24M2 14h24M6 6l16 16M22 6 6 22" stroke-width="2.4"/></svg>
+      <img class="pad air" src="ipad-air.png" alt="iPad Air azul">
+      <img class="pad pink" src="ipad-pink.png" alt="iPad rosa">
+      <div class="pro"><img class="pad" src="ipad-pro-silver.png" alt="iPad Pro plata"><span class="ptag">Pantalla de 13"</span></div>
+      <div class="sticky st1"><small>iPad Air</small><b>$13,499</b><span class="hand">chip M3, ligero para la mochila</span></div>
+      <div class="sticky st2"><small>iPad rosa</small><b>$8,999</b><span class="hand">ideal para la prepa</span></div>
+      <div class="badge"><span>Hasta<b>12</b>MSI</span></div>
+      <div class="fav hand">el favorito de diseño<svg viewBox="0 0 46 40"><path d="M4 34C16 34 30 26 36 8M36 8l4 10M36 8l-9 6"/></svg></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

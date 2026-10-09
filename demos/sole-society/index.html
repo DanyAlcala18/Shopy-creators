@@ -1,0 +1,175 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLE SOCIETY | Tenis verificados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #111213; --panel: #1A1C1E; --lime: #C8FF2E; --ink: #F2F3EE; --muted: #8D918B; --line: rgba(242,243,238,.1); --scan: #E9EAE4; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Inter Tight", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(700px 500px at 72% 40%, rgba(200,255,46,.08), transparent 70%), var(--bg); }
+.page::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(242,243,238,.07) 1px, transparent 1px); background-size: 22px 22px; pointer-events: none; }
+.top { position: relative; display: flex; justify-content: center; gap: 34px; padding: 9px 16px; border-bottom: 1px solid var(--line); font-family: "IBM Plex Mono"; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.top span { color: var(--muted); }
+.top b { color: var(--lime); font-weight: 500; }
+nav { position: relative; z-index: 4; display: flex; align-items: center; justify-content: space-between; padding: 18px 56px; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: "Unbounded"; font-weight: 800; font-size: 19px; letter-spacing: -.01em; color: var(--ink); }
+.logo i { width: 30px; height: 30px; border-radius: 8px; background: var(--lime); display: grid; place-items: center; color: #111213; }
+.logo i svg { width: 18px; height: 18px; stroke-width: 2.6; }
+.logo span { color: var(--lime); }
+.links { display: flex; gap: 4px; padding: 5px; border: 1px solid var(--line); border-radius: 999px; background: rgba(26,28,30,.8); }
+.links a { padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--muted); }
+.links a.on { background: var(--ink); color: #111213; }
+.icons { display: flex; gap: 10px; align-items: center; }
+.ic { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink); }
+.sell { padding: 11px 18px; border-radius: 999px; background: var(--lime); color: #111213; font-weight: 700; font-size: 14px; }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: .92fr 1.08fr; gap: 40px; align-items: center; padding: 14px 56px 0; min-height: 660px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: "IBM Plex Mono"; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 0 rgba(200,255,46,.6); animation: ping 1.8s infinite; }
+@keyframes ping { to { box-shadow: 0 0 0 10px rgba(200,255,46,0); } }
+h1 { font-family: "Unbounded"; font-weight: 700; font-size: 66px; line-height: 1.02; letter-spacing: -.04em; margin: 22px 0 22px; color: var(--ink); }
+h1 mark { background: var(--lime); color: #111213; padding: 0 10px; border-radius: 10px; display: inline-block; line-height: 1.08; }
+.lead { max-width: 450px; font-size: 17px; line-height: 1.6; color: var(--muted); }
+.ctas { display: flex; gap: 12px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 17px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+.btn-lime { background: var(--lime); color: #111213; }
+.btn-line { border: 1px solid rgba(242,243,238,.25); color: var(--ink); }
+.trust { display: flex; gap: 0; margin-top: 40px; border: 1px solid var(--line); border-radius: 16px; max-width: 480px; background: rgba(26,28,30,.6); }
+.trust div { flex: 1; padding: 14px 18px; border-right: 1px solid var(--line); }
+.trust div:last-child { border: 0; }
+.trust b { display: block; font-family: "Unbounded"; font-size: 20px; font-weight: 700; color: var(--ink); }
+.trust span { font-family: "IBM Plex Mono"; font-size: 11px; letter-spacing: .04em; color: var(--muted); }
+.lab { position: relative; height: 620px; }
+.scan { position: absolute; left: 40px; right: 0; top: 10px; height: 410px; border-radius: 28px; background: radial-gradient(circle at 50% 45%, #FFFFFF, var(--scan) 70%); overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,.8); }
+.scan .grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(17,18,19,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(17,18,19,.05) 1px, transparent 1px); background-size: 32px 32px; }
+.br { position: absolute; width: 34px; height: 34px; border: 3px solid #111213; }
+.br.a { left: 22px; top: 22px; border-right: 0; border-bottom: 0; border-radius: 8px 0 0 0; }
+.br.b { right: 22px; top: 22px; border-left: 0; border-bottom: 0; border-radius: 0 8px 0 0; }
+.br.c { left: 22px; bottom: 22px; border-right: 0; border-top: 0; border-radius: 0 0 0 8px; }
+.br.d { right: 22px; bottom: 22px; border-left: 0; border-top: 0; border-radius: 0 0 8px 0; }
+.line { position: absolute; left: 30px; right: 30px; height: 2px; top: 20%; background: #7FB800; box-shadow: 0 0 18px 4px rgba(200,255,46,.9); animation: scanline 3.6s ease-in-out infinite alternate; }
+@keyframes scanline { to { top: 80%; } }
+.shoe { position: absolute; left: 50%; top: 52%; width: 82%; transform: translate(-50%,-50%) rotate(-4deg); filter: drop-shadow(0 30px 24px rgba(17,18,19,.35)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translate(-50%,-55%) rotate(-3deg); } }
+.meta { position: absolute; left: 40px; top: 36px; font-family: "IBM Plex Mono"; font-size: 11px; line-height: 1.6; color: #55594F; letter-spacing: .06em; }
+.meta b { color: #111213; font-weight: 600; }
+.price { position: absolute; right: 40px; bottom: 34px; text-align: right; }
+.price small { font-family: "IBM Plex Mono"; font-size: 11px; letter-spacing: .1em; color: #55594F; }
+.price b { display: block; font-family: "Unbounded"; font-size: 26px; font-weight: 700; color: #111213; }
+.stamp { position: absolute; z-index: 3; right: -14px; top: -14px; width: 112px; height: 112px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; box-shadow: 0 20px 40px -16px rgba(200,255,46,.5); }
+.stamp svg.ring { position: absolute; inset: 0; width: 112px; height: 112px; stroke: none; animation: spin 16s linear infinite; }
+.stamp text { fill: #111213; font-family: "IBM Plex Mono"; font-size: 9.5px; font-weight: 600; letter-spacing: 2.4px; }
+.stamp .ck { width: 34px; height: 34px; color: #111213; stroke-width: 2.6; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.check { position: absolute; z-index: 3; left: 0; top: 250px; width: 230px; padding: 16px 18px; border-radius: 18px; background: rgba(26,28,30,.94); border: 1px solid var(--line); backdrop-filter: blur(10px); box-shadow: 0 30px 50px -20px rgba(0,0,0,.8); animation: bob 7s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-8px); } }
+.check small { font-family: "IBM Plex Mono"; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.check ul { list-style: none; margin-top: 10px; }
+.check li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink); padding: 4px 0; }
+.check li svg { width: 16px; height: 16px; color: var(--lime); stroke-width: 2.6; }
+.check .bar { margin-top: 10px; height: 4px; border-radius: 4px; background: rgba(242,243,238,.1); overflow: hidden; }
+.check .bar i { display: block; height: 100%; width: 100%; background: var(--lime); }
+.thumbs { position: absolute; left: 40px; right: 0; bottom: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.th { position: relative; height: 138px; border-radius: 20px; background: radial-gradient(circle at 50% 40%, #FFFFFF, #E4E5DF 80%); overflow: hidden; }
+.th img { position: absolute; left: 50%; top: 50%; width: 72%; transform: translate(-50%,-50%); filter: drop-shadow(0 12px 10px rgba(17,18,19,.25)); }
+.th .lb { position: absolute; left: 14px; right: 14px; bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; }
+.th .lb span { font-size: 12px; color: #55594F; }
+.th .lb b { font-family: "IBM Plex Mono"; font-size: 13px; font-weight: 600; color: #111213; }
+.th .v { position: absolute; top: 10px; left: 12px; display: flex; align-items: center; gap: 4px; font-family: "IBM Plex Mono"; font-size: 9px; letter-spacing: .1em; color: #3E6B00; }
+.th .v svg { width: 11px; height: 11px; stroke-width: 3; }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  .top { gap: 0; } .top span:not(:first-child) { display: none; }
+  nav { padding: 14px 18px; }
+  .links, .icons .hide { display: none; }
+  .burger { display: grid; }
+  .logo { font-size: 16px; }
+  .hero { grid-template-columns: 1fr; padding: 0 18px 30px; gap: 22px; min-height: 0; }
+  .lab { order: -1; height: 330px; }
+  .scan { left: 0; top: 6px; height: 222px; border-radius: 22px; }
+  .br { width: 22px; height: 22px; }
+  .br.a, .br.b { top: 14px; } .br.c, .br.d { bottom: 14px; } .br.a, .br.c { left: 14px; } .br.b, .br.d { right: 14px; }
+  .meta { left: 26px; top: 20px; font-size: 8px; }
+  .shoe { width: 78%; top: 56%; }
+  .price { right: 26px; bottom: 18px; }
+  .price small { font-size: 9px; }
+  .price b { font-size: 18px; }
+  .stamp { width: 74px; height: 74px; right: -4px; top: -4px; }
+  .stamp svg.ring { width: 74px; height: 74px; }
+  .stamp text { font-size: 9px; letter-spacing: 1.6px; }
+  .stamp .ck { width: 22px; height: 22px; }
+  .check { display: none; }
+  .thumbs { left: 0; bottom: 0; gap: 8px; }
+  .th { height: 92px; border-radius: 14px; }
+  .th .v { display: none; }
+  .th img { top: 42%; width: 80%; }
+  .th .lb { left: 8px; right: 8px; bottom: 6px; }
+  .th .lb span { display: none; }
+  .th .lb b { font-size: 11px; width: 100%; text-align: center; }
+  .eyebrow { font-size: 11px; }
+  h1 { font-size: 42px; margin: 14px 0 14px; }
+  .lead { font-size: 15px; }
+  .ctas { flex-direction: column; margin-top: 24px; }
+  .btn { justify-content: center; }
+  .trust { margin-top: 24px; }
+  .trust div { padding: 12px; }
+  .trust b { font-size: 16px; }
+  .trust span { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top"><span><b>●</b> Autenticación en 12 puntos</span><span>Envío asegurado a todo México</span><span>Paga hasta en <b>12 MSI</b></span></div>
+  <nav>
+    <a class="logo" href="#"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>SOLE<span>/</span>SOCIETY</a>
+    <div class="links"><a class="on" href="#">Comprar</a><a href="#">Marcas</a><a href="#">Recién llegados</a><a href="#">Cómo verificamos</a></div>
+    <div class="icons">
+      <span class="ic hide"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span>
+      <a class="sell hide" href="#">Vender</a>
+      <span class="ic burger"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="eyebrow"><i></i>Reventa con autenticación</span>
+      <h1>Cada par,<br><mark>verificado.</mark></h1>
+      <p class="lead">Yeezy, Bape, Balenciaga y Amiri revisados a mano por nuestro equipo antes de salir. Si no es original, no llega a tu puerta.</p>
+      <div class="ctas">
+        <a class="btn btn-lime" href="#">Comprar tenis <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="#">Cómo verificamos</a>
+      </div>
+      <div class="trust"><div><b>12</b><span>Puntos de revisión</span></div><div><b>+4,800</b><span>Pares verificados</span></div><div><b>4.9/5</b><span>Calificación</span></div></div>
+    </div>
+    <div class="lab">
+      <div class="scan">
+        <div class="grid"></div>
+        <span class="br a"></span><span class="br b"></span><span class="br c"></span><span class="br d"></span>
+        <div class="meta">MODELO <b>YEEZY 350 V2</b><br>COLOR <b>CORE BLACK</b><br>TALLA <b>27 MX</b></div>
+        <img class="shoe" src="yeezy-black.png" alt="Yeezy Boost 350 V2 Core Black">
+        <div class="line"></div>
+        <div class="price"><small>DESDE</small><b>$7,490</b></div>
+      </div>
+      <div class="stamp"><svg class="ring" viewBox="0 0 112 112"><defs><path id="c" d="M56 56m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs><text><textPath href="#c">VERIFICADO · 100% ORIGINAL · VERIFICADO ·</textPath></text></svg><svg class="ck" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <div class="check"><small>Reporte de autenticidad</small><ul>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Costuras y materiales</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Etiqueta y código SKU</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Prueba con luz UV</li>
+      </ul><div class="bar"><i></i></div></div>
+      <div class="thumbs">
+        <div class="th"><span class="v"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>VERIFICADO</span><img src="bape.png" alt="Bape Sta"><div class="lb"><span>Bape Sta</span><b>$6,290</b></div></div>
+        <div class="th"><span class="v"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>VERIFICADO</span><img src="balenciaga-3xl.png" alt="Balenciaga 3XL"><div class="lb"><span>3XL</span><b>$21,900</b></div></div>
+        <div class="th"><span class="v"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>VERIFICADO</span><img src="amiri-hi.png" alt="Amiri MA Court Hi"><div class="lb"><span>Amiri Hi</span><b>$12,800</b></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

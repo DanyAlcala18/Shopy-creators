@@ -348,6 +348,10 @@ s { text-decoration-thickness: 2px; }
 .portfolio { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 26px; }
 .work { cursor: pointer; transition: opacity .4s, transform .4s var(--ease); }
 .work.is-hidden { display: none; }
+.portfolio.is-collapsed .work.is-extra { display: none; }
+.more-wrap { display: flex; justify-content: center; margin-top: 34px; }
+.more-wrap .btn[hidden] { display: none; }
+.more-count { padding: .15em .6em; border-radius: 999px; background: var(--green-3); color: var(--deep); font-size: .85em; }
 .browser { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
 .browser__bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #F1F0EA; border-bottom: 1px solid var(--line); }
 .browser__bar i { width: 10px; height: 10px; border-radius: 50%; background: #FF5F57; }
@@ -643,6 +647,7 @@ s { text-decoration-thickness: 2px; }
 .pv__tags li { display: inline-flex; align-items: center; gap: .4em; padding: .4em .8em; border-radius: 999px; background: var(--tint); color: var(--deep); font-size: .8rem; font-weight: 600; }
 .pv__tags .ico { width: 14px; height: 14px; color: var(--green); stroke-width: 3; }
 .pv__nav { display: flex; gap: 8px; margin-top: auto; }
+.pv__info .btn[hidden] { display: none; }
 .pv.is-swapping .browser__view img, .pv.is-swapping .mini-phone img { opacity: 0; transform: scale(.98); }
 .browser__view img, .mini-phone img { transition: opacity .3s, transform .3s; }
 
@@ -784,6 +789,8 @@ s { text-decoration-thickness: 2px; }
   .portfolio::-webkit-scrollbar { display: none; }
   .work { flex: 0 0 84%; scroll-snap-align: start; }
   .portfolio .reveal { opacity: 1; transform: none; }
+  .portfolio.is-collapsed .work.is-extra { display: block; }
+  .more-wrap { display: none; }
   .browser { box-shadow: var(--shadow-sm); }
   .work__overlay { opacity: 1; place-items: end; padding: 12px; background: linear-gradient(180deg, transparent 55%, rgba(8,36,25,.55)); }
   .work__overlay span { transform: none; padding: .5em .9em; font-size: .8rem; }

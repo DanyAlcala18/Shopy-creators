@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CROSS &amp; CO. | Lujo gótico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #070707; --silver: #D7D7D4; --mid: #9C9C98; --dim: #6A6A66; --line: rgba(215,215,212,.14); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--silver); font-family: "Hanken Grotesk", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(640px 560px at 72% 52%, rgba(220,220,215,.13), transparent 70%), radial-gradient(900px 500px at 0% 100%, rgba(255,255,255,.04), transparent 60%), var(--bg); }
+.ticker { overflow: hidden; white-space: nowrap; border-bottom: 1px solid var(--line); padding: 9px 0; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--mid); }
+.ticker div { display: inline-block; animation: tick 34s linear infinite; }
+.ticker span { color: var(--mid); margin: 0 20px; }
+.ticker b { color: var(--silver); font-weight: 500; }
+@keyframes tick { to { transform: translateX(-50%); } }
+nav { position: relative; z-index: 4; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 18px 60px; border-bottom: 1px solid var(--line); }
+.links { display: flex; gap: 30px; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; }
+.links a { color: var(--mid); }
+.links a.on { color: var(--silver); }
+.logo { font-family: "UnifrakturMaguntia"; font-size: 36px; line-height: 1; color: #EDEDEA; text-align: center; text-shadow: 0 0 22px rgba(255,255,255,.18); }
+.logo small { display: block; font-family: "Hanken Grotesk"; font-size: 9px; letter-spacing: .55em; color: var(--dim); margin-top: 4px; }
+.icons { display: flex; gap: 22px; justify-content: flex-end; align-items: center; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--silver); }
+.icons span { color: var(--silver); }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px; align-items: center; padding: 10px 60px 0; min-height: 650px; }
+.kicker { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: var(--mid); }
+.kicker svg { width: 16px; height: 16px; color: var(--silver); }
+h1 { margin: 22px 0 22px; color: var(--silver); }
+h1 .a { display: block; font-family: "Cormorant Garamond"; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: .04em; text-transform: uppercase; color: var(--silver); }
+h1 .b { display: block; font-family: "UnifrakturMaguntia"; font-weight: 400; font-size: 90px; line-height: 1.04; white-space: nowrap; color: #E9E9E6; background: linear-gradient(180deg, #FFFFFF 10%, #BDBDB9 55%, #7C7C78 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 6px 20px rgba(255,255,255,.12)); }
+.lead { max-width: 430px; font-family: "Cormorant Garamond"; font-size: 21px; line-height: 1.5; color: var(--mid); }
+.ctas { display: flex; gap: 14px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 17px 28px; font-size: 12px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
+.btn-silver { background: linear-gradient(180deg, #F4F4F2, #B9B9B5); color: #0A0A0A; box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 18px 40px -20px rgba(255,255,255,.4); }
+.btn-line { border: 1px solid rgba(215,215,212,.3); color: var(--silver); }
+.trust { display: flex; gap: 34px; margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--line); }
+.trust div { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--dim); }
+.trust b { display: block; font-family: "Cormorant Garamond"; font-weight: 500; font-size: 26px; letter-spacing: 0; text-transform: none; color: var(--silver); margin-bottom: 2px; }
+.altar { position: relative; height: 620px; }
+.halo { position: absolute; left: 50%; top: 46%; width: 520px; height: 520px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.18), transparent 65%); animation: glow 5s ease-in-out infinite; }
+@keyframes glow { 50% { opacity: .55; } }
+.cross-bg { position: absolute; left: 50%; top: 46%; width: 420px; height: 420px; transform: translate(-50%,-50%); color: rgba(215,215,212,.08); }
+.cross-bg svg { width: 100%; height: 100%; stroke-width: .6; }
+.arch { position: absolute; clip-path: polygon(0 100%, 0 30%, 3% 21%, 9% 13%, 18% 7%, 31% 2.6%, 50% 0, 69% 2.6%, 82% 7%, 91% 13%, 97% 21%, 100% 30%, 100% 100%); background: linear-gradient(160deg, #F2F2EF, #8E8E8A 55%, #D2D2CE); }
+.arch .in { position: absolute; inset: 4px; clip-path: inherit; background: radial-gradient(circle at 50% 38%, #FBFBF9, #DCDCD8 55%, #B4B4AF); }
+.arch img { position: absolute; left: 50%; top: 56%; transform: translate(-50%,-50%); filter: drop-shadow(0 26px 22px rgba(0,0,0,.35)); }
+.p2 { left: 50%; top: 10px; width: 290px; height: 470px; margin-left: -145px; z-index: 2; box-shadow: none; }
+.p2 img { width: 88%; }
+.p1 { left: 10px; top: 120px; width: 200px; height: 330px; }
+.p1 img { width: 90%; top: 60%; }
+.p3 { right: 10px; top: 120px; width: 200px; height: 330px; }
+.p3 img { width: 94%; top: 60%; }
+.plinth { position: absolute; left: 50%; top: 478px; width: 560px; height: 2px; margin-left: -280px; background: linear-gradient(90deg, transparent, rgba(215,215,212,.5), transparent); }
+.tag { position: absolute; z-index: 4; background: rgba(12,12,12,.92); border: 1px solid rgba(215,215,212,.25); backdrop-filter: blur(8px); padding: 14px 18px; box-shadow: 0 30px 50px -20px rgba(0,0,0,.9); }
+.tag small { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--mid); }
+.tag b { display: block; font-family: "Cormorant Garamond"; font-weight: 500; font-size: 20px; color: var(--silver); margin: 4px 0 2px; }
+.tag span { font-size: 13px; color: #BDBDB9; letter-spacing: .04em; }
+.t1 { left: 50%; margin-left: -150px; top: 500px; width: 300px; display: flex; justify-content: space-between; align-items: center; animation: bob 7s ease-in-out infinite; }
+.t1 .arr { width: 40px; height: 40px; display: grid; place-items: center; background: linear-gradient(180deg, #F4F4F2, #B9B9B5); color: #0A0A0A; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+.t2 { right: 0; top: 26px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
+.t2 i { width: 7px; height: 7px; border-radius: 50%; background: #E9E9E6; box-shadow: 0 0 10px #fff; animation: glow 2s ease-in-out infinite; }
+.t2 em { font-style: normal; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--silver); }
+.seal { position: absolute; z-index: 4; left: 0; top: 30px; width: 104px; height: 104px; animation: spin 22s linear infinite; }
+.seal svg { width: 104px; height: 104px; stroke: none; }
+.seal text { fill: #BDBDB9; font-family: "Hanken Grotesk"; font-size: 9px; letter-spacing: 2.6px; }
+.seal-c { position: absolute; z-index: 4; left: 36px; top: 64px; width: 32px; height: 36px; display: grid; place-items: center; font-family: "UnifrakturMaguntia"; font-size: 30px; line-height: 1; color: #E9E9E6; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  .ticker { font-size: 10px; }
+  nav { grid-template-columns: auto 1fr auto; padding: 12px 18px; }
+  .links { display: none; }
+  .logo { font-size: 28px; text-align: left; grid-column: 1; }
+  .logo small { font-size: 7px; letter-spacing: .5em; }
+  .icons { grid-column: 3; }
+  .icons .hide { display: none; }
+  .burger { display: block; }
+  .hero { grid-template-columns: 1fr; padding: 0 18px 30px; gap: 14px; min-height: 0; }
+  .altar { order: -1; height: 330px; margin: 0 -18px; }
+  .halo { width: 320px; height: 320px; top: 44%; }
+  .cross-bg { width: 260px; height: 260px; top: 44%; }
+  .p2 { width: 160px; height: 236px; margin-left: -80px; top: 12px; }
+  .p1, .p3 { width: 112px; height: 172px; top: 70px; }
+  .p1 { left: 12px; } .p3 { right: 12px; }
+  .arch .in { inset: 3px; }
+  .plinth { top: 250px; width: 340px; margin-left: -170px; }
+  .t1 { width: 240px; margin-left: -120px; top: 252px; padding: 8px 12px; }
+  .t1 .arr { width: 32px; height: 32px; }
+  .tag b { font-size: 16px; margin: 2px 0 0; }
+  .tag small { font-size: 8px; }
+  .tag span { font-size: 11px; }
+  .t2 { top: 12px; right: 10px; padding: 6px 10px; }
+  .t2 em { font-size: 9px; }
+  .seal, .seal-c { display: none; }
+  .kicker { font-size: 10px; letter-spacing: .3em; }
+  h1 { margin: 14px 0 14px; }
+  h1 .a { font-size: 38px; }
+  h1 .b { font-size: 60px; }
+  .lead { font-size: 18px; }
+  .ctas { flex-direction: column; margin-top: 22px; }
+  .btn { justify-content: center; }
+  .trust { gap: 22px; margin-top: 26px; }
+  .trust b { font-size: 21px; }
+  .trust div { font-size: 9px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="ticker"><div><span>Piezas <b>100% auténticas</b></span><span>+</span><span>Envío asegurado a todo México</span><span>+</span><span>Hasta <b>12 MSI</b></span><span>+</span><span>Atención privada por WhatsApp</span><span>+</span><span>Piezas <b>100% auténticas</b></span><span>+</span><span>Envío asegurado a todo México</span><span>+</span><span>Hasta <b>12 MSI</b></span><span>+</span><span>Atención privada por WhatsApp</span><span>+</span></div></div>
+  <nav>
+    <div class="links"><a class="on" href="#">Ropa</a><a href="#">Sudaderas</a><a href="#">Manga larga</a><a href="#">Archivo</a></div>
+    <a class="logo" href="#">Cross &amp; Co.<small>CASA DE ARCHIVO · MX</small></a>
+    <div class="icons">
+      <svg class="hide" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="hide">Cuenta</span>
+      <span>Bolsa (2)</span>
+      <svg class="burger" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="kicker"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 8h14"/></svg>Chrome Hearts · Archivo</span>
+      <h1><span class="a">Lujo con</span><span class="b">alma oscura.</span></h1>
+      <p class="lead">Sudaderas y manga larga de Chrome Hearts, seleccionadas pieza por pieza. Herradura, cruz floral y letra gótica, auténticas y con envío asegurado.</p>
+      <div class="ctas">
+        <a class="btn btn-silver" href="#">Explorar archivo <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="#">Cita privada</a>
+      </div>
+      <div class="trust"><div><b>100%</b>Auténtico</div><div><b>Piezas</b>Únicas</div><div><b>12 MSI</b>Sin intereses</div></div>
+    </div>
+    <div class="altar">
+      <div class="halo"></div>
+      <div class="cross-bg"><svg viewBox="0 0 100 100"><path d="M44 6h12v30h30v12H56v46H44V48H14V36h30z"/><circle cx="50" cy="42" r="30"/></svg></div>
+      <div class="arch p1"><div class="in"></div><img src="ch-termica.png" alt="Chrome Hearts térmica manga larga"></div>
+      <div class="arch p3"><div class="in"></div><img src="ch-ls.png" alt="Chrome Hearts manga larga"></div>
+      <div class="arch p2"><div class="in"></div><img src="ch-floral.png" alt="Chrome Hearts hoodie cruz floral"></div>
+      <div class="plinth"></div>
+      <div class="seal"><svg viewBox="0 0 104 104"><defs><path id="c" d="M52 52m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs><text><textPath href="#c">AUTÉNTICO · ARCHIVO · PLATA ·</textPath></text></svg></div>
+      <div class="seal-c">C</div>
+      <div class="tag t2"><i></i><em>Última pieza en talla M</em></div>
+      <div class="tag t1"><div><small>Pieza central</small><b>Hoodie Cruz Floral</b><span>$32,900 MXN</span></div><span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

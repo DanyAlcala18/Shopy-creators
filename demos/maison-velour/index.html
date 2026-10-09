@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Velour | Calzado de lujo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #0C0B0A; --ink: #F3EADB; --muted: #9B917F; --gold: #D6B67A; --line: rgba(214,182,122,.22); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Montserrat", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(ellipse 50% 70% at 50% 0%, rgba(214,182,122,.22), transparent 70%), var(--bg); }
+.beam { position: absolute; left: 50%; top: 0; width: 900px; height: 800px; transform: translateX(-50%); background: conic-gradient(from 180deg at 50% 0%, transparent 160deg, rgba(255,240,210,.09) 175deg, rgba(255,240,210,.14) 180deg, rgba(255,240,210,.09) 185deg, transparent 200deg); pointer-events: none; }
+nav { position: relative; z-index: 3; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 28px 64px; }
+.links { display: flex; gap: 28px; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; }
+.links a { color: var(--ink); opacity: .75; }
+.logo { text-align: center; font-family: "Bodoni Moda"; font-size: 30px; letter-spacing: .12em; color: var(--ink); }
+.logo small { display: block; font-family: "Montserrat"; font-size: 9px; letter-spacing: .7em; color: var(--gold); margin-top: 4px; }
+.icons { display: flex; gap: 22px; justify-content: flex-end; color: var(--ink); }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; text-align: center; padding-top: 18px; }
+.kick { font-size: 11px; letter-spacing: .5em; text-transform: uppercase; color: var(--gold); }
+h1 { font-family: "Bodoni Moda"; font-weight: 400; font-size: 82px; line-height: 1; letter-spacing: -.01em; margin: 18px 0 14px; color: var(--ink); }
+h1 em { color: var(--gold); }
+.lead { font-size: 15px; letter-spacing: .02em; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+.ctas { display: flex; justify-content: center; gap: 16px; margin-top: 26px; }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 30px; font-size: 11px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; }
+.btn-gold { background: linear-gradient(90deg, #C9A465, #E9D3A2, #C9A465); color: #17130C; }
+.btn-line { border: 1px solid var(--line); color: var(--ink); }
+.vitrine { position: relative; height: 330px; margin-top: 18px; display: flex; justify-content: center; align-items: flex-end; gap: 40px; }
+.ped { position: relative; display: flex; flex-direction: column; align-items: center; }
+.ped img { position: relative; z-index: 2; filter: drop-shadow(0 18px 18px rgba(0,0,0,.65)); margin-bottom: -18px; }
+.ped .col { width: 230px; border-radius: 50% / 18px; background: linear-gradient(90deg, #1A1714, #2C2721 45%, #1A1714); position: relative; }
+.ped .col::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 36px; border-radius: 50%; background: radial-gradient(ellipse at 50% 40%, #3A332B, #221E19); box-shadow: inset 0 1px 0 rgba(214,182,122,.35); }
+.p1 img { width: 210px; transform: rotate(-4deg); }
+.p1 .col { height: 120px; }
+.p2 img { width: 270px; }
+.p2 .col { width: 280px; height: 170px; }
+.p3 img { width: 210px; transform: rotate(4deg) scaleX(-1); }
+.p3 .col { height: 120px; }
+.lbl { position: absolute; bottom: 24px; left: 0; right: 0; z-index: 3; font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.lbl b { display: block; font-family: "Bodoni Moda"; font-size: 17px; letter-spacing: .02em; text-transform: none; color: var(--ink); font-weight: 400; margin-top: 4px; }
+.lbl span { color: var(--gold); letter-spacing: .1em; }
+.side { position: absolute; z-index: 3; top: 46%; font-size: 10px; letter-spacing: .45em; text-transform: uppercase; color: var(--muted); writing-mode: vertical-rl; }
+.sl { left: 34px; transform: rotate(180deg); }
+.sr { right: 34px; }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { grid-template-columns: auto 1fr auto; padding: 18px 20px; }
+  .links, .icons .hide, .side { display: none; }
+  .burger { display: block; }
+  .logo { font-size: 22px; }
+  h1 { font-size: 46px; padding: 0 16px; }
+  .lead { font-size: 14px; padding: 0 20px; }
+  .ctas { flex-direction: column; padding: 0 20px; gap: 10px; }
+  .btn { justify-content: center; }
+  .vitrine { height: 260px; gap: 6px; margin-top: 30px; }
+  .p1, .p3 { display: none; }
+  .p2 img { width: 250px; }
+  .p2 .col { width: 270px; height: 150px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="beam"></div>
+  <nav>
+    <div class="links"><a href="#">Mujer</a><a href="#">Hombre</a><a href="#">Maisons</a></div>
+    <a class="logo" href="#">MAISON VELOUR<small>CALZADO DE AUTOR</small></a>
+    <div class="icons">
+      <svg class="hide" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <svg class="hide" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <svg class="burger" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg>
+    </div>
+  </nav>
+  <section class="hero">
+    <span class="kick">Colección privada · 2026</span>
+    <h1>El arte de <em>cada paso.</em></h1>
+    <p class="lead">Louboutin, Valentino y Giuseppe Zanotti. Piezas originales, empaque de lujo y entrega personalizada.</p>
+    <div class="ctas"><a class="btn btn-gold" href="#">Descubrir la colección</a><a class="btn btn-line" href="#">Cita privada</a></div>
+    <div class="vitrine">
+      <div class="ped p1"><img src="valentino-open.png" alt="Valentino Open"><div class="col"><div class="lbl">Valentino<b>Open</b><span>$16,400</span></div></div></div>
+      <div class="ped p2"><img src="louboutin-louis-junior-spikes.png" alt="Louboutin Louis Junior Spikes"><div class="col"><div class="lbl">Christian Louboutin<b>Louis Junior Spikes</b><span>$24,900</span></div></div></div>
+      <div class="ped p3"><img src="giuseppe-zanotti-gz-ghost.png" alt="Giuseppe Zanotti"><div class="col"><div class="lbl">Giuseppe Zanotti<b>GZ Ghost</b><span>$19,800</span></div></div></div>
+    </div>
+  </section>
+  <div class="side sl">Envío asegurado</div><div class="side sr">Autenticidad garantizada</div>
+</div>
+</body>
+</html>

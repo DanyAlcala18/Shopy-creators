@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>white label | Tenis blancos esenciales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #FAFAF7; --ink: #1B1B19; --muted: #85837C; --line: #E7E5DF; --sand: #EFECE6; --stone: #E6E3DC; --warm: #A89478; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Instrument Sans", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: var(--bg); }
+.top { display: flex; justify-content: space-between; padding: 9px 64px; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.top span { color: var(--muted); }
+.top b { font-weight: 500; color: var(--ink); }
+nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 22px 64px; }
+.links { display: flex; gap: 30px; font-size: 14px; }
+.links a { color: var(--muted); }
+.links a.on { color: var(--ink); }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 21px; font-weight: 500; letter-spacing: -.03em; color: var(--ink); }
+.logo i { width: 14px; height: 14px; border: 1.5px solid var(--ink); border-radius: 3px; background: #fff; }
+.icons { display: flex; justify-content: flex-end; gap: 24px; align-items: center; font-size: 14px; color: var(--ink); }
+.icons span { color: var(--ink); }
+.burger { display: none; }
+.head { display: grid; grid-template-columns: 1.25fr 1fr; gap: 60px; align-items: end; padding: 34px 64px 34px; }
+.eyebrow { display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.eyebrow b { font-weight: 500; color: var(--ink); }
+.eyebrow .x { color: var(--muted); }
+.eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--warm); animation: breathe 3s ease-in-out infinite; }
+@keyframes breathe { 50% { opacity: .3; } }
+h1 { font-weight: 400; font-size: 96px; line-height: .95; letter-spacing: -.055em; margin-top: 20px; color: var(--ink); }
+h1 em { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; letter-spacing: -.02em; color: var(--warm); }
+.side { padding-bottom: 8px; }
+.lead { font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 380px; }
+.ctas { display: flex; align-items: center; gap: 24px; margin-top: 24px; }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 28px; border-radius: 999px; background: var(--ink); color: #FAFAF7; font-size: 14px; font-weight: 500; }
+.ul { font-size: 14px; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
+.rail { display: grid; grid-template-columns: 1fr 1.55fr 1fr; gap: 16px; padding: 0 64px; }
+.tile { position: relative; height: 362px; border-radius: 6px; overflow: hidden; }
+.tile img { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); }
+.t1 { background: var(--sand); }
+.t1 img { width: 96%; top: 50%; transform: translate(-50%,-50%) scaleX(-1); }
+.t2 { background: #fff; border: 1px solid var(--line); }
+.t2 img { width: 74%; top: 52%; animation: float 7s ease-in-out infinite; }
+@keyframes float { 50% { transform: translate(-50%,-55%); } }
+.t3 { background: var(--stone); }
+.t3 img { width: 96%; }
+.idx { position: absolute; left: 20px; top: 18px; font-size: 12px; color: var(--muted); }
+.lbl { position: absolute; left: 20px; right: 20px; bottom: 18px; display: flex; justify-content: space-between; align-items: baseline; }
+.lbl span { font-size: 13px; color: var(--ink); }
+.lbl small { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+.lbl b { font-weight: 500; font-size: 14px; color: var(--ink); }
+.chip { position: absolute; z-index: 2; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-size: 12px; color: var(--ink); box-shadow: 0 14px 30px -18px rgba(27,27,25,.35); display: flex; align-items: center; gap: 8px; }
+.chip i { width: 7px; height: 7px; border-radius: 50%; background: #6E9F6B; }
+.c1 { right: 22px; top: 18px; }
+.c2 { right: 22px; top: 60px; flex-direction: column; align-items: flex-start; gap: 6px; border-radius: 14px; padding: 12px 14px; animation: bob 8s ease-in-out infinite; }
+.c2 small { font-size: 11px; color: var(--muted); }
+.c2 .sz { display: flex; gap: 4px; }
+.c2 .sz span { width: 30px; height: 26px; border: 1px solid var(--line); border-radius: 6px; display: grid; place-items: center; font-size: 11px; color: var(--ink); }
+.c2 .sz span.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+.trust { display: flex; gap: 28px; margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); }
+.trust div { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.trust svg { width: 16px; height: 16px; color: var(--ink); }
+@media (max-width: 760px) {
+  .page { min-height: 844px; display: flex; flex-direction: column; }
+  .top { justify-content: center; padding: 8px 18px; } .top span:last-child, .top span:first-child { display: none; }
+  nav { grid-template-columns: 1fr auto; padding: 14px 18px; }
+  .links, .icons .hide { display: none; }
+  .burger { display: block; }
+  .rail { order: -1; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 110px; gap: 8px; padding: 0 18px; height: 318px; }
+  nav { order: -2; } .top { order: -3; }
+  .tile { height: auto; }
+  .t2 { grid-column: 1 / -1; grid-row: 1; }
+  .t2 img { width: 76%; }
+  .t1, .t3 { grid-row: 2; }
+  .t1 img, .t3 img { width: 84%; top: 44%; }
+  .idx { left: 12px; top: 10px; font-size: 11px; }
+  .lbl { left: 12px; right: 12px; bottom: 10px; }
+  .t1 .lbl span, .t3 .lbl span { display: none; }
+  .t1 .lbl, .t3 .lbl { justify-content: flex-end; }
+  .lbl b { font-size: 12px; }
+  .lbl small { display: none; }
+  .c2, .eyebrow .x { display: none; }
+  .c1 { right: 12px; top: 10px; padding: 6px 10px; font-size: 11px; }
+  .head { grid-template-columns: 1fr; gap: 16px; padding: 24px 18px 30px; }
+  h1 { font-size: 56px; margin-top: 14px; }
+  .lead { font-size: 15px; }
+  .ctas { margin-top: 20px; }
+  .trust { gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top"><span>Envío gratis en todo México</span><span><b>Devoluciones sin costo</b> durante 30 días</span><span>Pagos a 3, 6 y 12 MSI</span></div>
+  <nav>
+    <div class="links"><a class="on" href="#">Tenis</a><a href="#">Marcas</a><a href="#">Cuidado</a><a href="#">Journal</a></div>
+    <a class="logo" href="#"><i></i>white label</a>
+    <div class="icons">
+      <svg class="hide" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="hide">Cuenta</span>
+      <span>Bolsa (1)</span>
+      <svg class="burger" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></svg>
+    </div>
+  </nav>
+  <section class="head">
+    <div>
+      <span class="eyebrow"><b>Edición Otoño</b><span class="x">Solo blanco y neutros</span></span>
+      <h1>Menos ruido,<br>más <em>blanco.</em></h1>
+    </div>
+    <div class="side">
+      <p class="lead">Una selección corta de tenis claros de Alexander McQueen, Fear of God y Yeezy. Originales, limpios y listos para todo.</p>
+      <div class="ctas"><a class="btn" href="#">Ver la selección <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="ul" href="#">Guía de tallas</a></div>
+      <div class="trust">
+        <div><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>100% originales</div>
+        <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg>Envío en 48 h</div>
+        <div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/></svg>30 días para cambios</div>
+      </div>
+    </div>
+  </section>
+  <section class="rail">
+    <div class="tile t1"><span class="idx">01</span><img src="fog.png" alt="Fear of God Athletics Los Angeles"><div class="lbl"><div><span>Fear of God Athletics</span><small>Los Angeles · Sesame</small></div><b>$4,990</b></div></div>
+    <div class="tile t2"><span class="idx">02</span><span class="chip c1"><i></i>Disponible en tu talla</span><div class="chip c2"><small>Talla MX</small><div class="sz"><span>25</span><span class="on">26</span><span>27</span><span>28</span></div></div><img src="mcqueen.png" alt="Alexander McQueen Oversized"><div class="lbl"><div><span>Alexander McQueen</span><small>Oversized · Blanco / Azul</small></div><b>$11,900</b></div></div>
+    <div class="tile t3"><span class="idx">03</span><img src="yeezy-cream.png" alt="Yeezy 350 V2 Light"><div class="lbl"><div><span>Yeezy 350 V2</span><small>Light</small></div><b>$6,490</b></div></div>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini Cracks | Kits de futbol para niños</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #FFF7EA; --ink: #1B2340; --muted: #5E6580; --grass: #16A35F; --grass-l: #BDEFD2; --sun: #FFC93C; --coral: #FF6B57; --sky: #7CC6FF; --card: #EAEFF0; --line: rgba(27,35,64,.1); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Plus Jakarta Sans", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(520px 420px at 8% 92%, #FFE9B8 0%, transparent 70%), var(--bg); }
+.conf { position: absolute; border-radius: 4px; pointer-events: none; animation: bob 5s ease-in-out infinite; }
+.c1 { left: 46%; top: 150px; width: 14px; height: 14px; background: var(--coral); transform: rotate(20deg); }
+.c2 { left: 40%; top: 640px; width: 18px; height: 18px; border-radius: 50%; background: var(--sky); animation-delay: -2s; }
+.c3 { left: 6%; top: 128px; width: 10px; height: 22px; background: var(--sun); transform: rotate(-30deg); animation-delay: -1s; }
+.c4 { left: 43%; top: 420px; width: 12px; height: 12px; border-radius: 50%; border: 3px solid var(--grass); animation-delay: -3s; }
+
+.top { background: var(--grass); color: #F2FFF7; text-align: center; padding: 9px 16px; font-size: 13px; font-weight: 600; }
+.top b { color: var(--sun); font-weight: 800; }
+
+nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 18px 56px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo .ball { width: 42px; height: 42px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; color: #fff; animation: roll 8s linear infinite; }
+.logo .ball svg { width: 30px; height: 30px; stroke-width: 1.6; color: #fff; }
+.logo b { font-family: "Fredoka"; font-weight: 700; font-size: 28px; line-height: 1; color: var(--ink); letter-spacing: -.01em; }
+.logo b span { color: var(--coral); }
+.links { display: flex; gap: 8px; padding: 6px; border-radius: 999px; background: #fff; box-shadow: 0 8px 24px -14px rgba(27,35,64,.3); }
+.links a { padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--ink); }
+.links a.on { background: var(--sun); color: var(--ink); }
+.icons { display: flex; gap: 10px; align-items: center; }
+.ic { width: 44px; height: 44px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: var(--ink); box-shadow: 0 8px 20px -12px rgba(27,35,64,.35); position: relative; }
+.ic i { position: absolute; top: -3px; right: -3px; width: 19px; height: 19px; border-radius: 50%; background: var(--coral); color: #fff; font-size: 11px; font-style: normal; font-weight: 800; display: grid; place-items: center; border: 2px solid var(--bg); }
+.burger { display: none; }
+
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; padding: 6px 56px 0; min-height: 640px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 8px; border-radius: 999px; background: #fff; box-shadow: 0 10px 24px -16px rgba(27,35,64,.4); font-size: 13px; font-weight: 700; color: var(--ink); }
+.chip i { padding: 4px 10px; border-radius: 999px; background: var(--coral); color: #fff; font-style: normal; font-size: 11.5px; font-weight: 800; letter-spacing: .04em; }
+h1 { font-family: "Fredoka"; font-weight: 700; font-size: 72px; line-height: .98; letter-spacing: -.02em; margin: 20px 0 18px; color: var(--ink); }
+h1 .hl { position: relative; color: var(--grass); white-space: nowrap; }
+h1 .hl svg { position: absolute; left: 0; bottom: -10px; width: 100%; height: 18px; stroke: var(--sun); stroke-width: 6; }
+.lead { max-width: 440px; font-size: 16.5px; line-height: 1.6; color: var(--muted); }
+.sizes { display: flex; align-items: center; gap: 8px; margin: 22px 0 26px; }
+.sizes small { font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); margin-right: 6px; }
+.sizes span { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #fff; border: 1.5px solid var(--line); font-size: 14px; font-weight: 700; color: var(--ink); }
+.sizes span.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.ctas { display: flex; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 17px 28px; border-radius: 18px; font-weight: 800; font-size: 15px; }
+.btn-main { background: var(--coral); color: #fff; box-shadow: 0 8px 0 #D94C39, 0 20px 30px -14px rgba(255,107,87,.7); }
+.btn-main svg { color: #fff; }
+.btn-soft { background: #fff; color: var(--ink); box-shadow: 0 8px 0 #E6DCC8; }
+.perks { display: flex; gap: 22px; margin-top: 36px; }
+.perks div { display: flex; align-items: center; gap: 10px; font-size: 13px; line-height: 1.3; color: var(--muted); }
+.perks b { display: block; font-size: 14px; color: var(--ink); }
+.perks .ico { width: 40px; height: 40px; border-radius: 14px; display: grid; place-items: center; flex: none; }
+.perks .ico svg { width: 20px; height: 20px; }
+
+/* bento de tarjetas */
+.bento { position: relative; height: 600px; display: grid; grid-template-columns: 1.25fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; }
+.tile { position: relative; border-radius: 32px; overflow: hidden; }
+.t-big { grid-row: 1 / 3; background: repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0 44px, transparent 44px 88px), linear-gradient(170deg, #CFF5DE 0%, #8FE0B2 100%); }
+.t-big .goal { position: absolute; right: 22px; top: 30px; width: 120px; height: 120px; border-radius: 50%; border: 3px dashed rgba(255,255,255,.8); display: grid; place-items: center; text-align: center; font-family: "Fredoka"; font-weight: 700; font-size: 15px; line-height: 1.1; color: #0E7A45; animation: roll 30s linear infinite; }
+.t-big::before { content: ""; position: absolute; left: -40px; right: -40px; bottom: -90px; height: 260px; border-radius: 50%; background: var(--grass); opacity: .9; }
+.t-big::after { content: ""; position: absolute; left: 50%; bottom: -60px; width: 300px; height: 150px; margin-left: -150px; border-radius: 50%; border: 3px solid rgba(255,255,255,.55); }
+.t-big img { position: absolute; left: 50%; bottom: 0; width: 124%; transform: translateX(-50%); z-index: 1; filter: drop-shadow(0 20px 20px rgba(10,60,35,.25)); }
+.t-white { background: var(--card); }
+.t-white img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.t-sun { background: linear-gradient(160deg, #FFE08A, var(--sun)); }
+.t-sun::before { content: ""; position: absolute; right: -40px; top: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,255,255,.35); }
+.t-sun img { position: absolute; left: 50%; bottom: -70px; height: 120%; transform: translateX(-50%); }
+.label { position: absolute; z-index: 3; left: 14px; bottom: 14px; padding: 8px 14px; border-radius: 14px; background: #fff; box-shadow: 0 12px 24px -12px rgba(27,35,64,.45); }
+.label small { display: block; font-size: 10.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.label b { font-family: "Fredoka"; font-weight: 600; font-size: 17px; color: var(--ink); }
+.label b span { color: var(--grass); margin-left: 6px; }
+.price { position: absolute; z-index: 3; left: 18px; top: 18px; padding: 12px 16px; border-radius: 20px; background: #fff; box-shadow: 0 16px 30px -14px rgba(27,35,64,.45); animation: bob 5s ease-in-out infinite; }
+.price small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); }
+.price b { display: block; font-family: "Fredoka"; font-weight: 600; font-size: 19px; color: var(--ink); }
+.price span { font-size: 13px; font-weight: 600; color: var(--muted); }
+.price span strong { font-family: "Fredoka"; font-size: 20px; font-weight: 700; color: var(--grass); margin-right: 6px; }
+.sticker { position: absolute; z-index: 4; left: 54%; top: 63%; width: 104px; height: 104px; margin: -52px; display: grid; place-items: center; text-align: center; background: var(--ink); color: #fff; border-radius: 50%; font-family: "Fredoka"; font-weight: 700; font-size: 28px; line-height: .95; box-shadow: 0 0 0 6px var(--bg), 0 20px 30px -12px rgba(27,35,64,.6); transform: rotate(-12deg); animation: wiggle 4s ease-in-out infinite; }
+.sticker small { display: block; font-family: "Plus Jakarta Sans"; font-size: 10px; font-weight: 800; letter-spacing: .06em; color: var(--sun); margin-top: 4px; }
+
+@keyframes bob { 50% { translate: 0 -8px; } }
+@keyframes roll { to { transform: rotate(360deg); } }
+@keyframes wiggle { 50% { transform: rotate(-4deg) scale(1.04); } }
+
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  .top { font-size: 11.5px; padding: 8px 12px; }
+  nav { padding: 12px 20px; }
+  .logo .ball { width: 36px; height: 36px; }
+  .logo .ball svg { width: 26px; height: 26px; }
+  .logo b { font-size: 24px; }
+  .links, .icons .hide { display: none; }
+  .ic { width: 40px; height: 40px; }
+  .burger { display: grid; }
+  .conf { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 0; padding: 0 20px 30px; min-height: 0; }
+  .bento { order: -1; height: 310px; gap: 10px; margin-bottom: 18px; grid-template-columns: 1.3fr 1fr; }
+  .tile { border-radius: 24px; }
+  .t-big::before { bottom: -60px; height: 150px; }
+  .t-big::after { width: 160px; height: 80px; margin-left: -80px; bottom: -34px; }
+  .t-big .goal { display: none; }
+  .price { left: 10px; top: 10px; padding: 8px 11px; border-radius: 14px; animation: none; }
+  .price small { font-size: 9.5px; }
+  .price b { font-size: 14px; }
+  .price span { font-size: 11px; }
+  .price span strong { font-size: 15px; }
+  .label { left: 8px; bottom: 8px; padding: 5px 9px; border-radius: 10px; }
+  .label small { display: none; }
+  .label b { font-size: 13px; }
+  .sticker { display: none; }
+  .sticker small { font-size: 7.5px; }
+  .chip { font-size: 12px; }
+  h1 { font-size: 46px; margin: 14px 0 12px; }
+  h1 br.d { display: none; }
+  .lead { font-size: 15px; }
+  .sizes { margin: 16px 0 22px; gap: 6px; }
+  .sizes span { width: 36px; height: 36px; font-size: 13px; }
+  .ctas { gap: 10px; }
+  .btn { flex: 1; justify-content: center; padding: 15px 12px; font-size: 14.5px; }
+  .perks { margin-top: 30px; gap: 12px; justify-content: space-between; }
+  .perks .ico { display: none; }
+  .perks div { font-size: 11.5px; }
+  .perks b { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="conf c1"></span><span class="conf c2"></span><span class="conf c3"></span><span class="conf c4"></span>
+  <div class="top">Cambio de talla <b>gratis</b> · Envío a todo México en 24-48 h</div>
+  <nav>
+    <a class="logo" href="#"><span class="ball"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m12 7.2 4.3 3.1-1.6 5h-5.4l-1.6-5z"/><path d="M12 2.5v4.7M16.3 10.3l4.5-1.5M14.7 15.3l2.8 3.9M9.3 15.3l-2.8 3.9M7.7 10.3 3.2 8.8"/></svg></span><b><span>mini</span> cracks</b></a>
+    <div class="links"><a class="on" href="#">Kits</a><a href="#">Jerseys</a><a href="#">Por edad</a><a href="#">Regalos</a></div>
+    <div class="icons">
+      <span class="ic hide"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <span class="ic hide"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><i>2</i></span>
+      <span class="ic burger"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="chip"><i>Nuevo</i>Kits de la Selección para niños</span>
+      <h1>Pequeños <br class="d">cracks, <br class="d">grandes <span class="hl">jugadas.<svg viewBox="0 0 200 18" preserveAspectRatio="none"><path d="M4 12 C 50 2, 120 2, 196 10"/></svg></span></h1>
+      <p class="lead">Jersey, short y medias en un solo kit. Telas ligeras que aguantan recreo, entrenamiento y final de domingo.</p>
+      <div class="sizes"><small>Edad</small><span>4</span><span>6</span><span class="on">8</span><span>10</span><span>12</span><span>14</span></div>
+      <div class="ctas">
+        <a class="btn btn-main" href="#">Comprar kits <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-soft" href="#">Guía de tallas</a>
+      </div>
+      <div class="perks">
+        <div><span class="ico" style="background:#D6F5E3;color:#16A35F"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><span><b>Cambio de talla</b>Sin costo</span></div>
+        <div><span class="ico" style="background:#FFEFC2;color:#B7860B"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span><span><b>Envío 24-48 h</b>A todo México</span></div>
+        <div><span class="ico" style="background:#FFE0DB;color:#E04A36"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span><span><b>Listo para regalo</b>Caja incluida</span></div>
+      </div>
+    </div>
+    <div class="bento">
+      <div class="tile t-big">
+        <img src="kids-verde.png" alt="Niños con jersey verde de México">
+        <div class="goal"></div>
+        <div class="price"><small>Kit verde</small><b>Jersey + short</b><span><strong>$1,290</strong>4 a 14 años</span></div>
+      </div>
+      <div class="tile t-white">
+        <img src="kids-blanco.png" alt="Niños con kit blanco de México">
+        <div class="label"><small>Visita</small><b>Kit blanco<span>$1,190</span></b></div>
+      </div>
+      <div class="tile t-sun">
+        <img src="kids-negro.png" alt="Niños con kit negro de México">
+        <div class="label"><small>Local</small><b>Kit negro<span>$1,190</span></b></div>
+      </div>
+      <div class="sticker"><div>-15%<small>2 KITS O MÁS</small></div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KEYFORGE | Teclados y setups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #EDEEF1; --ink: #121318; --muted: #62646E; --line: rgba(18,19,24,.1); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Inter Tight", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(900px 400px at 50% 100%, #fff, transparent 70%), var(--bg); }
+.dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(18,19,24,.14) 1px, transparent 1.2px); background-size: 22px 22px; -webkit-mask-image: linear-gradient(#000, transparent 70%); mask-image: linear-gradient(#000, transparent 70%); }
+nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; letter-spacing: .02em; color: var(--ink); }
+.cap { display: inline-grid; place-items: center; min-width: 34px; height: 34px; padding: 0 8px; border-radius: 8px; background: #fff; font-family: "JetBrains Mono"; font-weight: 700; font-size: 14px; color: var(--ink); box-shadow: inset 0 -4px 0 #D3D5DC, 0 2px 0 #B9BBC4, 0 6px 12px -6px rgba(0,0,0,.3); }
+.links { display: flex; gap: 30px; font-size: 14px; font-weight: 500; }
+.links a { color: var(--muted); }
+.links a.on { color: var(--ink); }
+.nav-r { display: flex; gap: 10px; align-items: center; color: var(--ink); }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; text-align: center; padding-top: 30px; }
+.term { display: inline-flex; gap: 10px; align-items: center; padding: 8px 14px; border-radius: 10px; background: var(--ink); color: #9EF0B5; font-family: "JetBrains Mono"; font-size: 13px; }
+.term span { color: #9EF0B5; }
+.term i { width: 8px; height: 16px; background: #9EF0B5; animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+h1 { font-size: 80px; font-weight: 800; line-height: .98; letter-spacing: -.05em; margin: 22px 0 16px; color: var(--ink); }
+h1 span { background: linear-gradient(90deg, #FF5F6D, #FFC371, #4ADE80, #38BDF8, #A78BFA); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { max-width: 560px; margin: 0 auto; font-size: 17px; line-height: 1.6; color: var(--muted); }
+.ctas { display: flex; justify-content: center; gap: 14px; margin-top: 26px; }
+.key { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px 18px; border-radius: 14px; font-weight: 700; font-size: 15px; }
+.key-dark { background: #1B1C22; color: #fff; box-shadow: inset 0 -6px 0 #000, 0 3px 0 #000, 0 16px 24px -12px rgba(0,0,0,.6); }
+.key-light { background: #fff; color: var(--ink); box-shadow: inset 0 -6px 0 #D3D5DC, 0 3px 0 #B9BBC4, 0 16px 24px -14px rgba(0,0,0,.35); }
+.key kbd { font-family: "JetBrains Mono"; font-size: 11px; padding: 2px 6px; border-radius: 5px; background: rgba(255,255,255,.14); color: inherit; }
+.key-light kbd { background: #EDEEF1; }
+.desk { position: relative; height: 320px; margin-top: 26px; }
+.rgb { position: absolute; left: 50%; top: 52%; width: 640px; height: 120px; transform: translate(-50%,-50%); border-radius: 50%; background: linear-gradient(90deg, #FF5F6D, #FFC371, #4ADE80, #38BDF8, #A78BFA); filter: blur(46px); opacity: .55; animation: hue 6s linear infinite; }
+@keyframes hue { to { filter: blur(46px) hue-rotate(360deg); } }
+.kb { position: absolute; left: 50%; top: 46%; width: 600px; transform: translate(-50%,-50%) perspective(900px) rotateX(18deg); filter: drop-shadow(0 30px 30px rgba(18,19,24,.35)); }
+.mouse { position: absolute; left: 50%; top: 44%; width: 104px; transform: translate(290px,-50%) rotate(8deg); filter: drop-shadow(0 26px 22px rgba(18,19,24,.4)); }
+.spec { position: absolute; display: flex; gap: 10px; align-items: center; padding: 10px 14px; border-radius: 14px; background: #fff; box-shadow: 0 20px 30px -18px rgba(18,19,24,.4); text-align: left; }
+.spec small { display: block; font-family: "JetBrains Mono"; font-size: 10px; color: var(--muted); text-transform: uppercase; }
+.spec b { font-size: 14px; color: var(--ink); }
+.spec .cap { min-width: 30px; height: 30px; font-size: 12px; }
+.sp1 { left: 9%; top: 40px; }
+.sp2 { right: 8%; top: 10px; }
+.sp3 { right: 10%; bottom: 40px; }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { padding: 16px 20px; }
+  .links, .nav-r .hide { display: none; }
+  .burger { display: block; }
+  .hero { padding: 20px 20px 0; }
+  .term { font-size: 11px; }
+  h1 { font-size: 46px; margin: 18px 0 12px; }
+  .lead { font-size: 15px; }
+  .ctas { flex-direction: column; }
+  .key { justify-content: center; }
+  .desk { height: 240px; margin: 20px -20px 0; }
+  .kb { width: 380px; }
+  .rgb { width: 360px; height: 80px; }
+  .mouse { width: 70px; transform: translate(120px,40%) rotate(8deg); }
+  .sp1 { left: 12px; top: -6px; }
+  .sp2 { right: 12px; top: auto; bottom: 0; }
+  .sp3 { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="dots"></div>
+  <nav>
+    <a class="logo" href="#"><span class="cap">K</span>KEYFORGE</a>
+    <div class="links"><a class="on" href="#">Teclados</a><a href="#">Switches</a><a href="#">Mouse</a><a href="#">Keycaps</a><a href="#">Setups</a></div>
+    <div class="nav-r">
+      <span class="cap hide">⌘</span><span class="cap hide">K</span>
+      <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <svg class="burger" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </div>
+  </nav>
+  <section class="hero">
+    <span class="term"><span>~/setup $ armar --mi-estilo</span><i></i></span>
+    <h1>Cada tecla,<br><span>a tu manera.</span></h1>
+    <p class="lead">Teclados mecánicos, mouse de precisión y keycaps personalizados para armar el setup de tus sueños.</p>
+    <div class="ctas">
+      <a class="key key-dark" href="#">Armar mi setup <kbd>↵</kbd></a>
+      <a class="key key-light" href="#">Explorar switches <kbd>S</kbd></a>
+    </div>
+    <div class="desk">
+      <div class="rgb"></div>
+      <img class="kb" src="p139.png" alt="Teclado mecánico TKL blanco">
+      <img class="mouse" src="p93.png" alt="Mouse gamer">
+      <div class="spec sp1"><span class="cap">ms</span><div><small>Latencia</small><b>1 ms Lightspeed</b></div></div>
+      <div class="spec sp2"><span class="cap">RGB</span><div><small>Iluminación</small><b>16.8 M colores</b></div></div>
+      <div class="spec sp3"><span class="cap">↯</span><div><small>Switches</small><b>Hot-swap</b></div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

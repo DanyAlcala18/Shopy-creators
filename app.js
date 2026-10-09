@@ -143,32 +143,67 @@ $$('[data-count]').forEach((el) => countIO.observe(el));
 })();
 
 /* ---------- Portafolio ---------- */
+// Cada proyecto tiene su mini página en demos/<demo>/ y capturas en img/portfolio/<id>.jpg y <id>-m.jpg
 const WORKS = [
-  { id: 'voltex-store', name: 'TechStore', cat: 'tech', label: 'Tecnología', url: 'techstore.mx',
-    desc: 'Tienda de electrónica con celulares, consolas y periféricos. Variantes por color, capacidad y estado, y pedidos directos por WhatsApp.',
-    tags: ['Variantes de producto', 'Checkout por WhatsApp', 'Filtros por categoría'] },
-  { id: 'glow-beauty-mx', name: 'Glow & Beauty', cat: 'belleza', label: 'Belleza', url: 'glowbeauty.mx',
-    desc: 'Boutique de maquillaje y skincare de lujo con estética editorial, colecciones por categoría y meses sin intereses.',
-    tags: ['Diseño editorial', 'Colecciones', 'Ofertas destacadas'] },
-  { id: 'highdrip', name: 'HIGHDRIP', cat: 'moda', label: 'Tenis', url: 'highdrip.mx',
-    desc: 'Tenis de diseñador con estética urbana, verificación de autenticidad y reseñas de clientes.',
-    tags: ['Estilo streetwear', 'Reseñas', 'Animaciones'] },
-  { id: 'the-sneaker-vault', name: 'The Sneaker Vault', cat: 'moda', label: 'Sneakers', url: 'thesneakervault.mx',
-    desc: 'Bóveda de tenis exóticos con autenticación en 12 puntos, envíos express y pagos a meses.',
-    tags: ['Catálogo premium', 'Pagos a meses', 'Envío express'] },
-  { id: 'narevo', name: 'NAREVO', cat: 'moda', label: 'Moda', url: 'narevo.mx',
-    desc: 'Tenis y ropa de diseñador con identidad dorada, temporadas y catálogo completo con checkout de Shopify.',
-    tags: ['Identidad de marca', 'Checkout Shopify', 'Temporadas'], noMobile: true },
-  { id: 'somnia', name: 'Somnia', cat: 'nicho', label: 'Producto único', url: 'somnia.mx',
-    desc: 'Página de producto único enfocada en conversión: ofertas por cantidad, regalo incluido, reseñas y contador de oferta.',
-    tags: ['Producto ganador', 'Ofertas por volumen', 'Alta conversión'] },
-  { id: 'neon-cards', name: 'NeonCards', cat: 'nicho', label: 'Coleccionables', url: 'neoncards.mx',
-    desc: 'Tienda de cartas coleccionables TCG con preventas, productos sellados y efectos holográficos.',
-    tags: ['Preventas', 'Efectos visuales', 'Checkout en 1 clic'], noMobile: true },
-  { id: 'reventix', name: 'JustTickets', cat: 'nicho', label: 'Boletos', url: 'justtickets.mx',
-    desc: 'Marketplace de reventa de boletos para conciertos, lucha libre y eventos con búsqueda por ciudad.',
-    tags: ['Marketplace', 'Buscador', 'Venta por WhatsApp'] },
+  { id: 'demo-stride', demo: 'stride', name: 'STRIDE', cat: 'moda', label: 'Tenis', url: 'stride.mx',
+    desc: 'Tienda de tenis de diseñador con estética editorial, producto protagonista y tarjetas de precio flotantes.',
+    tags: ['Diseño editorial', 'Producto protagonista', 'Meses sin intereses'] },
+  { id: 'demo-nova-tech', demo: 'nova-tech', name: 'NOVA', cat: 'tech', label: 'Tecnología', url: 'novatech.mx',
+    desc: 'Tienda de smartphones premium con estilo futurista, efectos de luz y financiamiento visible desde el inicio.',
+    tags: ['Estilo futurista', 'Efectos de luz', 'Financiamiento'] },
+  { id: 'demo-velarian', demo: 'velarian', name: 'Velarian', cat: 'nicho', label: 'Producto único', url: 'velarian.mx',
+    desc: 'Página de producto único enfocada en conversión: beneficios, reseñas, precio con descuento y contador de oferta.',
+    tags: ['Alta conversión', 'Contador de oferta', 'Prueba social'] },
+  { id: 'demo-noir-atelier', demo: 'noir-atelier', name: 'NOIR ATELIER', cat: 'moda', label: 'Streetwear', url: 'noiratelier.mx',
+    desc: 'Boutique de streetwear de lujo con estética oscura, tipografía serif y presentación tipo lookbook.',
+    tags: ['Estética de lujo', 'Lookbook', 'Ediciones limitadas'] },
+  { id: 'demo-lumiere', demo: 'lumiere', name: 'Lumière', cat: 'belleza', label: 'Belleza', url: 'lumiere.mx',
+    desc: 'Boutique de belleza con paleta rosa, selector de tonos y reseñas destacadas para impulsar la compra.',
+    tags: ['Selector de tonos', 'Reseñas', 'Muestras de regalo'] },
+  { id: 'demo-pixel-arena', demo: 'pixel-arena', name: 'PIXEL ARENA', cat: 'tech', label: 'Gaming', url: 'pixelarena.mx',
+    desc: 'Tienda gamer con estética neón retro, consolas destacadas, preventas y precios visibles al instante.',
+    tags: ['Estética neón', 'Preventas', 'Envío express'] },
+  { id: 'demo-alpine', demo: 'alpine', name: 'ALPINE', cat: 'moda', label: 'Outdoor', url: 'alpine.mx',
+    desc: 'Tienda de chamarras de invierno con ambiente nevado, especificaciones técnicas y puntos de detalle del producto.',
+    tags: ['Especificaciones', 'Puntos de detalle', 'Guía de tallas'] },
+  { id: 'demo-runlab', demo: 'runlab', name: 'RUNLAB', cat: 'moda', label: 'Running', url: 'runlab.mx',
+    desc: 'Tienda de tenis deportivos con diseño energético, métricas de rendimiento y productos relacionados.',
+    tags: ['Diseño deportivo', 'Métricas', 'Productos relacionados'] },
+  { id: 'demo-maison-velour', demo: 'maison-velour', name: 'Maison Velour', cat: 'moda', label: 'Lujo', url: 'maisonvelour.mx',
+    desc: 'Boutique de calzado de lujo con vitrina de pedestales, iluminación de galería y tipografía de alta costura.',
+    tags: ['Vitrina de lujo', 'Cita privada', 'Autenticidad'] },
+  { id: 'demo-soundwave', demo: 'soundwave', name: 'Soundwave', cat: 'tech', label: 'Audio', url: 'soundwave.mx',
+    desc: 'Tienda de audífonos con estilo pastel, ondas de sonido animadas, selector de color y pagos a plazos.',
+    tags: ['Selector de color', 'Animaciones', 'Pagos a plazos'] },
+  { id: 'demo-hype-district', demo: 'hype-district', name: 'HYPE DISTRICT', cat: 'moda', label: 'Drops', url: 'hypedistrict.mx',
+    desc: 'Tienda de drops de streetwear con estilo brutalista, cuenta regresiva al lanzamiento y sistema de raffles.',
+    tags: ['Cuenta regresiva', 'Raffles', 'Escasez'] },
+  { id: 'demo-casa-roma', demo: 'casa-roma', name: 'Casa Roma', cat: 'moda', label: 'Clásico', url: 'casaroma.mx',
+    desc: 'Tienda de moda clásica estilo "old money" con galería tipo fotografía impresa y paleta crema y verde.',
+    tags: ['Estilo clásico', 'Galería', 'Empaque de regalo'] },
+  { id: 'demo-keyforge', demo: 'keyforge', name: 'KEYFORGE', cat: 'tech', label: 'Setups', url: 'keyforge.mx',
+    desc: 'Tienda de teclados mecánicos y periféricos con botones tipo tecla, brillo RGB y especificaciones técnicas.',
+    tags: ['Botones tipo tecla', 'Brillo RGB', 'Especificaciones'] },
+  { id: 'demo-retro64', demo: 'retro64', name: 'RETRO 64', cat: 'tech', label: 'Retro', url: 'retro64.mx',
+    desc: 'Tienda de consolas retro con estética ochentera, arcoíris vintage y detalles de videojuego clásico.',
+    tags: ['Estética retro', 'Detalles arcade', 'Catálogo de juegos'] },
+  { id: 'demo-carry', demo: 'carry', name: 'Carry', cat: 'nicho', label: 'Bolsas', url: 'carry.mx', desc: 'Página de un solo producto, editorial y cálida, con selector de 5 colores, precio con descuento y botón de compra enfocado en conversión.', tags: ['Producto único', 'Selector de color', 'Conversión'] },
+  { id: 'demo-icore', demo: 'icore', name: 'icore', cat: 'tech', label: 'Apple', url: 'icore.mx', desc: 'Tienda minimalista estilo keynote con iPhone 17 Pro, iPad Pro y Watch Ultra flotando sobre un halo naranja y tarjetas translúcidas.', tags: ['Minimalista', 'Keynote', 'Meses sin intereses'] },
+  { id: 'demo-cap-city', demo: 'cap-city', name: 'CAP CITY', cat: 'moda', label: 'Gorras', url: 'capcity.mx', desc: 'Tienda de gorras New Era 59FIFTY con estética varsity en azul marino y dorado, selector de tallas y tarjetas flotantes de producto.', tags: ['Gorras', 'Varsity', 'Selector de tallas'] },
+  { id: 'demo-golazo', demo: 'golazo', name: 'Golazo', cat: 'nicho', label: 'Jerseys', url: 'golazo.mx', desc: 'Tienda de jerseys de la Selección Mexicana con ambiente de estadio nocturno, luces animadas y tarjetas de personalización.', tags: ['Futbol', 'Estadio', 'Personalizable'] },
+  { id: 'demo-sole-society', demo: 'sole-society', name: 'Sole Society', cat: 'moda', label: 'Reventa', url: 'solesociety.mx', desc: 'Tienda de reventa de tenis con escáner de autenticación animado, sello de verificado y reporte de autenticidad en grafito y lima.', tags: ['Reventa', 'Autenticación', 'Tenis'] },
+  { id: 'demo-orbit', demo: 'orbit', name: 'ORBIT', cat: 'tech', label: 'Galaxy', url: 'orbit.mx', desc: 'Tienda Galaxy con temática espacial, horizonte planetario, órbitas animadas y tarjetas tipo HUD enfocadas en plegables.', tags: ['Espacial', 'Plegables', 'HUD'] },
+  { id: 'demo-ninja-strike', demo: 'ninja-strike', name: 'Ninja Strike', cat: 'nicho', label: 'Juguetes', url: 'ninjastrike.mx', desc: 'Página de producto único para juguete infantil, colorida y premium, con escenario circular, estrellas ninja animadas y botón 3D de compra.', tags: ['Juguetes', 'Producto único', 'Infantil'] },
+  { id: 'demo-soleil', demo: 'soleil', name: 'Soleil', cat: 'moda', label: 'Verano', url: 'soleil.mx', desc: 'Boutique editorial de la Riviera francesa con toldo a rayas, sol pastel y mar animado para piezas de Jacquemus y Casablanca.', tags: ['Editorial', 'Pastel', 'Riviera'] },
+  { id: 'demo-green-zone', demo: 'green-zone', name: 'GREEN ZONE', cat: 'tech', label: 'Consolas', url: 'greenzone.mx', desc: 'Tienda de consolas en negro y verde neón con rayos de luz giratorios, tipografía condensada itálica y precios en tarjetas angulares.', tags: ['Gamer', 'Neón', 'Energético'] },
+  { id: 'demo-cross-co', demo: 'cross-co', name: 'Cross & Co.', cat: 'moda', label: 'Lujo gótico', url: 'crossandco.mx', desc: 'Tienda de lujo gótico en negro y plata con letra blackletter y prendas exhibidas en arcos tipo catedral.', tags: ['Lujo', 'Gótico', 'Streetwear'] },
+  { id: 'demo-tabla', demo: 'tabla', name: 'tabla', cat: 'tech', label: 'iPads', url: 'tabla.mx', desc: 'Tienda de iPads para estudiantes con hoja cuadriculada, notas adhesivas, garabatos a mano y botones con sombra sólida.', tags: ['Creativo', 'Estudiantes', 'Cuaderno'] },
+  { id: 'demo-mini-cracks', demo: 'mini-cracks', name: 'Mini Cracks', cat: 'nicho', label: 'Infantil', url: 'minicracks.mx', desc: 'Tienda de kits de futbol para niños con tarjetas redondeadas, colores alegres, selector de edad y botones con volumen.', tags: ['Infantil', 'Colorido', 'Divertido'] },
+  { id: 'demo-denim-lab', demo: 'denim-lab', name: 'Denim Lab', cat: 'moda', label: 'Denim', url: 'denimlab.mx', desc: 'Tienda de jeans premium sobre textura de mezclilla índigo, con costuras, parche de piel, etiquetas colgantes y cinta métrica.', tags: ['Índigo', 'Artesanal', 'Streetwear'] },
+  { id: 'demo-apex-gear', demo: 'apex-gear', name: 'Apex Gear', cat: 'tech', label: 'Esports', url: 'apexgear.mx', desc: 'Estética de transmisión de esports en vivo con paneles en ángulo, retícula de mira animada y etiquetas de precio tipo televisión.', tags: ['Esports', 'Periféricos', 'Broadcast'] },
+  { id: 'demo-white-label', demo: 'white-label', name: 'white label', cat: 'moda', label: 'Minimalista', url: 'whitelabel.mx', desc: 'Tienda ultraminimalista de tenis blancos con estilo escandinavo, tipografía editorial y una galería limpia de tres productos.', tags: ['Minimalista', 'Editorial', 'Tenis'] },
 ];
+const PORTFOLIO_PREVIEW = 6; // en computadora se muestran 6 y el resto con "Ver más diseños"
 
 const grid = $('#portfolio');
 grid.innerHTML = WORKS.map((w, i) => `
@@ -182,11 +217,28 @@ grid.innerHTML = WORKS.map((w, i) => `
     </div>
     <div class="work__meta"><div><h3>${w.name}</h3><p>${w.desc.split('.')[0]}.</p></div><span class="work__tag">${w.label}</span></div>
   </article>`).join('');
+$$('.work').forEach((w, i) => w.classList.toggle('is-extra', i >= PORTFOLIO_PREVIEW));
+
+const moreBtn = $('#moreWorks');
+let portfolioExpanded = WORKS.length <= PORTFOLIO_PREVIEW;
+function syncCollapse(filter) {
+  const collapsed = !portfolioExpanded && filter === 'all';
+  grid.classList.toggle('is-collapsed', collapsed);
+  moreBtn.hidden = !collapsed;
+}
+$('[data-more-count]', moreBtn).textContent = `+${WORKS.length - PORTFOLIO_PREVIEW}`;
+moreBtn.addEventListener('click', () => {
+  portfolioExpanded = true;
+  syncCollapse('all');
+  observeReveals(grid);
+});
+syncCollapse('all');
 
 $$('.chip').forEach((chip) => chip.addEventListener('click', () => {
   $$('.chip').forEach((c) => c.classList.toggle('is-active', c === chip));
   const f = chip.dataset.filter;
   $$('.work').forEach((w) => w.classList.toggle('is-hidden', f !== 'all' && w.dataset.cat !== f));
+  syncCollapse(f);
   grid.scrollTo({ left: 0, behavior: 'smooth' });
 }));
 
@@ -393,8 +445,10 @@ $$('.reviews-row').forEach((row) => {
   track.className = 'reviews-track';
   const items = [...row.children];
   items.forEach((el) => track.appendChild(el));
-  // 4 copias: la mitad del carril siempre cubre pantallas anchas
-  for (let i = 0; i < 3; i++) {
+  // copias suficientes para que la mitad del carril cubra pantallas de 2400px
+  const copies = Math.max(1, Math.ceil(2400 / (items.length * 380)));
+  track.style.animationDuration = `${items.length * (row.dataset.dir === 'right' ? 12 : 11)}s`;
+  for (let i = 0; i < copies * 2 - 1; i++) {
     items.forEach((el) => {
       const copy = el.cloneNode(true);
       copy.setAttribute('aria-hidden', 'true');

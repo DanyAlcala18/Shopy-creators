@@ -1,0 +1,162 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAP CITY | Gorras 59FIFTY originales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Graduate&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --navy: #0D1834; --navy2: #15234A; --gold: #F4B81C; --cream: #F5EEDD; --muted: #A9B2C8; --line: rgba(245,238,221,.14); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--navy); color: var(--cream); font-family: "Manrope", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background:
+  radial-gradient(800px 600px at 78% 55%, rgba(244,184,28,.13), transparent 65%),
+  repeating-linear-gradient(90deg, transparent 0 46px, rgba(245,238,221,.035) 46px 47px),
+  linear-gradient(180deg, var(--navy) 0%, #0A1229 100%); }
+.ticker { background: var(--gold); color: var(--navy); overflow: hidden; white-space: nowrap; padding: 9px 0; font-family: "Graduate"; font-size: 12px; letter-spacing: .14em; }
+.ticker div { display: inline-block; animation: tick 28s linear infinite; }
+.ticker span { color: var(--navy); margin: 0 18px; }
+.ticker i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--navy); vertical-align: middle; }
+@keyframes tick { to { transform: translateX(-50%); } }
+nav { position: relative; z-index: 4; display: flex; align-items: center; justify-content: space-between; padding: 20px 56px; border-bottom: 1px solid var(--line); }
+.logo { display: flex; align-items: center; gap: 12px; color: var(--cream); }
+.logo .crest { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); display: grid; place-items: center; font-family: "Graduate"; font-size: 15px; color: var(--gold); background: var(--navy2); }
+.logo b { font-family: "Graduate"; font-size: 24px; font-weight: 400; letter-spacing: .06em; color: var(--cream); line-height: 1; }
+.logo small { display: block; font-size: 10px; letter-spacing: .32em; color: var(--gold); margin-top: 4px; font-weight: 700; }
+.links { display: flex; gap: 32px; font-size: 14px; font-weight: 600; }
+.links a { color: var(--muted); }
+.links a.on { color: var(--cream); position: relative; }
+.links a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 3px; background: var(--gold); border-radius: 2px; }
+.icons { display: flex; gap: 18px; align-items: center; color: var(--cream); }
+.bag { position: relative; display: flex; color: var(--cream); }
+.bag i { position: absolute; top: -7px; right: -9px; min-width: 18px; height: 18px; border-radius: 9px; background: var(--gold); color: var(--navy); font-size: 10px; font-style: normal; font-weight: 800; display: grid; place-items: center; }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.08fr; gap: 10px; align-items: center; padding: 18px 56px 0; min-height: 650px; }
+.badge { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 8px; border: 1px solid rgba(244,184,28,.45); border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.badge b { padding: 3px 8px; border-radius: 999px; background: var(--gold); color: var(--navy); font-size: 11px; }
+h1 { font-family: "Big Shoulders Display"; font-weight: 900; font-size: 118px; line-height: .86; letter-spacing: -.01em; text-transform: uppercase; margin: 22px 0 20px; color: var(--cream); }
+h1 span { color: var(--gold); }
+h1 em { font-style: normal; color: transparent; -webkit-text-stroke: 2px var(--cream); }
+.lead { max-width: 440px; font-size: 16px; line-height: 1.65; color: var(--muted); }
+.sizes { display: flex; align-items: center; gap: 8px; margin: 26px 0 28px; }
+.sizes small { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+.sizes span { padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; font-weight: 700; color: var(--cream); }
+.sizes span.on { background: var(--cream); color: var(--navy); border-color: var(--cream); }
+.ctas { display: flex; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 17px 26px; border-radius: 12px; font-weight: 800; font-size: 15px; }
+.btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 16px 34px -14px rgba(244,184,28,.7); }
+.btn-line { border: 1.5px solid var(--line); color: var(--cream); }
+.stats { display: flex; gap: 38px; margin-top: 34px; }
+.stats b { display: block; font-family: "Big Shoulders Display"; font-size: 32px; font-weight: 800; color: var(--cream); line-height: 1; }
+.stats span { font-size: 12px; color: var(--muted); }
+.field { position: relative; height: 640px; }
+.disc { position: absolute; left: 50%; top: 50%; width: 450px; height: 450px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle at 34% 28%, #FFD562, var(--gold) 55%, #D99A06); box-shadow: 0 50px 90px -40px rgba(244,184,28,.6); }
+.stitch { position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; transform: translate(-50%,-50%); border-radius: 50%; border: 2px dashed rgba(244,184,28,.4); animation: spin 60s linear infinite; }
+@keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+.big { position: absolute; left: 50%; top: 50%; width: 460px; transform: translate(-50%,-50%) rotate(-6deg); filter: drop-shadow(0 40px 30px rgba(8,14,34,.55)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translate(-50%,-54%) rotate(-4deg); } }
+.word { position: absolute; left: 50%; top: 4px; transform: translateX(-50%); font-family: "Graduate"; font-size: 92px; letter-spacing: .08em; color: transparent; -webkit-text-stroke: 1px rgba(245,238,221,.12); white-space: nowrap; }
+.wcard { position: absolute; z-index: 3; background: #fff; border-radius: 18px; box-shadow: 0 30px 50px -24px rgba(0,0,0,.6); overflow: hidden; }
+.wcard img { display: block; width: 100%; }
+.wcard .cap { padding: 10px 14px 12px; border-top: 1px solid #ECECEC; background: #fff; }
+.wcard small { font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #8A8F9C; }
+.wcard b { display: block; font-size: 14px; color: #0D1834; margin-top: 2px; }
+.wcard strong { font-family: "Big Shoulders Display"; font-size: 20px; font-weight: 800; color: #0D1834; }
+.wcard .new { position: absolute; top: 10px; left: 10px; padding: 4px 8px; border-radius: 6px; background: #0D1834; color: #F4B81C; font-size: 10px; font-weight: 800; letter-spacing: .1em; }
+.k1 { right: -6px; top: 34px; width: 158px; animation: bob 7s ease-in-out infinite; }
+.k2 { left: -10px; bottom: 96px; width: 150px; animation: bob 7s ease-in-out infinite 1.5s; }
+@keyframes bob { 50% { transform: translateY(-10px); } }
+.tag { position: absolute; z-index: 3; right: 0; bottom: 40px; display: flex; align-items: center; gap: 12px; padding: 10px 16px 10px 10px; border-radius: 16px; background: rgba(21,35,74,.92); border: 1px solid var(--line); backdrop-filter: blur(8px); box-shadow: 0 24px 40px -20px rgba(0,0,0,.7); }
+.tag .th { display: flex; }
+.tag .th span { width: 50px; height: 50px; border-radius: 50%; background: #fff center/92% no-repeat; border: 2px solid var(--navy2); }
+.tag .th span + span { margin-left: -14px; }
+.tag small { font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.tag b { display: block; font-size: 14px; color: var(--cream); }
+.tag em { font-style: normal; font-size: 12px; color: var(--muted); }
+.seal { position: absolute; z-index: 3; left: 70px; top: 50px; width: 96px; height: 96px; border-radius: 50%; background: var(--cream); display: grid; place-items: center; text-align: center; box-shadow: 0 20px 40px -20px rgba(0,0,0,.6); transform: rotate(-10deg); animation: pulse 3s ease-in-out infinite; }
+.seal b { font-family: "Graduate"; font-size: 20px; color: var(--navy); line-height: 1; }
+.seal small { display: block; font-size: 9px; font-weight: 800; letter-spacing: .12em; color: #6B7488; margin-top: 4px; }
+@keyframes pulse { 50% { transform: rotate(-10deg) scale(1.06); } }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { padding: 14px 18px; }
+  .links, .icons .hide { display: none; }
+  .burger { display: block; }
+  .logo .crest { width: 36px; height: 36px; font-size: 12px; }
+  .logo b { font-size: 19px; }
+  .logo small { font-size: 8px; }
+  .hero { grid-template-columns: 1fr; padding: 0 18px 30px; min-height: 0; gap: 0; }
+  .field { order: -1; height: 320px; margin: 0 -18px; }
+  .word { font-size: 52px; top: 8px; }
+  .disc { width: 230px; height: 230px; }
+  .stitch { width: 280px; height: 280px; }
+  .big { width: 250px; }
+  .k1 { width: 92px; top: 22px; right: 10px; border-radius: 12px; }
+  .k2 { width: 92px; left: 10px; bottom: 20px; border-radius: 12px; }
+  .wcard .cap { padding: 6px 8px 8px; }
+  .wcard small { display: none; }
+  .wcard b { display: none; }
+  .wcard strong { font-size: 15px; }
+  .wcard .new { font-size: 8px; padding: 3px 6px; top: 6px; left: 6px; }
+  .tag { right: 12px; bottom: 8px; padding: 6px 12px 6px 6px; }
+  .tag .th span { width: 34px; height: 34px; }
+  .tag b { font-size: 12px; }
+  .tag em { display: none; }
+  .seal { width: 66px; height: 66px; left: 18px; top: 26px; }
+  .seal b { font-size: 14px; }
+  .seal small { font-size: 7px; }
+  .badge { font-size: 10px; }
+  h1 { font-size: 66px; margin: 14px 0 12px; }
+  .lead { font-size: 14px; }
+  .sizes { margin: 18px 0 20px; gap: 6px; }
+  .sizes small { display: none; }
+  .sizes span { padding: 7px 10px; font-size: 12px; }
+  .ctas { flex-direction: column; }
+  .btn { justify-content: center; }
+  .stats { gap: 26px; margin-top: 24px; }
+  .stats b { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="ticker"><div><span>59FIFTY originales New Era</span><i></i><span>Envío gratis en 2 gorras</span><i></i><span>Tallas 7 a 8</span><i></i><span>Hasta 6 meses sin intereses</span><i></i><span>59FIFTY originales New Era</span><i></i><span>Envío gratis en 2 gorras</span><i></i><span>Tallas 7 a 8</span><i></i><span>Hasta 6 meses sin intereses</span><i></i></div></div>
+  <nav>
+    <a class="logo" href="#"><span class="crest">CC</span><span><b>CAP CITY</b><small>FITTED CLUB · MX</small></span></a>
+    <div class="links"><a class="on" href="#">Novedades</a><a href="#">MLB</a><a href="#">NBA</a><a href="#">Liga Mexicana</a><a href="#">Guía de tallas</a></div>
+    <div class="icons">
+      <svg class="hide" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <svg class="hide" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      <span class="bag"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><i>3</i></span>
+      <svg class="burger" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="badge"><b>Nuevo</b>Colección 59FIFTY ajustadas</span>
+      <h1>Tu equipo.<br><em>Tu</em> <span>talla.</span></h1>
+      <p class="lead">Gorras New Era 59FIFTY originales de MLB, NBA y Liga Mexicana. Encuentra tu medida exacta y recíbela en casa en 48 horas.</p>
+      <div class="sizes"><small>Talla</small><span>7</span><span>7 1/8</span><span class="on">7 1/4</span><span>7 3/8</span><span>7 1/2</span></div>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#">Comprar gorras <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="#">Guía de tallas</a>
+      </div>
+      <div class="stats"><div><b>+300</b><span>Modelos en stock</span></div><div><b>100%</b><span>Originales</span></div><div><b>48 h</b><span>Envío nacional</span></div></div>
+    </div>
+    <div class="field">
+      <div class="word">FITTED</div>
+      <div class="stitch"></div>
+      <div class="disc"></div>
+      <img class="big" src="cap-p.png" alt="New Era 59FIFTY negra con P dorada">
+      <div class="seal"><div><b>7 1/4</b><small>LA MÁS<br>VENDIDA</small></div></div>
+      <div class="wcard k1"><span class="new">NUEVA</span><img src="cap-m.png" alt="59FIFTY blanca con M roja"><div class="cap"><small>Liga Mexicana</small><b>M Script Pinstripe</b><strong>$1,290</strong></div></div>
+      <div class="wcard k2"><img src="cap-b.png" alt="59FIFTY blanca con B verde"><div class="cap"><small>Liga Mexicana</small><b>B Script Verde</b><strong>$1,190</strong></div></div>
+      <div class="tag"><div class="th"><span style="background-image:url(cap-lakers.png)"></span><span style="background-image:url(cap-bulls.png)"></span></div><div><small>NBA Washed</small><b>Lakers · Bulls</b><em>Low Profile desde $1,390</em></div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

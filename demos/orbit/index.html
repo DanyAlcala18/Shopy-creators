@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORBIT | Galaxy plegables</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #02030A; --ink: #EEF3FF; --muted: #8E9AB8; --ice: #A9C6FF; --sun: #FF9C5B; --line: rgba(169,198,255,.14); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Sora", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(900px 500px at 70% 30%, rgba(40,60,140,.35), transparent 70%), var(--bg); }
+.stars, .stars2 { position: absolute; inset: 0; pointer-events: none; }
+.stars { background-image: radial-gradient(1.2px 1.2px at 20px 30px, #fff, transparent), radial-gradient(1px 1px at 140px 90px, rgba(255,255,255,.8), transparent), radial-gradient(1.4px 1.4px at 260px 170px, #CFE0FF, transparent), radial-gradient(1px 1px at 80px 220px, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 330px 40px, rgba(255,255,255,.7), transparent); background-size: 360px 260px; opacity: .7; }
+.stars2 { background-image: radial-gradient(1.6px 1.6px at 60px 120px, #FFD7B8, transparent), radial-gradient(1px 1px at 200px 20px, #fff, transparent), radial-gradient(1.3px 1.3px at 300px 200px, #fff, transparent); background-size: 420px 300px; animation: twinkle 4s ease-in-out infinite; }
+@keyframes twinkle { 50% { opacity: .3; } }
+.planet { position: absolute; left: 50%; bottom: -1700px; width: 2400px; height: 1800px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, #0E1838 0%, #050817 30%, #02030A 60%); box-shadow: 0 -2px 0 rgba(190,215,255,.75), 0 -14px 40px rgba(110,150,255,.45), 0 -60px 140px rgba(80,110,255,.25); }
+.flare { position: absolute; left: 62%; bottom: 92px; width: 520px; height: 40px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse, rgba(255,200,150,.95), rgba(255,156,91,.45) 35%, transparent 70%); filter: blur(6px); animation: flare 5s ease-in-out infinite; }
+@keyframes flare { 50% { opacity: .65; transform: translateX(-50%) scaleX(1.15); } }
+nav { position: relative; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 24px 64px; }
+.logo { display: flex; align-items: center; gap: 2px; font-weight: 800; font-size: 22px; letter-spacing: .22em; color: var(--ink); }
+.logo svg { width: 30px; height: 30px; margin-right: 8px; stroke-width: 1.6; }
+.links { display: flex; gap: 4px; padding: 5px; border: 1px solid var(--line); border-radius: 999px; background: rgba(10,16,40,.5); backdrop-filter: blur(10px); }
+.links a { padding: 9px 18px; border-radius: 999px; font-size: 13.5px; color: var(--muted); }
+.links a.on { background: rgba(169,198,255,.14); color: var(--ink); }
+.nav-r { display: flex; align-items: center; gap: 12px; }
+.ic { position: relative; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); color: var(--ink); }
+.ic b { position: absolute; top: -3px; right: -3px; width: 17px; height: 17px; border-radius: 50%; background: var(--sun); color: #1A0D04; font-size: 10px; font-weight: 700; display: grid; place-items: center; }
+.burger { display: none; }
+.hero { position: relative; z-index: 3; display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; padding: 0 64px; min-height: 690px; }
+.copy { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--ice); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 4px rgba(255,156,91,.18), 0 0 14px var(--sun); animation: blink 1.6s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .35; } }
+.eyebrow span { color: var(--muted); }
+h1 { font-size: 76px; font-weight: 700; line-height: 1.02; letter-spacing: -.045em; margin: 22px 0 20px; color: var(--ink); }
+h1 em { font-style: normal; font-weight: 300; color: #C9D6F2; }
+h1 span { background: linear-gradient(95deg, #FFD2AE 0%, var(--sun) 40%, #8FB2FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { max-width: 490px; font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--muted); }
+.lead b { font-weight: 600; color: var(--ink); }
+.ctas { display: flex; gap: 14px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+.btn-sun { background: linear-gradient(95deg, #FFC79E, var(--sun)); color: #1A0D04; box-shadow: 0 0 0 1px rgba(255,200,160,.4), 0 16px 40px -12px rgba(255,140,70,.7); }
+.btn-ghost { border: 1px solid var(--line); background: rgba(169,198,255,.06); color: var(--ink); }
+.telemetry { display: flex; gap: 0; margin-top: 40px; max-width: 520px; border: 1px solid var(--line); border-radius: 16px; background: rgba(10,16,40,.45); backdrop-filter: blur(8px); }
+.telemetry div { flex: 1; padding: 14px 18px; }
+.telemetry div + div { border-left: 1px solid var(--line); }
+.telemetry small { display: block; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.telemetry b { display: block; margin-top: 4px; font-size: 18px; font-weight: 700; color: var(--ink); }
+.stage { position: relative; height: 640px; animation: rise 1.2s .15s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } }
+.orb { position: absolute; left: 50%; top: 66%; border-radius: 50%; transform: translate(-50%,-50%) rotate(-16deg) scaleY(.32); }
+.orb .path { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(169,198,255,.55); box-shadow: 0 0 18px rgba(120,150,255,.25); }
+.orb .spin { position: absolute; inset: 0; animation: spin 14s linear infinite; }
+.orb .spin::after { content: ""; position: absolute; left: 50%; top: -6px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: #fff; box-shadow: 0 0 14px 4px rgba(169,198,255,.9); }
+.o1 { width: 640px; height: 640px; }
+.o2 { width: 780px; height: 780px; }
+.o2 .path { border-style: dashed; border-color: rgba(169,198,255,.32); box-shadow: none; }
+.o2 .spin { animation-duration: 22s; animation-direction: reverse; }
+.o2 .spin::after { background: var(--sun); box-shadow: 0 0 14px 4px rgba(255,156,91,.8); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.glow { position: absolute; left: 50%; top: 46%; width: 420px; height: 420px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(120,150,255,.45), rgba(255,156,91,.12) 45%, transparent 70%); filter: blur(10px); }
+.ph { position: absolute; filter: drop-shadow(0 40px 40px rgba(0,0,0,.7)); }
+.fold { width: 292px; left: 50%; top: 70px; margin-left: -146px; z-index: 3; animation: drift 7s ease-in-out infinite; }
+.s25 { width: 200px; left: 24px; top: 250px; z-index: 2; transform: rotate(-12deg); filter: drop-shadow(0 30px 30px rgba(0,0,0,.7)) brightness(.92); animation: dl 8s ease-in-out infinite; }
+.s24u { width: 250px; right: -6px; top: 236px; z-index: 2; transform: rotate(10deg); filter: drop-shadow(0 30px 30px rgba(0,0,0,.7)) brightness(.92); animation: dr 9s ease-in-out infinite; }
+@keyframes drift { 50% { transform: translateY(-14px); } }
+@keyframes dl { 50% { transform: rotate(-10deg) translateY(10px); } }
+@keyframes dr { 50% { transform: rotate(12deg) translateY(-8px); } }
+.hud { position: absolute; z-index: 4; padding: 12px 16px; border-radius: 4px; background: rgba(8,12,32,.72); backdrop-filter: blur(12px); border: 1px solid rgba(169,198,255,.22); }
+.hud::before, .hud::after { content: ""; position: absolute; width: 10px; height: 10px; border-color: var(--ice); border-style: solid; }
+.hud::before { left: -1px; top: -1px; border-width: 2px 0 0 2px; }
+.hud::after { right: -1px; bottom: -1px; border-width: 0 2px 2px 0; }
+.hud small { display: block; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ice); }
+.hud b { display: block; margin-top: 3px; font-size: 16px; font-weight: 700; color: var(--ink); }
+.hud span { font-size: 12px; color: var(--muted); }
+.hud .p { color: var(--sun); }
+.h1x { left: 6px; top: 70px; }
+.h2x { right: 0; top: 40px; }
+.h3x { left: 50%; bottom: 46px; transform: translateX(-30%); }
+.bar { display: block; width: 120px; height: 4px; margin-top: 8px; border-radius: 4px; background: rgba(169,198,255,.15); overflow: hidden; }
+.bar::after { content: ""; display: block; width: 72%; height: 100%; background: linear-gradient(90deg, var(--ice), var(--sun)); }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { padding: 16px 20px; }
+  .logo { font-size: 18px; }
+  .logo svg { width: 26px; height: 26px; }
+  .links, .ic.hide { display: none; }
+  .ic { width: 38px; height: 38px; }
+  .burger { display: grid; }
+  .hero { grid-template-columns: 1fr; padding: 0 20px 30px; min-height: 0; }
+  .stage { order: -1; height: 320px; margin: 0 -20px; }
+  .o1 { width: 330px; height: 330px; }
+  .o2 { width: 440px; height: 440px; }
+  .glow { width: 240px; height: 240px; }
+  .fold { width: 168px; margin-left: -84px; top: 40px; }
+  .s25 { width: 120px; left: 18px; top: 128px; }
+  .s24u { width: 150px; right: 6px; top: 120px; }
+  .hud { padding: 8px 11px; }
+  .hud b { font-size: 13px; }
+  .hud small { font-size: 9.5px; }
+  .h1x { left: 12px; top: 10px; }
+  .h2x { display: none; }
+  .h3x { left: auto; right: 12px; bottom: 10px; transform: none; }
+  .bar { width: 90px; }
+  .flare { bottom: -6px; width: 300px; }
+  .planet { bottom: -1790px; }
+  .eyebrow { font-size: 10.5px; letter-spacing: .14em; }
+  h1 { font-size: 46px; margin: 14px 0 12px; }
+  .lead { font-size: 15px; }
+  .ctas { flex-direction: column; margin-top: 22px; gap: 10px; }
+  .btn { justify-content: center; padding: 15px 22px; }
+  .telemetry { margin-top: 22px; }
+  .telemetry div { padding: 11px 12px; }
+  .telemetry small { font-size: 9px; letter-spacing: .08em; }
+  .telemetry b { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="stars"></div><div class="stars2"></div>
+  <div class="planet"></div><div class="flare"></div>
+  <nav>
+    <a class="logo" href="#"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="7" stroke="#EEF3FF"/><ellipse cx="16" cy="16" rx="14" ry="5" transform="rotate(-24 16 16)" stroke="#FF9C5B"/><circle cx="28" cy="10.5" r="1.6" fill="#FF9C5B" stroke="none"/></svg>ORBIT</a>
+    <div class="links"><a class="on" href="#">Galaxy Z</a><a href="#">Galaxy S</a><a href="#">Tablets</a><a href="#">Wearables</a><a href="#">Ofertas</a></div>
+    <div class="nav-r">
+      <span class="ic hide"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <span class="ic hide"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><b>1</b></span>
+      <span class="ic burger"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h16"/></svg></span>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="copy">
+      <span class="eyebrow"><i></i>Misión plegables <span>/ 2026</span></span>
+      <h1><em>Despliega</em><br>otro <span>universo.</span></h1>
+      <p class="lead">Galaxy Z Fold, S25+ y S24 Ultra nuevos y sellados. Una pantalla que se abre como tablet, <b>desde $1,833 al mes</b>.</p>
+      <div class="ctas">
+        <a class="btn btn-sun" href="#">Explorar plegables <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#">Comparar Galaxy</a>
+      </div>
+      <div class="telemetry">
+        <div><small>Envío</small><b>Gratis 24 h</b></div>
+        <div><small>Pagos</small><b>24 MSI</b></div>
+        <div><small>Garantía</small><b>12 meses</b></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="glow"></div>
+      <div class="orb o2"><div class="path"></div><div class="spin"></div></div>
+      <div class="orb o1"><div class="path"></div><div class="spin"></div></div>
+      <img class="ph s25" src="s25.png" alt="Galaxy S25+">
+      <img class="ph s24u" src="s24u.png" alt="Galaxy S24 Ultra con S Pen">
+      <img class="ph fold" src="fold.png" alt="Galaxy Z Fold">
+      <div class="hud h1x"><small>Z Fold / abierto</small><b>7.6" Dynamic AMOLED</b></div>
+      <div class="hud h2x"><small>S24 Ultra</small><b class="p">$21,999</b><span>S Pen incluido</span></div>
+      <div class="hud h3x"><small>Galaxy Z Fold</small><b>Desde $43,999</b><span class="bar"></span></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

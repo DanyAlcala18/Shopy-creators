@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velarian | Almohada ergonómica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #F4F1FF; --muted: #C3BCE8; --lav: #B9A6FF; --gold: #FFD27A; --line: rgba(255,255,255,.14); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #171338; color: var(--ink); font-family: "DM Sans", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(900px 600px at 72% 55%, #4B3BA8 0%, #2A2068 45%, #171338 80%); }
+.stars { position: absolute; inset: 0; background-image:
+  radial-gradient(1.4px 1.4px at 8% 20%, #fff, transparent), radial-gradient(1px 1px at 22% 70%, #fff, transparent),
+  radial-gradient(1.6px 1.6px at 40% 12%, #fff, transparent), radial-gradient(1px 1px at 55% 85%, #fff, transparent),
+  radial-gradient(1.4px 1.4px at 68% 18%, #fff, transparent), radial-gradient(1px 1px at 82% 40%, #fff, transparent),
+  radial-gradient(1.8px 1.8px at 92% 12%, #fff, transparent), radial-gradient(1px 1px at 30% 40%, #fff, transparent),
+  radial-gradient(1.2px 1.2px at 75% 75%, #fff, transparent), radial-gradient(1px 1px at 12% 90%, #fff, transparent);
+  opacity: .7; }
+.bar { position: relative; z-index: 2; display: flex; justify-content: center; gap: 10px; align-items: center; padding: 9px 16px; background: linear-gradient(90deg, #FFD27A, #FFB86B); color: #2A1E00; font-size: 13px; font-weight: 600; }
+.bar .short { display: none; }
+.bar span { color: #2A1E00; }
+.bar b { color: #2A1E00; padding: 2px 8px; border-radius: 6px; background: rgba(0,0,0,.1); font-variant-numeric: tabular-nums; }
+nav { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 20px 64px; }
+.logo { font-family: "Fraunces"; font-size: 26px; font-weight: 600; letter-spacing: .02em; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+.logo svg { width: 22px; height: 22px; color: var(--gold); fill: var(--gold); stroke: none; }
+.links { display: flex; gap: 30px; font-size: 14px; }
+.links a { color: var(--muted); }
+.cart { display: flex; gap: 8px; align-items: center; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); font-size: 14px; color: var(--ink); }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; padding: 10px 64px 40px; }
+.rating { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid var(--line); font-size: 13px; color: var(--ink); }
+.rating .st { color: var(--gold); letter-spacing: 2px; }
+h1 { font-family: "Fraunces"; font-weight: 600; font-size: 64px; line-height: 1.02; letter-spacing: -.02em; margin: 20px 0 18px; color: var(--ink); }
+h1 em { font-style: italic; color: var(--lav); }
+.benefits { display: grid; gap: 10px; margin-bottom: 26px; }
+.benefits li { list-style: none; display: flex; gap: 10px; align-items: center; font-size: 15px; color: var(--muted); }
+.benefits i { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: rgba(185,166,255,.2); color: var(--lav); flex: none; }
+.benefits svg { width: 13px; height: 13px; stroke-width: 3; }
+.buy { display: flex; align-items: center; gap: 18px; padding: 16px; border-radius: 22px; background: rgba(255,255,255,.07); border: 1px solid var(--line); max-width: 520px; backdrop-filter: blur(8px); }
+.price b { display: block; font-family: "Fraunces"; font-size: 34px; color: var(--ink); line-height: 1; }
+.price s { font-size: 14px; color: var(--muted); }
+.off { padding: 4px 10px; border-radius: 8px; background: var(--gold); color: #2A1E00; font-size: 12px; font-weight: 700; margin-left: 6px; }
+.btn { flex: 1; display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 18px 22px; border-radius: 16px; background: linear-gradient(90deg, #9B85FF, #C6B5FF); color: #1A1440; font-weight: 700; font-size: 16px; box-shadow: 0 16px 40px -12px rgba(155,133,255,.9); }
+.trust { display: flex; gap: 22px; margin-top: 20px; font-size: 13px; color: var(--muted); }
+.trust span { display: flex; gap: 6px; align-items: center; color: var(--muted); }
+.trust svg { color: var(--lav); }
+.visual { position: relative; height: 580px; }
+.moon { position: absolute; right: 30px; top: 0; width: 90px; height: 90px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #FFF6DA, #FFD27A); box-shadow: 0 0 60px rgba(255,210,122,.6); }
+.moon::after { content: ""; position: absolute; width: 90px; height: 90px; border-radius: 50%; left: 22px; top: -12px; background: #2E2470; }
+.glow { position: absolute; left: 50%; top: 52%; width: 460px; height: 460px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(185,166,255,.55), transparent 65%); }
+.pillow { position: absolute; left: 50%; top: 52%; width: 520px; transform: translate(-50%,-50%); filter: drop-shadow(0 50px 50px rgba(5,2,30,.7)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translate(-50%,-55%); } }
+.cloud { position: absolute; left: 50%; bottom: 40px; width: 540px; height: 90px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse, rgba(255,255,255,.18), transparent 70%); filter: blur(6px); }
+.card { position: absolute; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 16px; background: rgba(255,255,255,.92); color: #1A1440; box-shadow: 0 20px 40px -14px rgba(0,0,0,.5); }
+.card b { display: block; font-size: 14px; color: #1A1440; }
+.card small { font-size: 12px; color: #5D5690; }
+.card i { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; background: #EDE8FF; color: #6A52E8; }
+.q1 { left: 0; top: 120px; }
+.q2 { right: 0; bottom: 110px; }
+.avatars { display: flex; }
+.avatars span { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #fff; margin-left: -8px; background: #C9BFFF; display: grid; place-items: center; font-size: 10px; font-weight: 700; color: #1A1440; }
+.avatars span:first-child { margin-left: 0; background: #FFD27A; }
+.avatars span:nth-child(3) { background: #9FE3D4; }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  .bar { font-size: 12px; }
+  .bar .long { display: none; }
+  .bar .short { display: inline; }
+  nav { padding: 14px 20px; }
+  .links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 0 20px 30px; gap: 0; }
+  .visual { height: 300px; order: -1; }
+  .pillow { width: 300px; }
+  .glow { width: 300px; height: 300px; }
+  .moon { width: 56px; height: 56px; right: 10px; }
+  .moon::after { width: 56px; height: 56px; left: 14px; top: -8px; }
+  .q1 { top: 20px; left: -4px; padding: 8px 12px; }
+  .q2 { bottom: 10px; right: -4px; padding: 8px 12px; }
+  .card i { width: 30px; height: 30px; }
+  h1 { font-size: 38px; margin: 14px 0 14px; }
+  .benefits { margin-bottom: 18px; }
+  .benefits li { font-size: 14px; }
+  .buy { flex-direction: column; align-items: stretch; gap: 12px; }
+  .trust { flex-wrap: wrap; gap: 10px 16px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="stars"></div>
+  <div class="bar"><span class="long">Oferta de temporada: 31% de descuento + 2 fundas gratis ·</span><span class="short">-31% + 2 fundas gratis ·</span> termina en <b>06:43:12</b></div>
+  <nav>
+    <a class="logo" href="#"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Velarian</a>
+    <div class="links"><a href="#">Producto</a><a href="#">Cómo funciona</a><a href="#">Reseñas</a><a href="#">Rastrear pedido</a></div>
+    <a class="cart" href="#"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Carrito</a>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="rating"><span class="st">★★★★★</span> 4.9/5 · 265 reseñas verificadas</span>
+      <h1>Duerme profundo.<br><em>Despierta sin dolor.</em></h1>
+      <ul class="benefits">
+        <li><i><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></i>Alivia el dolor de cuello, hombros y espalda</li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></i>Diseño ergonómico para cualquier postura</li>
+        <li><i><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></i>Reduce los ronquidos desde la primera noche</li>
+      </ul>
+      <div class="buy">
+        <div class="price"><b>$1,071</b><s>$1,557</s><span class="off">-31%</span></div>
+        <a class="btn" href="#">Comprar ahora <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>Envío gratis</span>
+        <span><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>30 noches de prueba</span>
+        <span><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Pago seguro</span>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="moon"></div>
+      <div class="glow"></div><div class="cloud"></div>
+      <img class="pillow" src="pack.png" alt="Almohada ergonómica Velarian">
+      <div class="card q1"><i><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i><div><b>Recomendada</b><small>por fisioterapeutas</small></div></div>
+      <div class="card q2"><div class="avatars"><span>MR</span><span>JL</span><span>AG</span></div><div><b>+12,000 clientes</b><small>duermen mejor</small></div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

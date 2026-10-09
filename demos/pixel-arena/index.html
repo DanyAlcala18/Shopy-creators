@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PIXEL ARENA | Consolas y gaming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #07040F; --ink: #F4F0FF; --muted: #A49CC4; --pink: #FF2E9A; --cyan: #22E4FF; --line: rgba(255,255,255,.1); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(700px 420px at 72% 45%, rgba(255,46,154,.28), transparent 70%), radial-gradient(600px 400px at 90% 80%, rgba(34,228,255,.18), transparent 70%), var(--bg); }
+.floor { position: absolute; left: -20%; right: -20%; bottom: -120px; height: 420px; background-image: linear-gradient(rgba(255,46,154,.55) 1px, transparent 1px), linear-gradient(90deg, rgba(34,228,255,.45) 1px, transparent 1px); background-size: 64px 64px; transform: perspective(500px) rotateX(62deg); transform-origin: bottom; -webkit-mask-image: linear-gradient(transparent, #000 60%); mask-image: linear-gradient(transparent, #000 60%); }
+.sun { position: absolute; right: 18%; top: 120px; width: 300px; height: 300px; border-radius: 50%; background: linear-gradient(180deg, #FFB547, var(--pink) 70%); -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px); mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px); opacity: .5; filter: blur(.5px); }
+nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; border-bottom: 1px solid var(--line); }
+.logo { display: flex; align-items: center; gap: 10px; font-family: "Chakra Petch"; font-weight: 700; font-size: 22px; letter-spacing: .08em; color: var(--ink); }
+.logo i { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; background: linear-gradient(135deg, var(--pink), #8B2CFF); box-shadow: 0 0 20px rgba(255,46,154,.7); font-style: normal; font-size: 14px; color: #fff; }
+.logo span { color: var(--cyan); }
+.links { display: flex; gap: 30px; font-family: "Chakra Petch"; font-weight: 600; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+.links a { color: var(--muted); }
+.links a.on { color: var(--ink); text-shadow: 0 0 12px rgba(34,228,255,.8); }
+.icons { display: flex; gap: 12px; align-items: center; }
+.ic { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); position: relative; }
+.ic b { position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; border-radius: 50%; background: var(--pink); color: #fff; font-size: 10px; display: grid; place-items: center; }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; padding: 30px 60px 0; min-height: 620px; }
+.tag { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid rgba(34,228,255,.4); background: rgba(34,228,255,.08); font-family: "Chakra Petch"; font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); }
+.tag i { width: 7px; height: 7px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 10px var(--cyan); }
+h1 { font-family: "Chakra Petch"; font-weight: 700; font-size: 92px; line-height: .92; text-transform: uppercase; margin: 22px 0 20px; color: var(--ink); }
+h1 span { background: linear-gradient(90deg, var(--pink), #B44DFF 50%, var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 24px rgba(255,46,154,.45)); }
+.lead { max-width: 440px; font-size: 16px; line-height: 1.65; color: var(--muted); }
+.ctas { display: flex; gap: 14px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 17px 28px; font-family: "Chakra Petch"; font-weight: 700; font-size: 16px; letter-spacing: .1em; text-transform: uppercase; clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+.btn-neon { background: linear-gradient(90deg, var(--pink), #A63BFF); color: #fff; box-shadow: 0 0 30px rgba(255,46,154,.6); }
+.btn-out { background: rgba(255,255,255,.06); color: var(--ink); border: 1px solid var(--line); }
+.stats { display: flex; gap: 34px; margin-top: 40px; }
+.stats b { display: block; font-family: "Chakra Petch"; font-size: 28px; font-weight: 700; color: var(--ink); }
+.stats small { font-size: 13px; color: var(--muted); }
+.stage { position: relative; height: 600px; }
+.box { position: absolute; filter: drop-shadow(0 40px 40px rgba(0,0,0,.6)); }
+.ps5 { width: 400px; left: 40px; top: 120px; transform: rotate(-6deg); z-index: 2; }
+.sw2 { width: 290px; right: 10px; top: 40px; transform: rotate(7deg); }
+.mouse { width: 120px; right: 60px; bottom: 60px; transform: rotate(-18deg); z-index: 3; filter: drop-shadow(0 0 30px rgba(34,228,255,.5)) drop-shadow(0 30px 30px rgba(0,0,0,.6)); }
+.price { position: absolute; z-index: 4; padding: 12px 16px; background: rgba(14,8,30,.85); border: 1px solid rgba(255,46,154,.5); box-shadow: 0 0 24px rgba(255,46,154,.3); clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); }
+.price small { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.price b { display: block; font-family: "Chakra Petch"; font-size: 22px; color: var(--ink); }
+.price span { color: var(--pink); font-size: 13px; font-weight: 600; }
+.pr1 { left: 0; bottom: 70px; }
+.pr2 { right: 0; top: 0; border-color: rgba(34,228,255,.5); box-shadow: 0 0 24px rgba(34,228,255,.25); }
+.pr2 span { color: var(--cyan); }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { padding: 14px 18px; }
+  .links, .ic.hide { display: none; }
+  .burger { display: grid; }
+  .logo { font-size: 18px; }
+  .hero { grid-template-columns: 1fr; padding: 10px 20px 30px; min-height: 0; }
+  .stage { height: 320px; order: -1; }
+  .ps5 { width: 220px; left: 0; top: 70px; }
+  .sw2 { width: 160px; right: 0; top: 20px; }
+  .mouse { width: 70px; right: 30px; bottom: 10px; }
+  .price { padding: 8px 12px; }
+  .price b { font-size: 16px; }
+  .pr1 { bottom: 0; }
+  .pr2 { display: none; }
+  .sun { width: 200px; height: 200px; right: 10%; top: 90px; }
+  h1 { font-size: 52px; margin: 14px 0 14px; }
+  .lead { font-size: 15px; }
+  .ctas { flex-direction: column; margin-top: 22px; }
+  .btn { justify-content: center; }
+  .stats { gap: 22px; margin-top: 26px; }
+  .stats b { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="sun"></div><div class="floor"></div>
+  <nav>
+    <a class="logo" href="#"><i>▶</i>PIXEL<span>ARENA</span></a>
+    <div class="links"><a class="on" href="#">Consolas</a><a href="#">Juegos</a><a href="#">Periféricos</a><a href="#">Preventas</a></div>
+    <div class="icons">
+      <span class="ic hide"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><b>3</b></span>
+      <span class="ic burger"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="tag"><i></i>Nintendo Switch 2 disponible</span>
+      <h1>Juega en<br><span>otro nivel</span></h1>
+      <p class="lead">Consolas, juegos y periféricos originales con garantía. Envío en 24 horas y paga a meses sin intereses.</p>
+      <div class="ctas">
+        <a class="btn btn-neon" href="#">Ver consolas <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-out" href="#">Preventas</a>
+      </div>
+      <div class="stats"><div><b>+5K</b><small>Gamers felices</small></div><div><b>24 h</b><small>Envío express</small></div><div><b>12</b><small>Meses sin intereses</small></div></div>
+    </div>
+    <div class="stage">
+      <img class="box sw2" src="p4.png" alt="Nintendo Switch 2">
+      <img class="box ps5" src="p8.png" alt="PlayStation 5">
+      <img class="box mouse" src="p95.png" alt="Mouse gamer">
+      <div class="price pr1"><small>PS5 Slim Digital</small><b>$9,999</b><span>Incluye Fortnite</span></div>
+      <div class="price pr2"><small>Switch 2</small><b>$10,499</b><span>Envío gratis</span></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

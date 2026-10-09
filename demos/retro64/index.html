@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RETRO 64 | Consolas clásicas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #F6EBD3; --ink: #2B1B12; --muted: #6E5642; --red: #E8452C; --orange: #F28C28; --yellow: #F7C548; --teal: #1F8A84; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Rubik", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; background: radial-gradient(circle at 75% 55%, #FFF6E2, transparent 60%), var(--bg); }
+.page::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(43,27,18,.035) 0 2px, transparent 2px 4px); }
+.rainbow { position: absolute; right: -120px; top: 120px; width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle, transparent 0 46%, var(--teal) 46% 50%, var(--yellow) 50% 54%, var(--orange) 54% 58%, var(--red) 58% 62%, transparent 62%); opacity: .9; }
+nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; }
+.logo { font-family: "Bungee"; font-size: 26px; color: var(--ink); text-shadow: 3px 3px 0 var(--orange); }
+.logo span { color: var(--red); }
+.links { display: flex; gap: 28px; font-family: "Press Start 2P"; font-size: 10px; }
+.links a { color: var(--ink); }
+.links a.on { color: var(--red); }
+.cart { display: flex; gap: 8px; align-items: center; padding: 10px 16px; border: 3px solid var(--ink); border-radius: 12px; background: var(--yellow); font-family: "Press Start 2P"; font-size: 10px; color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; padding: 10px 60px 0; min-height: 640px; }
+.coin { display: inline-flex; align-items: center; gap: 10px; font-family: "Press Start 2P"; font-size: 11px; color: var(--red); animation: blink 1.2s steps(2) infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+.coin i { width: 16px; height: 16px; border-radius: 50%; background: var(--yellow); border: 3px solid var(--ink); }
+h1 { font-family: "Bungee"; font-weight: 400; font-size: 68px; line-height: .98; margin: 22px 0 20px; color: var(--ink); text-shadow: 5px 5px 0 var(--yellow), 9px 9px 0 var(--orange); }
+h1 span { color: var(--red); }
+.lead { max-width: 430px; font-size: 17px; line-height: 1.6; color: var(--muted); }
+.ctas { display: flex; gap: 14px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 24px; border: 3px solid var(--ink); border-radius: 14px; font-weight: 700; font-size: 16px; box-shadow: 5px 5px 0 var(--ink); }
+.btn-red { background: var(--red); color: #fff; }
+.btn-cream { background: #FFF8EA; color: var(--ink); }
+.hearts { display: flex; align-items: center; gap: 14px; margin-top: 34px; font-family: "Press Start 2P"; font-size: 10px; color: var(--ink); }
+.hearts .px { display: flex; gap: 4px; }
+.hearts .px i { width: 18px; height: 16px; background: var(--red); clip-path: polygon(0 25%, 25% 0, 50% 25%, 75% 0, 100% 25%, 100% 50%, 50% 100%, 0 50%); }
+.stage { position: relative; height: 620px; }
+.box { position: absolute; filter: drop-shadow(10px 14px 0 rgba(43,27,18,.85)); }
+.c64 { width: 430px; left: 50px; top: 150px; transform: rotate(-5deg); z-index: 2; }
+.atari { width: 230px; right: 20px; top: 40px; transform: rotate(8deg); }
+.pac { width: 200px; right: 60px; bottom: 30px; transform: rotate(-7deg); z-index: 3; }
+.tag { position: absolute; z-index: 4; padding: 10px 14px; border: 3px solid var(--ink); border-radius: 12px; background: #FFF8EA; box-shadow: 4px 4px 0 var(--ink); }
+.tag small { display: block; font-family: "Press Start 2P"; font-size: 8px; color: var(--muted); margin-bottom: 6px; }
+.tag b { font-family: "Bungee"; font-size: 20px; color: var(--ink); font-weight: 400; }
+.t1 { left: 20px; top: 80px; }
+.t2 { left: 70px; bottom: 60px; background: var(--teal); }
+.t2 small, .t2 b { color: #FFF8EA; }
+.stars i { position: absolute; width: 14px; height: 14px; background: var(--yellow); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); animation: twinkle 2s ease-in-out infinite; }
+@keyframes twinkle { 50% { transform: scale(.5); } }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  nav { padding: 16px 20px; }
+  .links { display: none; }
+  .logo { font-size: 20px; }
+  .cart span { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 0 20px 30px; min-height: 0; }
+  .stage { height: 310px; order: -1; }
+  .rainbow { width: 560px; height: 560px; right: -200px; top: 60px; }
+  .c64 { width: 250px; left: 0; top: 90px; }
+  .atari { width: 140px; right: 0; top: 10px; }
+  .pac { width: 120px; right: 10px; bottom: 0; }
+  .t1 { top: 20px; left: 0; padding: 6px 10px; }
+  .t1 b { font-size: 15px; }
+  .t2 { display: none; }
+  h1 { font-size: 38px; margin: 14px 0 14px; text-shadow: 3px 3px 0 var(--yellow), 6px 6px 0 var(--orange); }
+  .lead { font-size: 15px; }
+  .ctas { flex-direction: column; margin-top: 22px; }
+  .btn { justify-content: center; }
+  .hearts { margin-top: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="rainbow"></div>
+  <nav>
+    <a class="logo" href="#">RETRO<span>64</span></a>
+    <div class="links"><a class="on" href="#">CONSOLAS</a><a href="#">ARCADE</a><a href="#">CARTUCHOS</a><a href="#">OFERTAS</a></div>
+    <a class="cart" href="#"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span>BOLSA 1</span></a>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="coin"><i></i>INSERT COIN</span>
+      <h1>Los clásicos<br><span>vuelven</span> a casa</h1>
+      <p class="lead">Consolas retro con cientos de juegos incluidos. Conéctalas a tu TV y revive Pac-Man, Asteroids y más en minutos.</p>
+      <div class="ctas"><a class="btn btn-red" href="#">Jugar ahora <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-cream" href="#">Ver catálogo</a></div>
+      <div class="hearts"><span class="px"><i></i><i></i><i></i></span>+3,000 JUGADORES FELICES</div>
+    </div>
+    <div class="stage">
+      <div class="stars"><i style="left:12%;top:20%"></i><i style="left:58%;top:6%;animation-delay:.6s"></i><i style="left:90%;top:52%;animation-delay:1.2s"></i><i style="left:40%;top:88%;animation-delay:.3s"></i></div>
+      <img class="box atari" src="p32.png" alt="Atari Flashback Blast">
+      <img class="box c64" src="p24.png" alt="THEC64 Mini">
+      <img class="box pac" src="p34.png" alt="Bandai Namco Flashback">
+      <div class="tag t1"><small>MÁS VENDIDO</small><b>THEC64 MINI</b></div>
+      <div class="tag t2"><small>DESDE</small><b>$899</b></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

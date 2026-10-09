@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STRIDE | Tenis de diseñador</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #EFEDE8; --ink: #121212; --muted: #6B6862; --accent: #FF5A1F; --card: #F5F5F5; --line: rgba(18,18,18,.1); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.top { background: var(--ink); color: #F1EFEA; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; text-align: center; padding: 9px 16px; }
+.top b { color: var(--accent); }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 56px; }
+.logo { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 26px; letter-spacing: -.02em; color: var(--ink); }
+.logo sup { font-size: 11px; color: var(--accent); }
+.links { display: flex; gap: 34px; font-size: 14px; font-weight: 500; }
+.links a { color: var(--ink); opacity: .75; }
+.links a.on { opacity: 1; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.icons { display: flex; gap: 18px; align-items: center; color: var(--ink); }
+.bag { position: relative; }
+.bag i { position: absolute; top: -6px; right: -8px; width: 17px; height: 17px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 10px; font-style: normal; font-weight: 700; display: grid; place-items: center; }
+.burger { display: none; }
+.hero { position: relative; display: grid; grid-template-columns: 1fr 1.15fr; align-items: center; gap: 20px; padding: 10px 56px 40px; min-height: 640px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--ink); }
+.eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--accent); }
+h1 { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 112px; line-height: .88; letter-spacing: -.05em; margin: 22px 0 24px; color: var(--ink); }
+h1 em { font-style: normal; color: var(--accent); }
+.lead { max-width: 430px; font-size: 17px; line-height: 1.6; color: var(--muted); }
+.ctas { display: flex; gap: 12px; margin-top: 34px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 17px 28px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-line { border: 1.5px solid var(--ink); color: var(--ink); }
+.stats { display: flex; gap: 40px; margin-top: 46px; padding-top: 26px; border-top: 1px solid var(--line); max-width: 470px; }
+.stats b { display: block; font-family: "Bricolage Grotesque"; font-size: 28px; font-weight: 700; color: var(--ink); }
+.stats span { font-size: 13px; color: var(--muted); }
+.visual { position: relative; height: 600px; }
+.hero { overflow: hidden; }
+.word { position: absolute; right: -10px; top: 40px; font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 210px; letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1.5px rgba(18,18,18,.14); line-height: 1; user-select: none; }
+.disc { position: absolute; left: 50%; top: 52%; width: 470px; height: 470px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FF8A50, var(--accent) 60%, #E2400C); box-shadow: 0 40px 80px -30px rgba(226,64,12,.6); }
+.shoe { position: absolute; left: 50%; top: 54%; width: 600px; transform: translate(-50%,-50%) rotate(-14deg); animation: float 6s ease-in-out infinite; filter: drop-shadow(0 50px 40px rgba(80,20,0,.35)); }
+.shoe-wrap { position: absolute; inset: 0; }
+@keyframes float { 50% { transform: translate(-50%,-54%) rotate(-12deg); } }
+.tag { position: absolute; background: #fff; border-radius: 18px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.25); color: var(--ink); }
+.tag-price { left: 0; bottom: 70px; display: flex; gap: 14px; align-items: center; padding: 12px 18px 12px 12px; }
+.tag-price .thumb { width: 64px; height: 64px; border-radius: 12px; background: #fff url(maison-margiela-replica-blanco.png) center/88% no-repeat; }
+.tag-price small { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.tag-price b { display: block; font-size: 15px; color: var(--ink); margin: 2px 0; }
+.tag-price strong { font-family: "Bricolage Grotesque"; font-size: 17px; color: var(--accent); }
+.tag-new { right: 20px; top: 70px; padding: 14px 18px; }
+.tag-new small { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.tag-new b { display: block; font-family: "Bricolage Grotesque"; font-size: 18px; color: var(--ink); }
+.tag-new span { font-size: 13px; color: var(--muted); }
+.dots { position: absolute; right: 20px; bottom: 40px; display: flex; gap: 8px; }
+.dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(18,18,18,.2); }
+.dots i:first-child { width: 28px; border-radius: 6px; background: var(--ink); }
+.mini { position: absolute; right: 30px; bottom: 120px; width: 120px; height: 120px; border-radius: 22px; background: #fff url(golden-goose-super-star-negro.png) center/86% no-repeat; box-shadow: 0 24px 50px -20px rgba(0,0,0,.3); border: 4px solid #fff; }
+@media (max-width: 760px) {
+  nav { padding: 16px 20px; }
+  .links, .icons .hide { display: none; }
+  .burger { display: block; }
+  .hero { grid-template-columns: 1fr; padding: 8px 20px 30px; gap: 0; min-height: 0; }
+  h1 { font-size: 64px; margin: 14px 0 14px; }
+  .lead { font-size: 15px; }
+  .ctas { margin-top: 24px; flex-direction: column; }
+  .btn { justify-content: center; }
+  .stats { gap: 22px; margin-top: 28px; }
+  .stats b { font-size: 22px; }
+  .visual { height: 340px; order: -1; margin: 0 -20px 6px; overflow: hidden; }
+  .word { font-size: 110px; top: 10px; right: 0; }
+  .disc { width: 270px; height: 270px; }
+  .shoe { width: 360px; }
+  .tag-price { left: 14px; bottom: 6px; padding: 8px 12px 8px 8px; }
+  .tag-price .thumb { width: 46px; height: 46px; }
+  .tag-new { right: 14px; top: 16px; padding: 10px 12px; }
+  .mini, .dots { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="top">Envío gratis · <b>12 meses sin intereses</b></div>
+<nav>
+  <a class="logo" href="#">STRIDE<sup>®</sup></a>
+  <div class="links"><a class="on" href="#">Novedades</a><a href="#">Hombre</a><a href="#">Mujer</a><a href="#">Marcas</a><a href="#">Ofertas</a></div>
+  <div class="icons">
+    <svg class="hide" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <svg class="hide" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+    <span class="bag"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><i>2</i></span>
+    <svg class="burger" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </div>
+</nav>
+<section class="hero">
+  <div>
+    <span class="eyebrow">Drop 07 · Otoño 2026</span>
+    <h1>Camina<br>distinto<em>.</em></h1>
+    <p class="lead">Tenis de las casas que definen la calle: Balenciaga, Maison Margiela, Golden Goose y más. 100% auténticos, verificados pieza por pieza.</p>
+    <div class="ctas">
+      <a class="btn btn-dark" href="#">Comprar ahora <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="#">Ver colección</a>
+    </div>
+    <div class="stats"><div><b>100%</b><span>Auténticos</span></div><div><b>24 h</b><span>Envío express</span></div><div><b>4.9★</b><span>2,300 reseñas</span></div></div>
+  </div>
+  <div class="visual">
+    <div class="word">STRIDE</div>
+    <div class="disc"></div>
+    <div class="shoe-wrap"><img class="shoe" src="balenciaga-triple-s.png" alt="Balenciaga Triple S"></div>
+    <div class="tag tag-new"><small>Nuevo</small><b>Triple S</b><span>Balenciaga · $18,900</span></div>
+    <div class="tag tag-price"><div class="thumb"></div><div><small>Más vendido</small><b>Replica GAT</b><strong>$12,450</strong></div></div>
+    <div class="mini"></div>
+    <div class="dots"><i></i><i></i><i></i></div>
+  </div>
+</section>
+</body>
+</html>

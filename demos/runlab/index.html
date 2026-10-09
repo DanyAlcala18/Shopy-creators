@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUNLAB | Tenis de alto rendimiento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #F2F2EE; --ink: #0D0D0D; --muted: #5E5E58; --lime: #D4FF3A; --line: rgba(13,13,13,.1); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: "Manrope", sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.page { position: relative; min-height: 800px; overflow: hidden; }
+.panel { position: absolute; right: -80px; top: 0; bottom: 0; width: 56%; background: var(--lime); transform: skewX(-12deg); transform-origin: top; }
+.panel::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(13,13,13,.06) 0 2px, transparent 2px 26px); }
+nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; }
+.logo { font-family: "Anton"; font-size: 30px; letter-spacing: .02em; font-style: italic; color: var(--ink); }
+.logo span { background: var(--ink); color: var(--lime); padding: 0 6px; margin-left: 2px; }
+.links { display: flex; gap: 30px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; }
+.links a { color: var(--ink); }
+.nav-r { display: flex; gap: 16px; align-items: center; color: var(--ink); }
+.nav-btn { padding: 12px 20px; border-radius: 999px; background: var(--ink); color: var(--lime); font-weight: 800; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.burger { display: none; }
+.hero { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 10px 60px 0; min-height: 640px; }
+.kick { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.kick i { padding: 4px 10px; border-radius: 6px; background: var(--ink); color: var(--lime); font-style: normal; }
+h1 { font-family: "Anton"; font-weight: 400; font-style: italic; font-size: 118px; line-height: .9; text-transform: uppercase; letter-spacing: -.01em; margin: 20px 0 22px; color: var(--ink); }
+h1 .out { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+.lead { max-width: 420px; font-size: 17px; line-height: 1.6; color: var(--muted); font-weight: 500; }
+.ctas { display: flex; gap: 12px; margin-top: 32px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 28px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .04em; }
+.btn i { width: 30px; height: 30px; border-radius: 50%; background: var(--lime); color: var(--ink); display: grid; place-items: center; }
+.play { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--ink); }
+.play i { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; }
+.play svg { fill: var(--ink); stroke: none; width: 16px; height: 16px; }
+.metrics { display: flex; gap: 0; margin-top: 44px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; width: fit-content; background: #fff; }
+.metrics div { padding: 14px 22px; border-right: 1px solid var(--line); }
+.metrics div:last-child { border: 0; }
+.metrics b { display: block; font-family: "Anton"; font-size: 26px; color: var(--ink); font-weight: 400; }
+.metrics small { font-size: 12px; color: var(--muted); font-weight: 600; }
+.stage { position: relative; height: 640px; }
+.speed { position: absolute; left: 0; top: 46%; width: 100%; height: 120px; background: repeating-linear-gradient(180deg, transparent 0 14px, rgba(13,13,13,.9) 14px 17px); -webkit-mask-image: linear-gradient(90deg, #000, transparent 55%); mask-image: linear-gradient(90deg, #000, transparent 55%); transform: skewX(-12deg); opacity: .8; }
+.shoe { position: absolute; left: 50%; top: 46%; width: 640px; transform: translate(-50%,-50%) rotate(-16deg); filter: drop-shadow(0 50px 40px rgba(0,0,0,.35)); animation: run 5s ease-in-out infinite; }
+@keyframes run { 50% { transform: translate(-48%,-53%) rotate(-14deg); } }
+.num { position: absolute; right: 20px; top: 20px; font-family: "Anton"; font-size: 150px; line-height: 1; color: rgba(13,13,13,.1); font-style: italic; }
+.mini { position: absolute; display: flex; align-items: center; gap: 12px; padding: 10px 16px 10px 10px; background: #fff; border-radius: 18px; box-shadow: 0 20px 40px -18px rgba(0,0,0,.35); }
+.mini img { width: 80px; height: 54px; object-fit: contain; background: #F2F2EE; border-radius: 12px; padding: 4px; }
+.mini small { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.mini b { display: block; font-size: 15px; color: var(--ink); }
+.mini span { font-weight: 800; font-size: 14px; color: var(--ink); }
+.m1 { left: 10px; bottom: 70px; }
+.m2 { right: 10px; bottom: 140px; }
+.badge { position: absolute; left: 40px; top: 70px; width: 110px; height: 110px; border-radius: 50%; background: var(--ink); color: var(--lime); display: grid; place-items: center; text-align: center; font-family: "Anton"; font-size: 30px; line-height: .9; transform: rotate(-12deg); box-shadow: 0 20px 40px -14px rgba(0,0,0,.5); }
+.badge small { display: block; font-family: "Manrope"; font-weight: 800; font-size: 10px; letter-spacing: .12em; color: #fff; }
+@media (max-width: 760px) {
+  .page { min-height: 844px; }
+  .panel { width: 100%; right: -20%; height: 360px; bottom: auto; top: 70px; }
+  nav { padding: 16px 20px; }
+  .links, .nav-btn, .nav-r .hide { display: none; }
+  .burger { display: block; }
+  .logo { font-size: 24px; }
+  .hero { grid-template-columns: 1fr; padding: 0 20px 30px; min-height: 0; }
+  .stage { height: 330px; order: -1; }
+  .shoe { width: 330px; }
+  .num { font-size: 90px; }
+  .badge { width: 76px; height: 76px; font-size: 20px; left: 0; top: 20px; }
+  .mini { padding: 6px 10px 6px 6px; }
+  .mini img { width: 56px; height: 40px; }
+  .m1 { left: 0; bottom: 10px; }
+  .m2 { display: none; }
+  h1 { font-size: 76px; margin: 12px 0 14px; }
+  .lead { font-size: 15px; }
+  .ctas { flex-wrap: wrap; margin-top: 22px; }
+  .metrics { margin-top: 26px; }
+  .metrics div { padding: 10px 14px; }
+  .metrics b { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="panel"></div>
+  <nav>
+    <a class="logo" href="#">RUN<span>LAB</span></a>
+    <div class="links"><a href="#">Running</a><a href="#">Trail</a><a href="#">Lifestyle</a><a href="#">Ofertas</a></div>
+    <div class="nav-r">
+      <svg class="hide" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <a class="nav-btn" href="#">Únete al club</a>
+      <svg class="burger" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="kick"><i>Nuevo</i> Cloudtilt · Edición Ivory</span>
+      <h1>Corre<br><span class="out">más</span> lejos</h1>
+      <p class="lead">Tenis de running con amortiguación de nueva generación. Ligeros, reactivos y hechos para tus mejores kilómetros.</p>
+      <div class="ctas">
+        <a class="btn" href="#">Comprar ahora <i><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+        <a class="play" href="#"><i><svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg></i>Ver en acción</a>
+      </div>
+      <div class="metrics"><div><b>220 g</b><small>Peso ligero</small></div><div><b>+40%</b><small>Retorno de energía</small></div><div><b>30 días</b><small>Prueba sin riesgo</small></div></div>
+    </div>
+    <div class="stage">
+      <div class="num">26</div>
+      <div class="speed"></div>
+      <img class="shoe" src="on-cloudtilt-ivory.png" alt="Cloudtilt Ivory">
+      <div class="badge"><div>-25%<small>Esta semana</small></div></div>
+      <div class="mini m1"><img src="salomon-lab.png" alt="Salomon XT-6"><div><small>Trail</small><b>XT-6</b><span>$4,290</span></div></div>
+      <div class="mini m2"><img src="new-balance-530.png" alt="New Balance 530"><div><small>Lifestyle</small><b>530 Silver</b><span>$2,690</span></div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
